@@ -1,0 +1,166 @@
+.slider-wrapper {    
+  .transition(1s);
+  &.carousel {
+    height: 100%;
+  }
+  &.half-carousel {
+    height: 55%!important;
+  }
+  &.small-carousel {
+    height: 150px!important;
+    margin-top: 80px;
+  }
+  &.fade {
+    .transition(1s);
+    .opacity(0.3);
+  }
+
+  .carousel-inner {
+    height:100%;
+    .bg {
+      background-repeat:no-repeat;
+      background-size:cover;
+      img.circle {
+        margin-top: 30px;
+        // width: 150px;
+      }
+    }    
+    .bg1 {
+      background-image:url('../images/home/banner/banner-bg-v4.jpg')!important;
+      background-position: center center;     
+    }
+    .massage-bg1 {
+      background-image:url('../images/massage/banner/banner-bg-v5.jpg')!important;
+      background-position: center center;         
+    }
+    .features-bg1 {
+      background-image:url('../images/features/banner/banner-bg-v5.jpg')!important;
+      background-position: center center;  
+    }    
+    .design-bg1 {
+      // background-image:url('../images/specs/banner/banner-bg-v2.jpg')!important;
+      background-image:url('../images/design/banner/banner-bg-v5.png')!important;
+      background-position: center center;  
+    }     
+    .specs-bg1 {
+      background-image:url('../images/design/banner/banner-bg-v3.jpg')!important;
+      background-position: center center;        
+    }     
+    .terms-bg1 {
+      // background-image:url('../images/specs/banner/banner-bg-v2.jpg')!important;
+      // background-position: center center;    
+      // background-color: @light-greyish-5;
+      height: 150px!important;
+    }   
+    .privacy-bg1 {
+      // background-image:url('../images/specs/banner/banner-bg-v2.jpg')!important;
+      // background-position: center center;    
+      // background-color: @light-greyish-5;
+      height: 150px!important;
+    }     
+    .item {        
+      height: 100%;
+      .opacity(0);
+      .carousel-caption {
+        z-index: 0;          
+      }        
+    }      
+  }   
+
+  .privacy-title{
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  div.item {
+    div.carousel-caption {
+      position: absolute;
+      right: auto;
+      left: 70%!important;
+      top: 0;  
+      left: auto;    
+      height: 100%;         
+      display: table;
+      vertical-align: middle;
+      div.caption-text {
+        text-align: left;
+        display: table-cell;
+        vertical-align: middle;        
+        h1 {                    
+          text-shadow: none;
+          color: @white;
+          margin-bottom: 32px;          
+        }                    
+        h5 {                    
+          color: @white;          
+          text-transform: uppercase;   
+          text-shadow: none;
+          margin-bottom: 27px;
+        }
+        h2 {                    
+          text-shadow: none;
+          color: @white;
+        } 
+        &.color {
+          h1, h2, p {
+            // color: @dark-greyish;
+          }
+          h1 {
+            // color: @orangeish;
+            margin-bottom: 43px;
+          }
+          h2 {
+            // margin-bottom: 70px;            
+          }
+          span {
+            // .fs-albert-regular;
+            font-size: 17px;
+            line-height: 22px;
+            // color: @dark-greyish;
+            text-shadow: none;
+            display: block;
+            margin-top: -13px;
+            margin-left: 40px;
+          }
+          div.signature {
+            background: url('../images/massage/banner/signature.png') no-repeat;
+            width: 134px;
+            height: 86px;
+          }
+        }            
+      }        
+    }    
+  }
+  div.bg {
+    div.carousel-caption {
+      max-width: 287px;   
+      h2 {
+        span.cele-name {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  div.massage-bg1 {
+    div.carousel-caption {
+      // max-width: 311px;
+      max-width: 325px;      
+    }
+  }
+  div.design-bg1 {
+    div.carousel-caption {
+      left: 10%!important;
+    }
+  }
+  div.bg1 {
+    div.carousel-caption {
+      // width: 23%;   
+      div.caption-text {
+        h1 {
+          font-size: 40px;
+          line-height: 45px;
+        }
+      }
+    }
+  }  
+}
