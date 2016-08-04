@@ -1,0 +1,133 @@
+.montserrat-regular {
+  font-family: 'Montserrat', Impact, sans-serif;
+  font-weight: 400;
+}
+
+.montserrat-bold {
+  font-family: 'Montserrat', Impact, sans-serif;
+  font-weight: 700;
+}
+
+.playfair-regular {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+}
+
+.playfair-bold {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+}
+
+.open-sans-regular {
+  font-family: 'Open Sans', Verdana, Geneva, sans-serif;
+  font-weight: 400;
+}
+
+.open-sans-semi-bold {
+  font-family: 'Open Sans', Verdana, Geneva, sans-serif;
+  font-weight: 600;
+}
+
+
+//    ____ _______   ___     _____ ____  
+//   / ___|_   _\ \ / / |   | ____/ ___| 
+//   \___ \ | |  \ V /| |   |  _| \___ \ 
+//    ___) || |   | | | |___| |___ ___) |
+//   |____/ |_|   |_| |_____|_____|____/ 
+//                                       
+
+
+
+.body-font(@multiplier: 1){
+  .montserrat-regular;
+  font-size: 14px * @multiplier;
+  line-height: 16px * @multiplier;
+}
+.body-font-bold(@multiplier: 1){
+  .montserrat-bold;
+  font-size: 14px * @multiplier;
+  line-height: 16px * @multiplier;
+}
+.body-font-italic(@multiplier: 1){
+  .montserrat-regular;
+  font-style: italic;
+  font-size: 14px * @multiplier;
+  line-height: 16px * @multiplier;
+}
+
+
+
+
+.header-h1-style(@multiplier: 1){
+  .playfair-bold;
+  font-size: 72px * @multiplier;
+  line-height: 82px * @multiplier;
+  letter-spacing: -0.005em;
+}
+
+.header-h2-style(@multiplier: 1){
+  .playfair-bold;
+  font-size: 32px * @multiplier;
+  line-height: 38px * @multiplier;    // new
+}
+
+.header-h3-style(@multiplier: 1){
+  .montserrat-bold;
+  font-size: 22px * @multiplier;
+  line-height: 26px * @multiplier;    // new
+}
+
+.header-h4-style(@multiplier: 1){
+  .montserrat-regular;
+  font-size: 17px * @multiplier;
+  line-height: 22px * @multiplier;
+}
+
+.header-h5-style(@multiplier: 1){
+  .montserrat-regular;
+  font-size: 18px * @multiplier;
+  letter-spacing: 0.025em * @multiplier;
+}
+
+.header-h6-style(@multiplier: 1){
+  .playfair-bold;
+  font-size: 14px * @multiplier;
+  line-height: 18px * @multiplier;
+  letter-spacing: 0.025em * @multiplier;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    ___ __  __ ____   ___  ____ _____   _____ ___  _   _ _____
+//   |_ _|  \/  |  _ \ / _ \|  _ \_   _| |  ___/ _ \| \ | |_   _|
+//    | || |\/| | |_) | | | | |_) || |   | |_ | | | |  \| | | |
+//    | || |  | |  __/| |_| |  _ < | |   |  _|| |_| | |\  | | |
+//   |___|_|  |_|_|    \___/|_| \_\|_|   |_|   \___/|_| \_| |_|
+//
+
+/*
+@font-face {
+  font-family: 'fs_albertregular';
+  src: url('../fonts/fs_albert-webfont.eot');
+  src: url('../fonts/fs_albert-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/fs_albert-webfont.woff2') format('woff2'),
+       url('../fonts/fs_albert-webfont.woff') format('woff'),
+       url('../fonts/fs_albert-webfont.ttf') format('truetype'),
+       url('../fonts/fs_albert-webfont.svg#fs_albertregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*/

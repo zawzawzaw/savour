@@ -1,0 +1,263 @@
+html, body{
+  .body-font(1);
+  color: @dark-grey;
+}
+
+.general-text-declaration(@multiplier: 1){
+
+  h1 {
+    .header-h1-style(@multiplier);
+  }
+
+  h2 {
+    .header-h2-style(@multiplier);
+  }
+
+  h3 {
+    .header-h3-style(@multiplier);
+  }
+
+  h4 {
+    .header-h4-style(@multiplier);
+  }
+
+  h5 {
+    .header-h5-style(@multiplier);
+  }
+
+  h6 {
+    .header-h6-style(@multiplier);
+  }
+
+
+  p {
+    .body-font(@multiplier);
+  }
+  i{
+    .body-font-italic(@multiplier);
+  }
+  ul{
+    li{
+      .body-font(@multiplier);
+    }
+  }
+
+  strong{
+    .body-font-bold(@multiplier);
+  }
+  small{
+  }
+
+} // .general-text-declaration
+
+
+
+.general-text-declaration(1);
+
+@media only screen and (max-width: 991px) {
+  .general-text-declaration(0.8);
+}
+@media only screen and (max-width: 767px) {
+  .general-text-declaration(1);
+}
+
+
+// PC:  WebFont renders thicker
+// MAC: WebFont renders thinner
+
+.is-mac{
+  *{
+    // make font a bit thicker
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+
+
+
+a{
+  text-decoration: none !important;
+  .transition-out(0.3s);
+  cursor: pointer;
+
+  &:hover,
+  &:focus{
+    .transition-in(0.3s);
+  }
+}
+
+hr{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0;
+  border-top: 1px solid @border-grey;
+}
+
+
+// remove dropshadow on iOS
+input,
+select,
+textarea{
+  -webkit-appearance: none;
+}
+
+
+
+
+
+
+
+//     ___ _____ _   _ _____ ____  ____  
+//    / _ \_   _| | | | ____|  _ \/ ___| 
+//   | | | || | | |_| |  _| | |_) \___ \ 
+//   | |_| || | |  _  | |___|  _ < ___) |
+//    \___/ |_| |_| |_|_____|_| \_\____/ 
+//                                       
+
+
+#page-wrapper{
+  position: relative;
+  z-index: 20;
+
+  &.hidden-version{
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+
+
+
+@target_black_bg: 28px;
+@target_white_bg: 80px;
+
+.scroll-target{
+  position: relative;
+  top: 0px;
+
+  // top: -108px;
+}
+
+
+
+
+
+.manic-image-container{
+  .opacity(0.0);
+  .transition-in(0.4s);
+
+  // default height (to be overriden)
+  height: 300px;    
+
+  &.image-loaded-version{
+    .opacity(1);
+  }
+}
+
+html.actual-mobile{
+  .manic-image-container{
+
+    // to avoid incorrect image width and height calculations
+    .transition-none;
+  }
+}
+
+
+
+
+
+
+
+.clear {
+  clear: both;
+}
+
+.valign-table {
+  display: table;
+  width: 100%;
+  height: 100%;
+  .valign-table-cell {
+    display: table-cell;
+    vertical-align: middle;     
+  }
+}
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+.hcenter {
+  text-align: center;
+}
+
+.hright {
+  text-align: right;
+}
+
+
+.table {
+  display: table;
+  .table-cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+}
+
+
+
+
+
+//    _____ _   _ _     _     ____   ____ ____  _____ _____ _   _
+//   |  ___| | | | |   | |   / ___| / ___|  _ \| ____| ____| \ | |
+//   | |_  | | | | |   | |   \___ \| |   | |_) |  _| |  _| |  \| |
+//   |  _| | |_| | |___| |___ ___) | |___|  _ <| |___| |___| |\  |
+//   |_|    \___/|_____|_____|____/ \____|_| \_\_____|_____|_| \_|
+//
+
+
+html.fullscreen-component-open{
+  overflow: hidden;
+
+  body.is-tablet.is-tablet-landscape{
+    #mobile-header{
+      display: none !important;
+    }
+  }
+
+
+  
+}
+body.fullscreen-component-open{
+  overflow: hidden;
+}
+
+
+
+// if mobile
+html.fullscreen-component-open.is-html-mobile{
+  overflow: scroll;
+
+  body.fullscreen-component-open{
+    overflow: visible;
+
+    #page-wrapper{
+      display: none;
+    }
+
+    #packages-popup-container{
+      z-index: 1000;
+    }
+
+  }
+
+}
+
+
+
+
+
+  
