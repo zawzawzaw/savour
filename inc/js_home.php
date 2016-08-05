@@ -35,7 +35,7 @@
 
   <script type="text/javascript" src="assets/libs/video.js/dist/video.min.js"></script>   
   <script type="text/javascript" src="assets/libs/slick-carousel/slick/slick.min.js"></script>
-  <!-- <script type="text/javascript" src="assets/libs/imagesloaded/imagesloaded.pkgd.min.js"></script> -->
+  <script type="text/javascript" src="assets/libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
 
 
   <!-- Google Closure -->

@@ -11,10 +11,9 @@
 
 @import (inline) "../libs/animate.css/animate.min.css";
 
-@import (inline) "../libs/font-awesome/css/font-awesome.min.css";
-
-// @import (inline) "../libs/slick-carousel/slick/slick.css";   // cannot cause of relative images
-// @import (inline) "../libs/slick-carousel/slick/slick-theme.css";   // cannot cause of relative images
+// @import (inline) "../libs/font-awesome/css/font-awesome.min.css";   // cannot cause of relative fonts
+// @import (inline) "../libs/slick-carousel/slick/slick.css";          // cannot cause of relative images
+// @import (inline) "../libs/slick-carousel/slick/slick-theme.css";    // cannot cause of relative images
 @import "../libs/slick-carousel/slick/slick.less";
 @import "../libs/slick-carousel/slick/slick-theme.less";
 
@@ -27,7 +26,7 @@
 
 
 @import "lib/reset.less";
-// @import "lib/font-awesome.less";
+@import "lib/font-awesome.less";
 @import "lib/video-js.less";
 
 @import "manic/customized-bootstrap.less";
@@ -47,6 +46,9 @@
 @black-with-opacity: #333231;
 
 
+
+
+
 // new
 @border-grey: #e1e1e1;
 
@@ -57,9 +59,9 @@
 
 
 @import "savour/header.less";
+@import "savour/header_mobile.less";
 @import "savour/footer.less";
 
-// @import "savour/header_mobile.less";
 
 // @import "savour/form.less";
 // @import "savour/search.less";

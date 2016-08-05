@@ -51,8 +51,8 @@
 
 
 
-
-<header id="header">
+<div id="desktop-header-spacer"></div>
+<header id="desktop-header">
   <div class="container-fluid header-logo-container">
     <div class="big-logo-container">
       <a href="#" class="main-logo-big"></a>
@@ -79,7 +79,7 @@
         <div class="col-md-3">
           <a href="#">
             <div class="img-container">
-              <img src="assets/images/menu/menu-content-1.png" class="img-responsive" alt="">
+              <img src="images_cms/menu/menu-content-1.png" class="img-responsive" alt="">
               <span>Competition</span>
             </div>
             <div class="text-container">
@@ -90,7 +90,7 @@
         <div class="col-md-3">
           <a href="#">
             <div class="img-container">
-              <img src="assets/images/menu/menu-content-2.png" class="img-responsive" alt="">
+              <img src="images_cms/menu/menu-content-2.png" class="img-responsive" alt="">
               <span>Coming Soon</span>
             </div>
             <div class="text-container">
@@ -101,7 +101,7 @@
         <div class="col-md-3">
           <a href="#">
             <div class="img-container">
-              <img src="assets/images/menu/menu-content-3.png" class="img-responsive" alt="">
+              <img src="images_cms/menu/menu-content-3.png" class="img-responsive" alt="">
               <div class="play-icon"></div>
             </div>
             <div class="text-container">
@@ -112,7 +112,7 @@
         <div class="col-md-3">
           <a href="#">
             <div class="img-container">
-              <img src="assets/images/menu/menu-content-4.png" class="img-responsive" alt="">
+              <img src="images_cms/menu/menu-content-4.png" class="img-responsive" alt="">
             </div>
             <div class="text-container">
               <p>A Fair to Savour: Masterchefs, New Menus and Live Music</p>
@@ -125,7 +125,7 @@
         <div class="col-md-3">
           <a href="#">
             <div class="img-container">
-              <img src="assets/images/menu/menu-content-4.png" class="img-responsive" alt="">
+              <img src="images_cms/menu/menu-content-4.png" class="img-responsive" alt="">
               <span>Competition</span>
             </div>
             <div class="text-container">
@@ -136,7 +136,7 @@
         <div class="col-md-3">
           <a href="#">
             <div class="img-container">
-              <img src="assets/images/menu/menu-content-3.png" class="img-responsive" alt="">
+              <img src="images_cms/menu/menu-content-3.png" class="img-responsive" alt="">
               <span>Coming Soon</span>
             </div>
             <div class="text-container">
@@ -147,7 +147,7 @@
         <div class="col-md-3">
           <a href="#">
             <div class="img-container">
-              <img src="assets/images/menu/menu-content-2.png" class="img-responsive" alt="">
+              <img src="images_cms/menu/menu-content-2.png" class="img-responsive" alt="">
               <div class="play-icon"></div>
             </div>
             <div class="text-container">
@@ -158,7 +158,7 @@
         <div class="col-md-3">
           <a href="#">
             <div class="img-container">
-              <img src="assets/images/menu/menu-content-1.png" class="img-responsive" alt="">
+              <img src="images_cms/menu/menu-content-1.png" class="img-responsive" alt="">
             </div>
             <div class="text-container">
               <p>A Fair to Savour: Masterchefs, New Menus and Live Music</p>

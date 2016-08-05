@@ -1,13 +1,14 @@
-
-
-@mobile-black-bg-height: 23px;
-@mobile-white-bg-height: 63px;
+@mobile-white-bg-height: 57px;
 
 #mobile-header-spacer{
   // height: 56px;
-  height: @mobile-white-bg-height + @mobile-black-bg-height;
-  background: @off-black;
+  height: @mobile-white-bg-height;
   .transition-in(0.3s);
+}
+
+
+body.mobile-menu-open{
+  background: #555654;
 }
 
 
@@ -20,21 +21,11 @@
   left: 0;
   width: 100%;
 
+  background: #555654;
 
-  .black-bg{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: @mobile-black-bg-height;
-
-    background: @off-black;
-
-    .transition-in(0.3s);
-  }
   .white-bg{
     position: absolute;
-    top: @mobile-black-bg-height;
+    top: 0px;
     left: 0px;
 
     width: 100%;
@@ -65,7 +56,7 @@
 
 #mobile-header-content-container{
   position: relative;
-  top: @mobile-black-bg-height;
+  top: 0px;
 
   .transition-in(0.3s);
 }
@@ -93,55 +84,50 @@ body.body-sticky-version{
   
 }
 
+
+
+
+
+
+
+
+
+
+
+
+// logo
+
 #mobile-header-logo{
   position: absolute;
-  // top: -7px;
-  // left: 16px;
-  top: -5px;
-  left: 11px;
+  top: 13px;
+  left: 50%;
+  margin-left: -80px;
 
   display: block;
+
   img{
     display: block;
-    // width: 95px;
-    // height: 95px;
-    width: 73px;
-    height: 73px;
+    width: 164px;
+    height: 27px;
   }
 }
 
-#mobile-header-name{
-  position: absolute;
-  top: 14px;
-  left: 93px;
 
-  .title-01{
-    .lato-light;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.1em;
-    color: @off-black;
 
-    margin-bottom: -4px;
-  }
-  .title-02{
-    .lato-bold;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.1em;
-    color: @off-black;
-  }
-  span{
-    .lato-light;
-    font-size: 9px;
-    line-height: 9px;
-    letter-spacing: 0.0em;
 
-    position: absolute;
-    top: 2px;
-    right: -4px;
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+// Buttons
 
 #mobile-header-close-btn{
   .mobile-menu-close-icon;
@@ -152,13 +138,12 @@ body.body-sticky-version{
   .mobile-menu-open-icon;
 }
 
-
 #mobile-header-close-btn,
 #mobile-header-open-btn{
   position: absolute;
   //top: 16px;
-  top: 19px;
-  right: 12px;
+  top: 15px;
+  left: 14px;
 
   &:before{
     content: "";
@@ -176,10 +161,67 @@ body.body-sticky-version{
   }
 }
 
+#mobile-header-search-btn{
+  .fa;
+  // font-size: 17px;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  // color: #464646;
+  color: #717070;
+
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  width: 26px;
+  height: 26px;
+
+  
+  &:before{
+    content: "\f002";
+  }
+
+  &:after{
+    content: "";
+    display: block;
+
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    width: @mobile-white-bg-height;
+    height: @mobile-white-bg-height;
+    
+    top: -19px;
+    left: -17px;
+    background: transparent;
+  }
+
+}
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    _______  ______   _    _   _ ____  _____ ____
+//   | ____\ \/ /  _ \ / \  | \ | |  _ \| ____|  _ \
+//   |  _|  \  /| |_) / _ \ |  \| | | | |  _| | | | |
+//   | |___ /  \|  __/ ___ \| |\  | |_| | |___| |_| |
+//   |_____/_/\_\_| /_/   \_\_| \_|____/|_____|____/
+//
 
 
 
@@ -200,9 +242,7 @@ body.body-sticky-version{
 }
 
 
-body.mobile-menu-open{
-  background: @off-white;
-}
+
 
 
 
@@ -214,7 +254,7 @@ body.mobile-menu-open{
 //                             
 
 #mobile-header-menu-container{
-  background: @white;
+  background: #555654;
 }
 
 #mobile-menu{
@@ -224,137 +264,50 @@ body.mobile-menu-open{
     > li {
 
       position: relative;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid #72706e;
 
       > a {
         display: block;
 
-        // .gotham-medium;
-        .lato-bold;
-        font-size: 12px;
-        line-height: 42px;
+
+        .montserrat-regular;
+        font-size: 15px;
+        line-height: 39px;
         letter-spacing: 0.075em;
         text-transform: uppercase;
-        color: @dark-grey;
+        text-align: center;
+        color: @white;
 
-        padding-left: 30px;
-        //padding-right: 44px;
-        margin-right: 70px;
-
-      }
-
-
-
-      .expand-btn{
-
-        line-height: 20px;
-        // display: none;
-        display: block;
-        
-        position: absolute;
-        width: 70px;
-        height: 42px;
-        top: 0;
-        right: 0;
-
-        
-
-        &:before{
-          .fa;
-          content: "\f105";
-          font-size: 18px;
-          line-height: 20px;
-          text-align: center;
-          color: #b7b7b7;
-          display: block;
-
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          top: 11px;
-          right: 23px;
-
-          .transition-in(0.5s);
+        &.food-menu{
+          color: @yellow;
         }
-        
-        
-
-        
-      }
-
-      &.has-subnav{
-        /*
-        &:before{
-          display: block;
+        &.people-menu{
+          color: @green;
         }
-        */
+        &.travel-menu{
+          color: @orange;
+        }
+        &.events-menu{
+          color: @light-blue;
+        }
+        &.videos-menu{
+          color: #cdcccc;
+        }
+
+        
+
+
+
+
+
+        
+
       }
 
+
+
+      
+
     }
   }
-}
-
-// LEVEL 02
-
-#mobile-menu > ul > li > ul {
-  overflow: hidden;
-  max-height: 0px;
-  .transition-in(0.5s);
-  background: #f4f2ef;
-
-  &:before{
-    content: "";
-    display: block;
-    width: 100%;
-    height: 0px;
-    border-bottom: 1px solid #e0e0e0;
-    margin-bottom: 8px;
-  }
-  &:after{
-    content: "";
-    display: block;
-    height: 10px;
-  }
-
-  > li{
-    position: relative;
-    &:before{
-      .fa;
-      content: "\f111";
-      font-size: 4px;
-      line-height: 23px;
-      color: #707070;
-
-      position: absolute;
-      top: 3px;
-      left: 39px;
-    }
-    > a {
-      // .gotham-medium;
-      .lato-bold;
-      font-size: 12px;
-      line-height: 23px;
-      letter-spacing: 0.075em;
-      text-transform: uppercase;
-      color: #707070;
-
-      padding-left: 49px;
-      padding-right: 30px;
-    }
-  }
-}
-
-// EXPAND
-
-#mobile-menu > ul > li.expand-version {
-  
-  .expand-btn{
-    &:before{
-      .rotation(90deg);
-    }
-  }
-  > ul{
-    max-height: 400px;
-  }
-
 }

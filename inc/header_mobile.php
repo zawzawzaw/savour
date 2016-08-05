@@ -8,29 +8,31 @@
 -->
 
 
-<!--
+
 <div id="mobile-header-spacer"></div>
 <header id="mobile-header">
 
-  <div class="black-bg"></div>
   <div class="white-bg"></div>
 
   <div id="mobile-header-content-container">
     <a href="index.html" id="mobile-header-logo">
-      <img src="images/logo/sage-west-logo.svg">
+      <img src="assets/images/logos/main-logo.svg">
     </a>
-
-    <div id="mobile-header-name">
-      <div class="title-01">SAGE HOTEL</div>
-      <div class="title-02">WEST PERTH</div>
-      <span>&reg;</span>
-    </div>
 
     <div id="mobile-header-close-btn"></div>
     <div id="mobile-header-open-btn"></div>
+
+    <div id="mobile-header-search-btn"></div>
   </div>
 
 </header>
+
+
+
+
+
+
+
 
 <header id="mobile-header-expanded">
 
@@ -38,14 +40,22 @@
       <nav id="mobile-menu">
 
         <ul>
-          <li><a href="packages.html">Packages</a></li>
-          <li><a href="experiences.html">Experiences</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="packages.html#travel-agents">Travel Agents</a></li>
+          <li><a href="javascript:void(0);" class="food-menu">Food</a></li>
+          <li><a href="javascript:void(0);" class="people-menu">People</a></li>
+          <li><a href="javascript:void(0);" class="travel-menu">Travel</a></li>
+          <li><a href="javascript:void(0);" class="events-menu">Events</a></li>
+          <li><a href="javascript:void(0);" class="videos-menu">Videos</a></li>
+          <li><a href="javascript:void(0);">FAQ</a></li>
+          <li><a href="javascript:void(0);">About Us</a></li>
+          <li><a href="javascript:void(0);">Contact Us</a></li>
+          <li><a href="javascript:void(0);">Privacy Policy</a></li>
+          <li><a href="javascript:void(0);">Terms of Use</a></li>
+          
+
+
         </ul>
 
       </nav>
     </div>
 
 </header>
--->
