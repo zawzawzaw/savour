@@ -4,14 +4,19 @@
 
 goog.provide('manic.page.Page');
 
-goog.require('manic');
-
-
 goog.require('goog.events.Event');
 goog.require('goog.events.EventTarget');
 
 goog.require('goog.userAgent');
 goog.require('goog.userAgent.product');
+
+goog.require('manic');
+goog.require('manic.ui.FormCheck');
+goog.require('manic.ui.Dropdown');
+goog.require('manic.ui.ImageContainer');
+goog.require('manic.ui.ImageContainerPadding');
+goog.require('manic.ui.TextPadding');
+
 
 /**
  * The Page constructor
@@ -32,6 +37,7 @@ manic.page.Page = function(options) {
   //
 
   this.body = $('body');
+  this.html = $('html');
   //this.body.addClass('preload-start');
 
   this.window = $(window);
@@ -45,92 +51,96 @@ manic.page.Page = function(options) {
   this.device_width = 100;
   this.device_height = 100;
 
-  /*
-  this.is_mobile = this.options['is_mobile'];
-  this.is_tablet = this.options['is_tablet'];
-  console.log('this.is_tablet: ' + this.is_tablet);
-  */
-
-  this.window_width = this.window.width();
-  this.window_height = this.window.height();
-
-  manic.IS_MOBILE       = this.window.width() <= 992;
-
-
-  this.mobile_detect = new MobileDetect(window.navigator.userAgent);
-  manic.IS_ACTUAL_MOBILE = this.mobile_detect.mobile() != null;
-
-  if(manic.IS_ACTUAL_MOBILE == true){
-    $('html').addClass('actual-mobile');
-  }
-
-  manic.IS_TABLET = this.mobile_detect.tablet() != null;
-  
-  if (manic.IS_TABLET == true) {
-    if(this.window_width > this.window_height) {
-      manic.IS_TABLET_PORTRAIT = false;
-      manic.IS_TABLET_LANDSCAPE = true;
-    } else {
-      manic.IS_TABLET_PORTRAIT = true;
-      manic.IS_TABLET_LANDSCAPE = false;
-    }
-  } else {
-    manic.IS_TABLET_PORTRAIT = false;
-    manic.IS_TABLET_LANDSCAPE = false;
-  }
-
-
-
-
 
   /**
-   * @type {boolean}
+   * @type {MobileDetect}
    */
-  manic.IS_TABLET_PORTRAIT = false;
+  this.mobile_detect = null;
 
-  /**
-   * @type {boolean}
-   */
-  manic.IS_TABLET_LANDSCAPE = false;
 
-  
   /**
    * @type {Array.<jQuery>}
    */
   this.scrolltarget_array = [];
   this.scrolltarget_name_array = [];
 
-  //manic.BASE_URL        = this.options['base_url'];
-  //manic.THEME_URL       = this.options['theme_url'];
-  //manic.SITE_LANGUAGE   = this.options['site_language'];
-
-  /*
-  manic.IS_MOBILE       = this.is_mobile;
-  manic.IS_TABLET       = this.is_tablet;
-
-  // fake !!
-  if(this.body.hasClass('manic-tablet-portrait-fake')){
-    manic.IS_TABLET_FAKE_PORTRAIT = true;
-  }
-  */
-
-
-  if(goog.userAgent.WINDOWS) { this.body.addClass('is-windows') }
-  if(goog.userAgent.MAC) { this.body.addClass('is-mac') }
-
-  if (goog.userAgent.product.FIREFOX) { this.body.addClass('is-firefox') }
-  if (goog.userAgent.product.CHROME) { this.body.addClass('is-chrome') }
-  if (goog.userAgent.product.SAFARI) { this.body.addClass('is-safari') }
-  if (goog.userAgent.product.IE) { this.body.addClass('is-ie') }
-
-  if (goog.userAgent.product.IPHONE) { this.body.addClass('is-iphone') }
-  if (goog.userAgent.product.IPAD) { this.body.addClass('is-ipad') }                                          // lol, this is redaundant to mobile checker outside :D
+  
+  
 
   
   /**
    * @type {jQuery}
    */
   this.preloader_element = $('#page-preloader');
+
+
+  /**
+   * @type {Array.<manic.ui.Dropdown>}
+   */
+  this.dropdown_array = [];
+
+  /**
+   * @type {Array.<manic.ui.FormCheck>}
+   */
+  this.form_check_array = [];
+
+  /**
+   * @type {Array.<manic.ui.ImageContainer>}
+   */
+  this.manic_image_array = [];
+
+  /**
+   * @type {Array.<manic.ui.TextPadding>}
+   */
+  this.plain_padding_array = [];
+
+  /**
+   * @type {Array.<manic.ui.ImageContainerPadding>}
+   */
+  this.padding_array = [];
+
+
+  this.previous_scroll_position = 0;
+
+
+
+
+  this.page_wrapper = $('#page-wrapper');
+
+  this.mobile_header_spacer_element = $('#mobile-header-spacer');
+  this.mobile_header_element = $('#mobile-header');
+  this.desktop_header_spacer_element = $('#desktop-header-spacer');
+  this.desktop_header_element = $('#desktop-header');
+
+
+
+  this.controller = null;
+
+
+
+
+
+  //     ____ _   _ _____ ____ _  __
+  //    / ___| | | | ____/ ___| |/ /
+  //   | |   | |_| |  _|| |   | ' /
+  //   | |___|  _  | |__| |___| . \
+  //    \____|_| |_|_____\____|_|\_\
+  //
+
+  this.check_browser();
+  this.check_browser_size();    // before check_device
+
+  this.check_actual_device();
+  this.check_device();
+
+
+
+  //    ___ _   _ ___ _____
+  //   |_ _| \ | |_ _|_   _|
+  //    | ||  \| || |  | |
+  //    | || |\  || |  | |
+  //   |___|_| \_|___| |_|
+  //
 
   TweenMax.delayedCall(0.4,this.init,[],this);
 
@@ -160,15 +170,6 @@ manic.page.Page.DEFAULT = {
   'on_init_complete': function(){}
 };
 
-/**
- * Page Event Constant
- * @const
- */
-manic.page.Page.BREAKPOINT = 768;
-
-// manic.page.Page.BREAKPOINT = 992;
-
-
 
 
 //    ____  ____  _____     ___  _____ _____
@@ -179,7 +180,19 @@ manic.page.Page.BREAKPOINT = 768;
 //
 
 manic.page.Page.prototype.init = function(){
+
+
+
+  this.controller = new ScrollMagic.Controller(); // needed by some components
+  this.controller.scrollTo(this.controller_scroll_to.bind(this));
+
+  this.create_image_container();
+  this.create_dropdown();
+  this.create_form_check();
+
+
   this.create_scrolltarget();
+  this.create_scroll_down_cta();
 
   this.window.resize(this.on_window_resize.bind(this));
   this.window.focus(this.on_window_resize.bind(this));
@@ -187,63 +200,12 @@ manic.page.Page.prototype.init = function(){
   this.on_window_resize(null);
   this.hide_preloader();
 
+  this.update_page_layout();
+
   this.options['on_init_complete']();
+
+  console.log('manic.page.Page: init');
 };
-
-/*
-manic.page.Page.prototype.init_desktop = function() {
-  $('body').addClass('desktop-version');
-  this.create_scrolltarget();
-
-  this.window.resize(this.on_window_resize.bind(this));
-  this.window.on('hashchange', this.on_window_hash_change.bind(this));
-  this.on_window_resize(null);
-  //this.initial_window_hash();
-
-
-  this.hide_preloader();
-
-
-
-  console.log('init_desktop');
-  this.options['on_init_complete']();
-};
-
-manic.page.Page.prototype.init_tablet = function(){
-  $('body').addClass('tablet-version');
-  this.create_scrolltarget();
-
-  this.window.resize(this.on_window_resize.bind(this));
-  this.window.on('hashchange', this.on_window_hash_change.bind(this));
-  this.on_window_resize(null);
-  //this.initial_window_hash();
-
-
-  this.hide_preloader();
-
-
-
-  console.log('init_tablet');
-  this.options['on_init_complete']();
-};
-
-
-manic.page.Page.prototype.init_mobile = function() {
-  $('body').addClass('mobile-version');
-  this.create_scrolltarget();
-
-  this.window.resize(this.on_window_resize.bind(this));
-  this.window.on('hashchange', this.on_window_hash_change.bind(this));
-  this.on_window_resize(null);
-  //this.initial_window_hash();
-
-
-  this.hide_preloader();
-  
-  console.log('init_mobile');
-  this.options['on_init_complete']();
-};
-*/
 
 manic.page.Page.prototype.create_scrolltarget = function() {
   /**
@@ -312,7 +274,7 @@ manic.page.Page.prototype.initial_scroll_to_target = function() {
   // console.log('initial_scroll_to_target: page')
 
   this.window_hash = window.location.hash.replace('#', '');
-  console.log('initial_scroll_to_target: ' + this.window_hash);
+  console.log('manic.page.Page: initial_scroll_to_target: ' + this.window_hash);
 
   // last working code... Jun 02 2016
   // this.scroll_to_target(this.window_hash);
@@ -333,9 +295,8 @@ manic.page.Page.prototype.initial_scroll_to_target = function() {
       this.scroll_to_target(str_array[0], str_array[1], str_array[2]);
 
     } else {
-      console.log('there is too many slashes in the hash url...');
-      console.log('there is too many slashes in the hash url...');
-      console.log('there is too many slashes in the hash url...');
+      console.log('manic.page.Page: there is too many slashes in the hash url...');
+      this.scroll_to_target(str_array[0], str_array[1], str_array[2]);
     }
   }
 
@@ -349,15 +310,13 @@ manic.page.Page.prototype.initial_scroll_to_target = function() {
  * @param  {String=} str_param_3
  */
 manic.page.Page.prototype.scroll_to_target = function(str_param, str_param_2, str_param_3) {
+
+
+  /*
   console.log('manic.page.Page: scroll_to_target');
-  /**
-   * @type {jQuery}
-   */
+  
   var scroll_target = null;
 
-  /**
-   * @type {String}
-   */
   var scroll_target_str = "";
 
 
@@ -367,8 +326,8 @@ manic.page.Page.prototype.scroll_to_target = function(str_param, str_param_2, st
 
     if (str_param == scroll_target_str) {
 
-      var header_height = 60; // be careful of this.
-      var target_y = scroll_target.offset().top - header_height;
+      //var header_height = 60; // be careful of this.
+      var target_y = scroll_target.offset().top; // - header_height;          // modify header height in css of scroll target
 
       var offset_y = 0;
       var offset_data = scroll_target.attr('data-offset');
@@ -389,6 +348,32 @@ manic.page.Page.prototype.scroll_to_target = function(str_param, str_param_2, st
         
     
   }
+  */
+ 
+
+  /**
+   * @type {jQuery}
+   */
+  var scroll_target = null;
+
+  /**
+   * @type {String}
+   */
+  var scroll_target_str = "";
+
+
+  for (var i = 0, l = this.scrolltarget_name_array.length; i < l; i++) {
+    scroll_target_str = this.scrolltarget_name_array[i];
+    scroll_target = this.scrolltarget_array[i];
+
+    if (str_param == scroll_target_str) {
+
+      console.log('manic.page.Page: scroll_to_target: ');
+      console.log(scroll_target);
+      this.controller.scrollTo(scroll_target[0]);
+    }
+  }
+
 
 };
 
@@ -401,6 +386,110 @@ manic.page.Page.prototype.scroll_to = function(num_param) {
   var target_duration = Math.abs( (target_y - current_scroll) / 800 );
   TweenMax.to(this.window, target_duration, {scrollTo:{y:target_y,autoKill: true}, ease:Quad.easeInOut});
 };
+
+
+
+
+
+
+
+
+//     ____ ____  _____    _  _____ _____ 
+//    / ___|  _ \| ____|  / \|_   _| ____|
+//   | |   | |_) |  _|   / _ \ | | |  _|  
+//   | |___|  _ <| |___ / ___ \| | | |___ 
+//    \____|_| \_\_____/_/   \_\_| |_____|
+//                                        
+
+
+/*
+manic.page.Page.prototype.create_hammer = function(){
+  // this.hammertime = new Hammer(myElement, myOptions);
+};
+*/
+
+manic.page.Page.prototype.create_image_container = function() {
+  
+  var arr = $('.manic-image-container').not('.not-default-version');
+  var image_container = null;
+  var item = null;
+
+  for (var i = 0, l=arr.length; i < l; i++) {
+    item = $(arr[i]);
+    
+    image_container = new manic.ui.ImageContainer({
+      'has_window_resize': false                                // updated manually by 'update_page_layout'
+    }, item);
+    //this.manic_image_array[i] = image_container;
+    this.manic_image_array[this.manic_image_array.length] = image_container;
+  }
+
+
+};
+
+manic.page.Page.prototype.create_dropdown = function() {
+  var arr = $('.manic-dropdown');
+  var item = null;
+  var item_id = "";
+
+  /**
+   * @type {manic.ui.Dropdown}
+   */
+  var dropdown = null;
+
+  for (var i = 0, l = arr.length ; i < l; i++) {
+    item = $(arr[i]);
+    item_id = '' + item.find('select').attr('id');
+
+    dropdown = new manic.ui.Dropdown({}, item);
+    this.dropdown_array[this.dropdown_array.length] = dropdown;
+
+  }
+};
+
+
+
+manic.page.Page.prototype.create_form_check = function() {
+  var arr = $('.simple-form-check');
+  var form_check = null;
+  var item = null;
+  var item_id = '';
+
+  for (var i = 0, l = arr.length ; i < l; i++) {
+    item = $(arr[i]);
+    item_id = item.attr('id');
+
+    form_check = new manic.ui.FormCheck({
+      'alert_on_error': false,
+      'error_class': 'has-error',
+      'parent_classes': ['form-group']
+    }, item);
+
+    //goog.events.listen(form_check, manic.ui.FormCheck.ON_ERROR, this.on_form_check_error.bind(this));
+
+    this.form_check_array[this.form_check_array.length] = form_check;
+  }
+};
+
+manic.page.Page.prototype.create_scroll_down_cta = function(){
+  $('.scroll-down-cta').click(function(event){
+    event.preventDefault();
+    this.scroll_to_after_the_fold();
+  }.bind(this));
+  
+};
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -423,7 +512,7 @@ manic.page.Page.prototype.public_method_06 = function() {};
  * @param  {object} event
  */
 manic.page.Page.prototype.on_window_resize = function(event) {
-
+  /*
   this.window_width = this.window.width();
   this.window_height = this.window.height();
 
@@ -435,6 +524,7 @@ manic.page.Page.prototype.on_window_resize = function(event) {
 
   this.device_width = window.screen.width;
   this.device_height = window.screen.height;
+  */
 
   /*
   // to prevent iOS resize when removing the address bar on scroll (default safari animation)
@@ -442,23 +532,335 @@ manic.page.Page.prototype.on_window_resize = function(event) {
     this.window_height = window.screen.height;      
   }
   */
+ 
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  
+
+
+  var previous_is_mobile = manic.IS_MOBILE;
+
+  this.check_browser_size();
+  this.check_device();
+  
+
+  // if switching from desktop to mobile or vice versa
+  
+  if (previous_is_mobile != manic.IS_MOBILE) {
+    this.update_page_layout();
+    return;
+  }
+  
+
+
+  // to prevent iOS resize when removing the address bar on scroll (default safari animation)
+  
+  this.device_width = window.screen.width;
+  this.device_height = window.screen.height;
+
 
   
-  /*
-  if (this.is_mobile == true) {
+  if (manic.IS_ACTUAL_MOBILE == true) {
 
-    if (this.window_width >= manic.page.Page.BREAKPOINT) {
-      location.reload();
+    // if the mobile device has not yet changed aspect ratio
+    if(this.prev_device_width != this.device_width && this.prev_device_height != this.device_height) {
+      this.update_page_layout();
+
+    } else {
+      // do nothing
+      
     }
 
   } else {
-    if (this.window_width < manic.page.Page.BREAKPOINT) {
-      location.reload();
-    }
+
+    // desktop, just update
+    this.update_page_layout();
   }
-  */
+
+
+  this.prev_device_width = this.device_width;
+  this.prev_device_height = this.device_height;
+
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    _   _ ____  ____    _  _____ _____   _        _ __   _____  _   _ _____
+//   | | | |  _ \|  _ \  / \|_   _| ____| | |      / \\ \ / / _ \| | | |_   _|
+//   | | | | |_) | | | |/ _ \ | | |  _|   | |     / _ \\ V / | | | | | | | |
+//   | |_| |  __/| |_| / ___ \| | | |___  | |___ / ___ \| || |_| | |_| | | |
+//    \___/|_|   |____/_/   \_\_| |_____| |_____/_/   \_\_| \___/ \___/  |_|
+//
+
+
+
+
+
+manic.page.Page.prototype.update_page_layout = function(){
+
+  if (manic.IS_MOBILE_HEADER == true) {
+    this.body.addClass('is-mobile-header');
+    // this.show_mobile_header();
+    
+  } else {
+    this.body.removeClass('is-mobile-header');
+    // this.show_desktop_header();
+  }
+
+
+  
+  
+
+
+  /**
+   * @type {manic.ui.ImageContainer}
+   */
+  var item = null;
+
+  for (var i = 0, l=this.manic_image_array.length; i < l; i++) {
+    item = this.manic_image_array[i];
+    item.update_layout();
+  }
+
+  /**
+   * @type {manic.ui.TextPadding}
+   */
+  var plain_padding_item = null;
+
+  for (var i = 0, l=this.plain_padding_array.length; i < l; i++) {
+    plain_padding_item = this.plain_padding_array[i];
+    plain_padding_item.update_layout();
+  }
+
+
+
+};
+
+/*
+manic.page.Page.prototype.show_mobile_header = function(){
+  this.mobile_header_spacer_element.show(0);
+  this.mobile_header_element.show(0);
+  this.desktop_header_spacer_element.hide(0);
+  this.desktop_header_element.hide(0);
+};
+
+manic.page.Page.prototype.show_desktop_header = function(){
+  this.mobile_header_spacer_element.hide(0);
+  this.mobile_header_element.hide(0);
+  this.desktop_header_spacer_element.show(0);
+  this.desktop_header_element.show(0);
+};
+*/
+
+
+
+
+
+
+//    ____  ____   _____        ______  _____ ____
+//   | __ )|  _ \ / _ \ \      / / ___|| ____|  _ \
+//   |  _ \| |_) | | | \ \ /\ / /\___ \|  _| | |_) |
+//   | |_) |  _ <| |_| |\ V  V /  ___) | |___|  _ <
+//   |____/|_| \_\\___/  \_/\_/  |____/|_____|_| \_\
+//
+
+
+manic.page.Page.prototype.check_browser = function() {
+  if(goog.userAgent.WINDOWS) { this.body.addClass('is-windows') }
+  if(goog.userAgent.MAC) { this.body.addClass('is-mac') }
+
+  if (goog.userAgent.product.FIREFOX) { this.body.addClass('is-firefox') }
+  if (goog.userAgent.product.CHROME) { this.body.addClass('is-chrome') }
+  if (goog.userAgent.product.SAFARI) { this.body.addClass('is-safari') }
+  if (goog.userAgent.product.IE) { this.body.addClass('is-ie') }
+
+  
+};
+
+manic.page.Page.prototype.check_browser_size = function(){
+  this.window_width = this.window.width();
+  this.window_height = this.window.height();
+};
+
+manic.page.Page.prototype.check_actual_device = function() {
+
+  this.mobile_detect = new MobileDetect(window.navigator.userAgent);
+
+  manic.IS_ACTUAL_MOBILE = this.mobile_detect.mobile() != null;
+  manic.IS_ACTUAL_TABLET = this.mobile_detect.tablet() != null;
+
+  if(manic.IS_ACTUAL_MOBILE == true){
+    this.html.addClass('is-actual-mobile');
+  }
+
+  if(manic.IS_ACTUAL_TABLET == true){
+    this.html.addClass('is-actual-tablet');
+  }
+
+};
+
+manic.page.Page.prototype.check_device = function() {
+
+  console.log('manic.page.Page: check_device');
+
+  manic.IS_MOBILE       = this.window_width <= 992;
+  
+  if (manic.IS_ACTUAL_TABLET == true) {
+    if(this.window_width > this.window_height) {
+      manic.IS_TABLET_PORTRAIT = false;
+      manic.IS_TABLET_LANDSCAPE = true;
+    } else {
+      manic.IS_TABLET_PORTRAIT = true;
+      manic.IS_TABLET_LANDSCAPE = false;
+    }
+  } else {
+    manic.IS_TABLET_PORTRAIT = false;
+    manic.IS_TABLET_LANDSCAPE = false;
+  }
+
+
+  
+
+
+  if( manic.IS_MOBILE == true){
+    this.body.addClass('is-mobile');
+  } else {
+    this.body.removeClass('is-mobile');
+  }
+
+
+  
+  if (manic.IS_ACTUAL_TABLET == true) {
+    this.body.addClass('is-tablet');
+
+    if (manic.IS_TABLET_PORTRAIT == true) {
+      this.body.removeClass('is-tablet-landscape');
+      this.body.addClass('is-tablet-portrait');
+    } else {
+      this.body.addClass('is-tablet-landscape');
+      this.body.removeClass('is-tablet-portrait');
+    }
+
+  } else {
+
+    this.body.removeClass('is-tablet');
+    this.body.removeClass('is-tablet-landscape');
+    this.body.removeClass('is-tablet-portrait');
+
+  }
+
+
+  if (manic.IS_ACTUAL_MOBILE == true || this.window_width < 992) {
+    manic.IS_MOBILE_HEADER = true;
+  } else {
+    manic.IS_MOBILE_HEADER = false;
+  }
+
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    ____   ____ ____   ___  _     _     
+//   / ___| / ___|  _ \ / _ \| |   | |    
+//   \___ \| |   | |_) | | | | |   | |    
+//    ___) | |___|  _ <| |_| | |___| |___ 
+//   |____/ \____|_| \_\\___/|_____|_____|
+//                                        
+
+
+/**
+ * @param  {object} target
+ */
+manic.page.Page.prototype.controller_scroll_to = function(target) {
+  TweenMax.to(window, 0.5, {
+    scrollTo : {
+      y : target, // scroll position of the target along y axis
+      autoKill : true // allows user to kill scroll action smoothly
+    },
+    ease : Sine.easeInOut
+    //ease : Cubic.easeInOut
+  });
+};
+
+/**
+ * @param  {String} str_param
+ */
+manic.page.Page.prototype.util_scroll_to = function(str_param){
+
+  if(goog.isDefAndNotNull(str_param) == true){
+    TweenMax.killDelayedCallsTo(this.scroll_to_target);
+    TweenMax.delayedCall(0.6, this.scroll_to_target, [str_param], this);
+    //this.scroll_to_target(value);
+    
+  } else {
+    console.log('Element needs a [data-value] param');
+  }
+
+};
+
+
+manic.page.Page.prototype.scroll_to_after_the_fold = function(){
+
+  // var target_y = this.window_height - $('#desktop-header .bottom-header').height();
+  
+  var target_y = 0;
+
+  if(manic.IS_MOBILE_HEADER == true) {
+    target_y = this.window_height - this.mobile_header_element.height();
+  } else {
+    target_y = this.window_height - this.desktop_header_element.height();
+  }
+
+  TweenMax.to(this.window, 0.5, {
+    scrollTo:{y:target_y,autoKill: true},
+    ease:Quad.easeInOut
+  });
+};
+
+
+
+
 
 /**
  * event handler
@@ -488,33 +890,19 @@ manic.page.Page.prototype.on_window_hash_change = function(event) {
       this.scroll_to_target(str_array[0], str_array[1], str_array[2]);
 
     } else {
-      console.log('there is too many slashes in the hash url...');
-      console.log('there is too many slashes in the hash url...');
-      console.log('there is too many slashes in the hash url...');
+      console.log('manic.page.Page: there is too many slashes in the hash url...');
+      this.scroll_to_target(str_array[0], str_array[1], str_array[2]);
     }
-
-    /*
-    if (this.window_hash.indexOf('/') == -1) {
-      this.scroll_to_target(this.window_hash);
-    } else if (this.window_hash.indexOf('/') == 1) {
-      str_array = this.window_hash.split('/');
-      this.scroll_to_target(str_array[0], str_array[1]);
-    }
-    */
-
-    
-
 
   } else {
     this.on_scroll_to_no_target();
-    this.scroll_to(0);
   }
 
 };
 
 
 manic.page.Page.prototype.on_scroll_to_no_target = function(){
-
+  this.scroll_to(0);
 };
 
 /*

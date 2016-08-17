@@ -11,7 +11,7 @@ goog.addDependency('../../../../../js_source/manic/fullpage/Fullpage.js', ['mani
 goog.addDependency('../../../../../js_source/manic/fullpage/Indicator.js', ['manic.fullpage.Indicator'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js_source/manic/fullpage/Section.js', ['manic.fullpage.Section'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js_source/manic/google/Map.js', ['manic.google.Map'], ['goog.events.Event', 'goog.events.EventTarget']);
-goog.addDependency('../../../../../js_source/manic/page/Page.js', ['manic.page.Page'], ['goog.events.Event', 'goog.events.EventTarget', 'goog.userAgent', 'goog.userAgent.product', 'manic']);
+goog.addDependency('../../../../../js_source/manic/page/Page.js', ['manic.page.Page'], ['goog.events.Event', 'goog.events.EventTarget', 'goog.userAgent', 'goog.userAgent.product', 'manic', 'manic.ui.Dropdown', 'manic.ui.FormCheck', 'manic.ui.ImageContainer', 'manic.ui.ImageContainerPadding', 'manic.ui.TextPadding']);
 goog.addDependency('../../../../../js_source/manic/ui/ComboBox.js', ['manic.ui.ComboBox'], ['goog.events.Event', 'goog.events.EventTarget', 'goog.math.Box', 'goog.ui.ComboBox', 'goog.ui.ComboBoxItem', 'goog.ui.MenuItem']);
 goog.addDependency('../../../../../js_source/manic/ui/DingMasonry.js', ['manic.ui.DingMasonry', 'manic.ui.DingMasonryItem'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js_source/manic/ui/Dropdown.js', ['manic.ui.Dropdown'], ['goog.events.Event', 'goog.events.EventTarget', 'goog.math.Box', 'goog.ui.MenuItem', 'goog.ui.Select']);
@@ -32,6 +32,7 @@ goog.addDependency('../../../../../js_source/manic/util/JsonImagePreloaderMobile
 goog.addDependency('../../../../../js_source/manic/util/JsonParser.js', ['manic.util.JsonParser'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js_source/manic/util/StringUtil.js', ['manic.util.StringUtil'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js_source/manic/video/VideoJSPlayer.js', ['manic.video.VideoJSPlayer'], ['goog.events.Event', 'goog.events.EventTarget']);
+goog.addDependency('../../../../../js_source/savour/component/DesktopHeader.js', ['savour.component.DesktopHeader'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js_source/savour/component/MobileHeader.js', ['savour.component.MobileHeader'], ['goog.events.Event', 'goog.events.EventTarget']);
-goog.addDependency('../../../../../js_source/savour/page/Default.js', ['savour.page.Default'], ['goog.events.Event', 'goog.events.EventTarget', 'manic.page.Page', 'manic.ui.Dropdown', 'manic.ui.FormCheck', 'manic.ui.ImageContainer', 'manic.ui.ImageContainerPadding', 'manic.ui.TextPadding', 'savour.component.MobileHeader']);
+goog.addDependency('../../../../../js_source/savour/page/Default.js', ['savour.page.Default'], ['goog.events.Event', 'goog.events.EventTarget', 'manic.page.Page', 'savour.component.DesktopHeader']);
 goog.addDependency('../../../../../js_source/savour/page/Home.js', ['savour.page.Home'], ['savour.page.Default']);

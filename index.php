@@ -9,6 +9,7 @@ ob_start();
   $is_debug = true;
 
   $body_class = "page-home";
+  $output_file = "index.html";
 ?>
 <!doctype html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
@@ -23,11 +24,6 @@ ob_start();
   <body class="<?php echo $body_class; ?>">
 
     <div id="page-preloader">
-      <div id="page-preloader-line-01"></div>
-      <div id="page-preloader-line-02">
-        <div class="line-a"></div>
-        <div class="line-b"></div>
-      </div>
     </div>
 
 
@@ -80,7 +76,7 @@ ob_start();
 </html>
 <?php
 // saving captured output to file
-file_put_contents('index.html', ob_get_contents());
+file_put_contents($output_file, ob_get_contents());
 // end buffering and displaying page
 ob_end_flush();
 ?>

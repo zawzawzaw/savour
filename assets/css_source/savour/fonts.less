@@ -8,6 +8,7 @@
   font-weight: 700;
 }
 
+
 .playfair-regular {
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 400;
@@ -15,8 +16,23 @@
 
 .playfair-bold {
   font-family: 'Playfair Display', Georgia, serif;
+  // Raleway
   font-weight: 700;
 }
+
+
+/*
+.raleway-regular {
+  font-family: 'Raleway', Georgia, serif;
+  font-weight: 400;
+}
+
+.raleway-bold {
+  font-family: 'Raleway', Georgia, serif;
+  font-weight: 700;
+}
+*/
+
 
 .open-sans-regular {
   font-family: 'Open Sans', Verdana, Geneva, sans-serif;
@@ -60,6 +76,7 @@
 
 .header-h1-style(@multiplier: 1){
   .playfair-bold;
+  // .raleway-bold;
   font-size: 72px * @multiplier;
   line-height: 82px * @multiplier;
   letter-spacing: -0.005em;
@@ -67,6 +84,7 @@
 
 .header-h2-style(@multiplier: 1){
   .playfair-bold;
+  // .raleway-bold;
   font-size: 32px * @multiplier;
   line-height: 38px * @multiplier;    // new
 }
@@ -91,6 +109,7 @@
 
 .header-h6-style(@multiplier: 1){
   .playfair-bold;
+  // .raleway-bold;
   font-size: 14px * @multiplier;
   line-height: 18px * @multiplier;
   letter-spacing: 0.025em * @multiplier;

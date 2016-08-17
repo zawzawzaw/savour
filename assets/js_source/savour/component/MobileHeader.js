@@ -29,13 +29,23 @@ savour.component.MobileHeader = function(options, element) {
   //this.on_window_scroll(null);
 
   this.is_open = false;
+
+  this.is_search_open = false;
   
   this.expand_container = $('#mobile-header-expanded');
   this.page_wrapper = $('#page-wrapper');
 
   this.open_btn = this.element.find('#mobile-header-open-btn');
   this.close_btn = this.element.find('#mobile-header-close-btn');
+
+  this.search_btn = this.element.find('#mobile-header-search-btn');
+  this.search_close_btn = this.element.find('#mobile-header-search-close-btn');
   
+
+  this.search_form_container = this.element.find('#mobile-header-search-form-container');
+  
+
+
 
   //    ___ _   _ ___ _____
   //   |_ _| \ | |_ _|_   _|
@@ -44,7 +54,45 @@ savour.component.MobileHeader = function(options, element) {
   //   |___|_| \_|___| |_|
   //
 
-  this.create_main_buttons();
+
+
+  this.open_btn.click(this.on_open_btn_click.bind(this));
+  this.close_btn.click(this.on_close_btn_click.bind(this));
+
+  this.search_btn.click(this.on_search_btn_click.bind(this));
+  this.search_close_btn.click(this.on_search_close_btn_click.bind(this));
+
+  TweenMax.delayedCall(0.2, function(){
+    $('#mobile-header-search-txt').val('Search');
+  }, [], this);
+
+  $('#mobile-header-search-txt').focus(function(event){
+    var input = $('#mobile-header-search-txt');
+    var value = input.val();
+    if(value == 'Search'){
+      input.val('');
+    }
+  });
+
+  $('#mobile-header-search-txt').blur(function(event){
+    var input = $('#mobile-header-search-txt');
+    var value = input.val();
+    if(value == ''){
+      input.val('Search');
+    }
+  });
+
+  this.element.find('#mobile-header-search-form').submit(function(event) {
+    if($('#mobile-header-search-txt').val() == 'Search'){
+      $('#mobile-header-search-txt').focus();
+      return false;
+    }
+  });  
+
+
+
+
+
 
   console.log('init');
 };
@@ -86,13 +134,6 @@ savour.component.MobileHeader.ON_CLOSE = 'on_close';
 //    \____|_| \_\_____/_/   \_\_| |_____|
 //                                        
 
-savour.component.MobileHeader.prototype.create_main_buttons = function() {
-  this.open_btn.click(this.on_open_btn_click.bind(this));
-  this.close_btn.click(this.on_close_btn_click.bind(this));
-
-};
-
-
 
 //    ____  _   _ ____  _     ___ ____
 //   |  _ \| | | | __ )| |   |_ _/ ___|
@@ -131,6 +172,9 @@ savour.component.MobileHeader.prototype.close_menu = function() {
   if (this.is_open == true) {
     this.is_open = false;
 
+
+    this.close_search();
+
     this.body.removeClass('mobile-menu-open');
 
     console.log('previous_scroll_position set: ' + this.previous_scroll_position);
@@ -140,9 +184,6 @@ savour.component.MobileHeader.prototype.close_menu = function() {
     
     TweenMax.to(this.close_btn, 0.3, {autoAlpha: 0});
     TweenMax.to(this.open_btn, 0.3, {autoAlpha: 1});
-
-
-    
     
     TweenMax.delayedCall(0.2, function(){
       this.window.scrollTop(this.previous_scroll_position);
@@ -151,6 +192,37 @@ savour.component.MobileHeader.prototype.close_menu = function() {
     this.window.scrollTop(this.previous_scroll_position);
 
     this.dispatchEvent(new goog.events.Event(savour.component.MobileHeader.ON_CLOSE));
+
+  }
+};
+
+
+savour.component.MobileHeader.prototype.open_search = function(){;
+
+  if(this.is_search_open == false){
+
+    this.is_search_open = true;
+    this.element.addClass('search-open-version');
+
+    TweenMax.to(this.search_close_btn, 0.5, {autoAlpha: 1});
+    TweenMax.to(this.search_form_container, 0.5, {autoAlpha: 1});
+    
+    
+
+  }
+  
+
+};
+savour.component.MobileHeader.prototype.close_search = function(){
+  if(this.is_search_open == true){
+
+    this.is_search_open = false;
+    this.element.removeClass('search-open-version');
+
+    TweenMax.to(this.search_close_btn, 0.5, {autoAlpha: 0});
+    TweenMax.to(this.search_form_container, 0.5, {autoAlpha: 0});
+
+    $('#mobile-header-search-txt').val('Search');
 
   }
 };
@@ -179,6 +251,31 @@ savour.component.MobileHeader.prototype.on_close_btn_click = function(event) {
 };
 
 
+/**
+ * event handler
+ * @param  {object} event
+ */
+savour.component.MobileHeader.prototype.on_search_btn_click = function(event) {
+  
+
+  if(this.is_search_open == false){
+    this.open_search();
+  } else {
+    this.element.find('#mobile-header-search-form').submit();
+  }
+
+};
+/**
+ * event handler
+ * @param  {object} event
+ */
+savour.component.MobileHeader.prototype.on_search_close_btn_click = function(event) {
+  this.close_search();
+};
+
+
+
+
 
 /**
  * event handler
@@ -204,4 +301,4 @@ savour.component.MobileHeader.prototype.on_window_scroll = function(event) {
 
   this.window_scroll = current_window_scroll;
 
-}
+};

@@ -26,14 +26,7 @@ manic.IS_MOBILE = false;
 /**
  * @type {boolean}
  */
-manic.IS_ACTUAL_MOBILE = false;
-
-
-/**
- * @type {boolean}
- */
 manic.IS_TABLET = false;
-
 
 
 /**
@@ -48,7 +41,19 @@ manic.IS_TABLET_LANDSCAPE = false;
 
 
 
+
+
 /**
  * @type {boolean}
  */
-manic.IS_TABLET_FAKE_PORTRAIT = false;
+manic.IS_ACTUAL_MOBILE = false;
+
+/**
+ * @type {boolean}
+ */
+manic.IS_ACTUAL_TABLET = false;
+
+/**
+ * @type {boolean}
+ */
+manic.IS_MOBILE_HEADER = false;

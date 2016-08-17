@@ -22,7 +22,19 @@
     <div id="mobile-header-close-btn"></div>
     <div id="mobile-header-open-btn"></div>
 
+    <div id="mobile-header-search-form-container">
+      <form id="mobile-header-search-form" action="" method="GET" class="simple-form-check" autocomplete="false">
+        <div class="form-group">
+          <input type="text" name="s" id="mobile-header-search-txt" value="Search" class="required">
+        </div>
+      </form>
+    </div>
+
     <div id="mobile-header-search-btn"></div>
+    <div id="mobile-header-search-close-btn"></div>
+
+    
+
   </div>
 
 </header>

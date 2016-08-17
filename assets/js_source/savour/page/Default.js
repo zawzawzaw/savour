@@ -1,31 +1,13 @@
-//////////
-// AMDG //
-//////////
-
-
-// TODO:
-// move most of these to the manic/page/DefaultPage.js ? 
-
-
 goog.provide('savour.page.Default');
 
 goog.require('goog.events.Event');
 goog.require('goog.events.EventTarget');
 
-goog.require('manic.ui.ImageContainer');
-
-goog.require('manic.ui.FormCheck');
-goog.require('manic.ui.Dropdown');
-goog.require('manic.ui.ImageContainer');
-goog.require('manic.ui.ImageContainerPadding');
-goog.require('manic.ui.TextPadding');
 
 goog.require('manic.page.Page');
 
 
-
-
-
+goog.require('savour.component.DesktopHeader');
 goog.require('savour.component.MobileHeader');
 
 
@@ -37,248 +19,81 @@ goog.require('savour.component.MobileHeader');
  * @extends {manic.page.Page}
  */
 savour.page.Default = function(options) {
+
   manic.page.Page.call(this, options);
   this.options = $.extend(this.options, savour.page.Default.DEFAULT, options);
 
-  /**
-   * @type {Array.<manic.ui.Dropdown>}
-   */
-  this.dropdown_array = [];
 
-  /**
-   * @type {Array.<manic.ui.Dropdown>}
-   */
-  this.dropdown_dictionary = [];
-
-  /**
-   * @type {Array.<manic.ui.FormCheck>}
-   */
-  this.form_check_array = [];
-
-  /**
-   * @type {Array.<manic.ui.FormCheck>}
-   */
-  this.form_check_dictionary = [];
-
-  /**
-   * @type {Array.<manic.ui.ImageContainer>}
-   */
-  this.manic_image_array = [];
-
-  /**
-   * @type {Array.<manic.ui.TextPadding>}
-   */
-  this.plain_padding_array = [];
-
-  /**
-   * @type {Array.<manic.ui.ImageContainerPadding>}
-   */
-  this.padding_array = [];
-
-
-  this.previous_scroll_position = 0;
-  
-
-  
-
-  this.contact_form = null;
-
-  /**
-   * @type {manic.ui.FormCheck}
-   */
-  this.contact_form_check = null;
-
-  
-  this.controller = null;
-
-  this.html = $('html');
-
-  this.original_window_width = this.window.width();
-  this.original_window_height = this.window.height();
-
-  this.page_wrapper = $('#page-wrapper');
-
-  //    ___ _   _ ___ _____
-  //   |_ _| \ | |_ _|_   _|
-  //    | ||  \| || |  | |
-  //    | || |\  || |  | |
-  //   |___|_| \_|___| |_|
-  //
-
-
-  this.mobile_header_spacer_element = $('#mobile-header-spacer');
-  this.mobile_header_element = $('#mobile-header');
-  this.desktop_header_spacer_element = $('#desktop-header-spacer');
-  this.desktop_header_element = $('#desktop-header');
-
-
-
-  /**
-   * @type {savour.component.MobileHeader}
-   */
-  this.mobile_header = null;
-  this.mobile_header = new savour.component.MobileHeader({}, $('#mobile-header'));
-  
-
-
-
-
-
-  console.log('init');
 };
 goog.inherits(savour.page.Default, manic.page.Page);
 
 
-
-
-// i have to remove this eventually, it's better to have class STATIC variables,  this.var with STATIC defaults...
-
 /**
- * default options for Default Page
+ * like jQuery options
  * @const {object}
  */
 savour.page.Default.DEFAULT = {
-  
+  'option_01': '',
+  'option_02': ''
 };
 
-
-
-//    ___ _   _ ___ _____ 
-//   |_ _| \ | |_ _|_   _|
-//    | ||  \| || |  | |  
-//    | || |\  || |  | |  
-//   |___|_| \_|___| |_|  
-//                        
+/**
+ * Default Event Constant
+ * @const
+ * @type {string}
+ */
+savour.page.Default.EVENT_01 = '';
 
 /**
- * init_desktop
+ * Default Event Constant
+ * @const
+ * @type {string}
+ */
+savour.page.Default.EVENT_02 = '';
+
+
+
+//    ___ _   _ ___ _____
+//   |_ _| \ | |_ _|_   _|
+//    | ||  \| || |  | |
+//    | || |\  || |  | |
+//   |___|_| \_|___| |_|
+//
+
+
+
+/**
  * @override
  */
 savour.page.Default.prototype.init = function() {
   savour.page.Default.superClass_.init.call(this);
 
-  console.log('init desktop');
+  window.onbeforeunload = function(){ window.scrollTo(0,0); }     // from zaw's main.js
 
-  this.controller = new ScrollMagic.Controller(); // needed by some components
-  this.controller.scrollTo(this.controller_scroll_to.bind(this));
 
-  this.create_image_container();
-  this.create_dropdown();
-  this.create_form_check();
+  this.desktop_header = new savour.component.DesktopHeader({}, $('#desktop-header'));
+  this.desktop_header.set_controller(this.controller);
 
+  this.mobile_header = new savour.component.MobileHeader({}, $('#mobile-header'));
   
 
-
-  // mobile!
-  this.update_page_layout();
+  console.log('savour.page.Default: init');
 };
 
+//    ____  ____  _____     ___  _____ _____
+//   |  _ \|  _ \|_ _\ \   / / \|_   _| ____|
+//   | |_) | |_) || | \ \ / / _ \ | | |  _|
+//   |  __/|  _ < | |  \ V / ___ \| | | |___
+//   |_|   |_| \_\___|  \_/_/   \_\_| |_____|
+//
 
 
-//     ____ ____  _____    _  _____ _____ 
-//    / ___|  _ \| ____|  / \|_   _| ____|
-//   | |   | |_) |  _|   / _ \ | | |  _|  
-//   | |___|  _ <| |___ / ___ \| | | |___ 
-//    \____|_| \_\_____/_/   \_\_| |_____|
-//                                        
-
-
-/*
-savour.page.Default.prototype.create_hammer = function(){
-  // this.hammertime = new Hammer(myElement, myOptions);
-};
-*/
-
-savour.page.Default.prototype.create_image_container = function() {
-  
-
-  var arr = $('.manic-image-container').not('.not-default-version');
-  var image_container = null;
-  var item = null;
-
-  for (var i = 0, l=arr.length; i < l; i++) {
-    item = $(arr[i]);
-    image_container = new manic.ui.ImageContainer({
-      'has_window_resize': false                                // updated manually by 'update_page_layout'
-    }, item);
-    this.manic_image_array[i] = image_container;
-  }
-
-
-};
-
-savour.page.Default.prototype.create_dropdown = function() {
-  var arr = $('.manic-dropdown');
-  var item = null;
-  var item_id = "";
-
-  /**
-   * @type {manic.ui.Dropdown}
-   */
-  var dropdown = null;
-
-  for (var i = 0, l = arr.length ; i < l; i++) {
-    item = $(arr[i]);
-    item_id = '' + item.find('select').attr('id');
-
-    dropdown = new manic.ui.Dropdown({}, item);
-    this.dropdown_array[this.dropdown_array.length] = dropdown;
-
-    this.dropdown_dictionary[item_id] = dropdown;
-  }
-};
-
-
-
-savour.page.Default.prototype.create_form_check = function() {
-  var arr = $('.simple-form-check');
-  var form_check = null;
-  var item = null;
-  var item_id = '';
-
-  for (var i = 0, l = arr.length ; i < l; i++) {
-    item = $(arr[i]);
-    item_id = item.attr('id');
-
-    form_check = new manic.ui.FormCheck({
-      'alert_on_error': false,
-      'error_class': 'has-error',
-      'parent_classes': ['form-group']
-    }, item);
-
-    //goog.events.listen(form_check, manic.ui.FormCheck.ON_ERROR, this.on_form_check_error.bind(this));
-
-    this.form_check_array[this.form_check_array.length] = form_check;
-    this.form_check_dictionary[item_id] = form_check;
-
-  }
-};
-
-savour.page.Default.prototype.create_scroll_down_cta = function(){
-  $('.scroll-down-cta').click(function(event){
-    event.preventDefault();
-    this.scroll_to_after_the_fold();
-  }.bind(this));
-  
-};
-
-
-
-
-
-
-
-savour.page.Default.prototype.create_mobile_menu = function(){
-  if($('#mobile-header').length != 0){
-
-    this.mobile_menu = new sagewest.component.MobileHeader({}, $('#mobile-header'));
-
-    //goog.events.listen(this.mobile_menu, sagewest.component.MobileHeader.ON_OPEN, this.on_mobile_menu_open.bind(this));
-    goog.events.listen(this.mobile_menu, sagewest.component.MobileHeader.ON_CLOSE, this.on_mobile_menu_close.bind(this));
-    
-  }
-}
-
+savour.page.Default.prototype.private_method_01 = function() {};
+savour.page.Default.prototype.private_method_02 = function() {};
+savour.page.Default.prototype.private_method_03 = function() {};
+savour.page.Default.prototype.private_method_04 = function() {};
+savour.page.Default.prototype.private_method_05 = function() {};
+savour.page.Default.prototype.private_method_06 = function() {};
 
 
 //    ____  _   _ ____  _     ___ ____
@@ -289,146 +104,12 @@ savour.page.Default.prototype.create_mobile_menu = function(){
 //
 
 
-
-savour.page.Default.prototype.update_page_layout = function() {
-
-  console.log('default update_page_layout');
-
-
-  
-  if (manic.IS_ACTUAL_MOBILE == true || this.original_window_width < 992) {
-    this.show_mobile_header();
-  } else {
-    this.show_desktop_header();
-  }
-
-  if (manic.IS_TABLET == true) {
-    if(this.window_width > this.window_height) {
-      manic.IS_TABLET_PORTRAIT = false;
-      manic.IS_TABLET_LANDSCAPE = true;
-    } else {
-      manic.IS_TABLET_PORTRAIT = true;
-      manic.IS_TABLET_LANDSCAPE = false;
-    }
-  } else {
-    manic.IS_TABLET_PORTRAIT = false;
-    manic.IS_TABLET_LANDSCAPE = false;
-  }
-
-  if( manic.IS_MOBILE == true){
-    this.body.addClass('is-mobile');
-    this.html.addClass('is-html-mobile');
-  } else {
-    this.body.removeClass('is-mobile');
-    this.html.removeClass('is-html-mobile');
-  }
-
-  
-
-  if (manic.IS_TABLET == true) {
-    this.body.addClass('is-tablet');
-
-    if (manic.IS_TABLET_PORTRAIT == true) {
-      this.body.removeClass('is-tablet-landscape');
-      this.body.addClass('is-tablet-portrait');
-    } else {
-      this.body.addClass('is-tablet-landscape');
-      this.body.removeClass('is-tablet-portrait');
-    }
-
-
-  } else {
-
-    this.body.removeClass('is-tablet');
-    this.body.removeClass('is-tablet-landscape');
-    this.body.removeClass('is-tablet-portrait');
-
-  }
-
-
-
-
-  /**
-   * @type {manic.ui.ImageContainer}
-   */
-  var item = null;
-
-  for (var i = 0, l=this.manic_image_array.length; i < l; i++) {
-    item = this.manic_image_array[i];
-    item.update_layout();
-  }
-
-  /**
-   * @type {manic.ui.TextPadding}
-   */
-  var plain_padding_item = null;
-
-  for (var i = 0, l=this.plain_padding_array.length; i < l; i++) {
-    plain_padding_item = this.plain_padding_array[i];
-    plain_padding_item.update_layout();
-  }
-
-
-
-  
-  
-
-
-};
-
-
-
-savour.page.Default.prototype.show_mobile_header = function(){
-  this.mobile_header_spacer_element.show(0);
-  this.mobile_header_element.show(0);
-  this.desktop_header_spacer_element.hide(0);
-  this.desktop_header_element.hide(0);
-};
-
-savour.page.Default.prototype.show_desktop_header = function(){
-  this.mobile_header_spacer_element.hide(0);
-  this.mobile_header_element.hide(0);
-  this.desktop_header_spacer_element.show(0);
-  this.desktop_header_element.show(0);
-};
-
-//    ____   ____ ____   ___  _     _     
-//   / ___| / ___|  _ \ / _ \| |   | |    
-//   \___ \| |   | |_) | | | | |   | |    
-//    ___) | |___|  _ <| |_| | |___| |___ 
-//   |____/ \____|_| \_\\___/|_____|_____|
-//                                        
-
-
-/**
- * @param  {object} target
- */
-savour.page.Default.prototype.controller_scroll_to = function(target) {
-  TweenMax.to(window, 0.5, {
-    scrollTo : {
-      y : target, // scroll position of the target along y axis
-      autoKill : true // allows user to kill scroll action smoothly
-    },
-    ease : Sine.easeInOut
-    //ease : Cubic.easeInOut
-  });
-};
-
-/**
- * @param  {String} str_param
- */
-savour.page.Default.prototype.util_scroll_to = function(str_param){
-
-  if(goog.isDefAndNotNull(str_param) == true){
-    TweenMax.killDelayedCallsTo(this.scroll_to_target);
-    TweenMax.delayedCall(0.6, this.scroll_to_target, [str_param], this);
-    //this.scroll_to_target(value);
-    
-  } else {
-    console.log('Element needs a [data-value] param');
-  }
-
-};
+savour.page.Default.prototype.public_method_01 = function() {};
+savour.page.Default.prototype.public_method_02 = function() {};
+savour.page.Default.prototype.public_method_03 = function() {};
+savour.page.Default.prototype.public_method_04 = function() {};
+savour.page.Default.prototype.public_method_05 = function() {};
+savour.page.Default.prototype.public_method_06 = function() {};
 
 
 //    _______     _______ _   _ _____ ____
@@ -439,217 +120,39 @@ savour.page.Default.prototype.util_scroll_to = function(str_param){
 //
 
 /**
- * event handler
- * @param  {object} event
+ * @param {object} event
  */
-savour.page.Default.prototype.on_mobile_menu_close = function(event) {
-  this.update_page_layout();
+savour.page.Default.prototype.on_event_handler_01 = function(event) {
 };
-
-
-
-//     _____     _______ ____  ____  ___ ____  _____ 
-//    / _ \ \   / / ____|  _ \|  _ \|_ _|  _ \| ____|
-//   | | | \ \ / /|  _| | |_) | |_) || || | | |  _|  
-//   | |_| |\ V / | |___|  _ <|  _ < | || |_| | |___ 
-//    \___/  \_/  |_____|_| \_\_| \_\___|____/|_____|
-//                                                   
 
 /**
- * @override
- * @inheritDoc
+ * @param {object} event
  */
-savour.page.Default.prototype.on_window_resize = function(event) {
-  // savour.page.Default.superClass_.on_window_resize.call(this, event);         // we needed to get previous device height
-  
-
-  // copied from manic.page.Page
-  this.window_width = this.window.width();
-  this.window_height = this.window.height();
-
-  this.original_window_width = this.window.width();
-  this.original_window_height = this.window.height();
-
-  // zoom check
-  if (this.original_window_width <= 1280 && manic.IS_ACTUAL_MOBILE == false ||
-      manic.IS_ACTUAL_MOBILE == true && manic.IS_TABLET_LANDSCAPE) {
-
-    this.body.addClass('zoomed-version');
-    window['is_custom_zoomed'] = true;
-
-  } else {
-
-    this.body.removeClass('zoomed-version');
-    window['is_custom_zoomed'] = false;
-
-  }
-
-
-
-  var previous_is_mobile = manic.IS_MOBILE;
-
-  manic.IS_MOBILE       = this.original_window_width <= 992;
-
-  // manic.IS_ACTUAL_MOBILE
-  // manic.IS_ACTUAL_MOBILE = this.mobile_detect.mobile() != null;
-
-
-  this.device_width = window.screen.width;
-  this.device_height = window.screen.height;
-  // copied from manic.page.Page
-  
-  if( manic.IS_MOBILE == true){
-    
-  } else {
-
-  }
-
-
-  if (manic.IS_ACTUAL_MOBILE == true) {
-
-    
-
-    // to prevent iOS resize when removing the address bar on scroll (default safari animation)
-    //if (manic.IS_MOBILE) {
-    if (manic.IS_ACTUAL_MOBILE) {
-
-      // if the mobile device has not yet changed aspect ratio
-      if(this.prev_device_width != this.device_width && this.prev_device_height != this.device_height) {
-        this.update_page_layout();
-
-      // if switching from desktop to mobile
-      } else if (previous_is_mobile != manic.IS_MOBILE) {
-        this.update_page_layout();
-
-      } else {
-        // do nothing
-        
-      }
-
-    } else {
-
-      // desktop, just update
-      this.update_page_layout();
-    }
-
-
-  } else {
-    // console.log('not mobile :D')
-
-    // desktop, just update
-    this.update_page_layout();
-  }
-
-
-
-
-  // error in logic, this this to be outside the on_window_resize
-  // copied from manic.page.Page
-  this.prev_device_width = this.device_width;
-  this.prev_device_height = this.device_height;
-  
+savour.page.Default.prototype.on_event_handler_02 = function(event) {
 };
-
 
 /**
- * @override
- * @inheritDoc
+ * @param {object} event
  */
-savour.page.Default.prototype.scroll_to_target = function(str_param, str_param_2, str_param_3) {
-
-  /**
-   * @type {jQuery}
-   */
-  var scroll_target = null;
-
-  /**
-   * @type {String}
-   */
-  var scroll_target_str = "";
-
-
-  for (var i = 0, l = this.scrolltarget_name_array.length; i < l; i++) {
-    scroll_target_str = this.scrolltarget_name_array[i];
-    scroll_target = this.scrolltarget_array[i];
-
-    if (str_param == scroll_target_str) {
-
-
-      
-      console.log('savour.page.Default: scroll_to_target: ');
-      console.log(scroll_target);
-      this.controller.scrollTo(scroll_target[0]);
-
-      
-    }
-        
-    
-  }
-
+savour.page.Default.prototype.on_event_handler_03 = function(event) {
 };
-
-
-
-//    _   _ _____ ___ _     
-//   | | | |_   _|_ _| |    
-//   | | | | | |  | || |    
-//   | |_| | | |  | || |___ 
-//    \___/  |_| |___|_____|
-//                          
-
 
 /**
- * @param  {String} text_str_param  [description]
- * @param  {String} image_str_param [description]
+ * @param {object} event
  */
-savour.page.Default.prototype.create_text_padding = function(text_str_param, image_str_param){
-  var manic_image_container_element = $(image_str_param);
-  var text_element = $(text_str_param);
-
-  /**
-   * @type {manic.ui.ImageContainerPadding}
-   */
-  var padding_item = null;
-
-  if(manic_image_container_element.length != 0 && text_element.length != 0){
-
-    padding_item = new manic.ui.ImageContainerPadding({
-      'target': manic_image_container_element,
-      //'min-padding': 34
-      'min-padding': 70
-    },text_element);
-
-    this.padding_array[this.padding_array.length] = padding_item;
-    
-  }
-
+savour.page.Default.prototype.on_event_handler_04 = function(event) {
 };
 
 
-savour.page.Default.prototype.scroll_to_after_the_fold = function(){
 
-  // var target_y = this.window_height - $('#desktop-header .bottom-header').height();
-  
-  var target_y = this.window_height - 108;      // 108 = height of header
 
-  if(manic.IS_ACTUAL_MOBILE == true) {
 
-    if(manic.IS_TABLET_LANDSCAPE == true) {
-      target_y = this.window_height - ($('#mobile-header').height() * 0.9);
-      
-      console.log('here lies something')
-      console.log('target_y: ' + target_y);
-    } else {
-      target_y = this.window_height - $('#mobile-header').height();
-    }
-    
-  }
 
-  TweenMax.to(this.window, 0.5, {
-    scrollTo:{y:target_y,autoKill: true},
-    ease:Quad.easeInOut
-  });
+savour.page.Default.prototype.sample_method_calls = function() {
+
+  // sample override
+  savour.page.Default.superClass_.method_02.call(this);
+
+  // sample event
+  this.dispatchEvent(new goog.events.Event(savour.page.Default.EVENT_01));
 };
-
-
-goog.exportSymbol('savour.page.Default', savour.page.Default);

@@ -48,6 +48,13 @@
     page = new savour.page.Home({});
   </script>
 
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $('body').addClass('preload-start');        // TODO: this needs to be added to the optimized version as well ?
+    });
+  </script>
+
+
 <?php else: ?>
 
   <!--

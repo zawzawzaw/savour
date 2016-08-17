@@ -59,6 +59,33 @@ html, body{
 }
 @media only screen and (max-width: 767px) {
   .general-text-declaration(1);
+
+  // override
+  // 
+  h1 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  h2 {
+    
+  }
+
+  h3 {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  h4 {
+  }
+
+  h5 {
+  }
+
+  h6 {
+  }
+
+
 }
 
 
@@ -92,6 +119,11 @@ hr{
   margin-bottom: 0px;
   border: 0;
   border-top: 1px solid @border-grey;
+
+  &.longer-version{
+    margin-left: -15px;
+    margin-right: -15px;
+  }
 }
 
 

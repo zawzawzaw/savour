@@ -1,4 +1,4 @@
-/*
+
 #page-preloader{
   //display: none;
   
@@ -41,122 +41,35 @@
     position: absolute;
     top: 50%;
     left: 50%;
+
+    /*
     width: 200px;
     height: 160px;
     margin-left: -100px;
     margin-top: -80px;
     background: transparent url('../images/icons/preloader.svg') center center no-repeat;
+    */
+   
+    width: 280px;
+    height: 80px;
+    margin-left: -280px / 2;
+    margin-top: -80px / 2;
+    // background: transparent url('assets/images/logos/preloader.gif') center center no-repeat;
+    background: transparent url('assets/images/logos/preloader.svg') center center no-repeat;
 
+    /*
     background-size: unit(200, px) unit(160, px);
     -webkit-background-size: unit(200, px) unit(160, px);      // i forgot what this was for
+    */
 
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     
-    -webkit-animation: alphaScaleIn 1.3s both cubic-bezier(0.7,0,0.3,1);
-    animation: alphaScaleIn 1.3s both cubic-bezier(0.7,0,0.3,1);
+    // -webkit-animation: alphaScaleIn 1.3s both cubic-bezier(0.7,0,0.3,1);
+    // animation: alphaScaleIn 1.3s both cubic-bezier(0.7,0,0.3,1);
   }
   
 } // #page-preloader
-
-
-
-
-#page-preloader-line-01{
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  height: 20px;
-  margin-top: -10px;
-  overflow: hidden;
-
-  display: none;      // hide according to yiling
-
-  &:before{
-    content: "";
-    display: block;
-
-    position: absolute;
-    top: 10px;
-    right: 0px;
-    margin-right: -100px;
-    width: 50%;
-    height: 0px;
-    border-bottom: 1px solid #e6e6e6;
-
-    .opacity(0);
-    -webkit-animation: fadeInWidthLeft 1.3s both cubic-bezier(0.7,0,0.3,1);
-    animation: fadeInWidthLeft 1.3s both cubic-bezier(0.7,0,0.3,1);
-  }
-
-  &:after{
-    content: "";
-    display: block;
-
-    position: absolute;
-    top: 10px;
-    left: 0px;
-    margin-left: -100px;
-    width: 50%;
-    height: 0px;
-    border-bottom: 1px solid #e6e6e6;
-
-    .opacity(0);
-    -webkit-animation: fadeInWidthLeft 1.3s both cubic-bezier(0.7,0,0.3,1);
-    animation: fadeInWidthRight 1.3s both cubic-bezier(0.7,0,0.3,1);
-  }
-
-  
-}
-
-
-#page-preloader-line-02{
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  height: 20px;
-  margin-top: -10px;
-  overflow: hidden;
-
-  display: none;      // hide according to yiling
-
-  .line-a{
-    content: "";
-    display: block;
-
-    position: absolute;
-    top: 10px;
-    right: 0px;
-    margin-right: -100px;
-    //width: 50%;
-    width: 5%;
-    height: 0px;
-    border-bottom: 1px solid #b7b7b7;
-    .opacity(1);
-
-    .transition-in(1s);
-    //animation: animateJustWidth 10s both cubic-bezier(0.7,0,0.3,1);
-    
-  }
-
-  .line-b{
-    content: "";
-    display: block;
-
-    position: absolute;
-    top: 10px;
-    left: 0px;
-    margin-left: -100px;
-    //width: 50%;
-    width: 5%;
-    height: 0px;
-    border-bottom: 1px solid #b7b7b7;
-    .opacity(1);
-
-    .transition-in(1s);
-    //animation: animateJustWidth 10s both cubic-bezier(0.7,0,0.3,1);
-  }
-}
 
 
 
@@ -171,6 +84,8 @@
 
 
 .preload-start{
+
+  /*
   #page-preloader-line-02{
     .line-a{
       .transition-in(8s, linear);
@@ -181,8 +96,10 @@
       width: 40% !important;
     }
   }
+  */
 }
 .preload-fade-start{
+  /*
   #page-preloader-line-01{
     &:before{
       .opacity(0.3);
@@ -199,9 +116,11 @@
       .opacity(0.3);
     }
   }
+  */
 }
 .preload-complete{
- 
+  
+
   #page-preloader{
     &:before{
       // -webkit-animation: moveToTop 1.1s both cubic-bezier(0.7,0,0.3,1);
@@ -215,6 +134,7 @@
     
     }
   }
+  /*
   #page-preloader-line-02{
     .line-a{
       .transition-in(1s);
@@ -225,6 +145,7 @@
       width: 50% !important;
     }
   }
+  */
 }
 
 
@@ -249,32 +170,23 @@
   #page-preloader{
     &:after{
       // background: transparent url('../images/logo/preloader-ayana.svg') center center no-repeat;
-      background: transparent url('../images/icons/preloader.svg') center center no-repeat;
+      // background: transparent url('../images/icons/preloader.svg') center center no-repeat;
+      // background-size: unit(200 * 3 / 5, px) unit(160 * 3 / 5, px);
+      // -webkit-background-size: unit(200 * 3 / 5, px) unit(160 * 3 / 5, px);      // i forgot what this was for
       
+      // background: transparent url('assets/images/logos/preloader.gif') center center no-repeat;
+      background: transparent url('assets/images/logos/preloader.svg') center center no-repeat;
+      
+      width: 280px;
+      height: 80px;
+      margin-left: -280px / 2;
+      margin-top: -80px / 2;
 
-      background-size: unit(200 * 3 / 5, px) unit(160 * 3 / 5, px);
-      -webkit-background-size: unit(200 * 3 / 5, px) unit(160 * 3 / 5, px);      // i forgot what this was for
     }
 
   }
 
-  #page-preloader-line-01{
-    &:before{
-      margin-right: -60px;
-    }
-    &:after{
-      margin-left: -60px;
-    }
-  }
-  #page-preloader-line-02{
-    .line-a{
-      margin-right: -60px;
-    }
-    .line-b{
-      margin-left: -60px;
-    }
-  }
+  
 
 
 }
-*/
