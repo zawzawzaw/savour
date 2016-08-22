@@ -75,6 +75,19 @@ savour.page.Default.prototype.init = function() {
   this.desktop_header.set_controller(this.controller);
 
   this.mobile_header = new savour.component.MobileHeader({}, $('#mobile-header'));
+
+
+  $('.page-template-slider').slick({
+    'speed': 350,
+    'dots': false,
+    'arrows': true,
+    'infinite': false,
+    'slidesToShow': 1,
+    'slidesToScroll': 1,
+    'pauseOnHover': false,
+    'autoplay': true,
+    'autoplaySpeed': 4000
+  });
   
 
   console.log('savour.page.Default: init');

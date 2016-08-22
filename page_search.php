@@ -13,7 +13,21 @@
       <div class="col-md-9">
 
         <div id="page-search-title">
-          <h1>Search results for <br>“oysters and chocolate cake”</h1>
+          <?php 
+            $search_term = "oysters and chocolate cake";
+            if (isset($_GET["s"])) {
+              $search_term = $_GET["s"];
+            }
+
+            $search_term_next_line = strlen($search_term) > 12;
+            
+
+          ?>
+          <br>
+
+          <h1>Search results for <?php if($search_term_next_line){ echo '<br>'; } ?>“<?php echo $search_term; ?>”</h1>
+
+          
         </div>
         <div id="page-search-filter-contianer">
           <p>Filter by:</p>
@@ -25,16 +39,16 @@
 
       </div>
       <div class="col-md-3">
-        <div class="page-search-ad-container-container" class="hidden-sm hidden-xs">
+        <div id="page-search-ad-container-container" class="hidden-sm hidden-xs">
           <div id="page-search-ad-container">
 
             <div id="page-search-ad-01">
-              <div class="manic-image-container">
+              <div class="manic-image-container has-full-width">
                 <img src="" data-image-desktop="images_cms/search/search-ad-1.png">
               </div>
             </div>
             <div id="page-search-ad-02">
-              <div class="manic-image-container">
+              <div class="manic-image-container has-full-width">
                 <img src="" data-image-desktop="images_cms/search/search-ad-2.png">
               </div>
             </div>
@@ -311,7 +325,7 @@
             </div>
             <div class="col-md-12 col-sm-6 col-xs-12">
 
-              <div class="search-item food-version">
+              <div class="search-item people-version">
                 <div class="row">
                   <div class="col-md-4 col-sm-6 col-xs-6">
 

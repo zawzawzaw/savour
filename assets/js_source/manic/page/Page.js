@@ -14,6 +14,7 @@ goog.require('manic');
 goog.require('manic.ui.FormCheck');
 goog.require('manic.ui.Dropdown');
 goog.require('manic.ui.ImageContainer');
+goog.require('manic.ui.ExpandContainer');
 goog.require('manic.ui.ImageContainerPadding');
 goog.require('manic.ui.TextPadding');
 
@@ -187,6 +188,7 @@ manic.page.Page.prototype.init = function(){
   this.controller.scrollTo(this.controller_scroll_to.bind(this));
 
   this.create_image_container();
+  this.create_expand_container();
   this.create_dropdown();
   this.create_form_check();
 
@@ -427,6 +429,25 @@ manic.page.Page.prototype.create_image_container = function() {
 
 };
 
+
+manic.page.Page.prototype.create_expand_container = function(){
+  var arr = $('.manic-expand-container');
+  var item = null;
+
+  /**
+   * @type {manic.ui.ExpandContainer}
+   */
+  var expand_container = null;
+
+  for (var i = 0, l=arr.length; i < l; i++) {
+    item = $(arr[i]);
+    expand_container = new manic.ui.ExpandContainer({}, item);
+    goog.events.listen(expand_container, manic.ui.ExpandContainer.ON_EXPAND, this.on_expand_container_expand.bind(this));
+  }
+
+  
+};
+
 manic.page.Page.prototype.create_dropdown = function() {
   var arr = $('.manic-dropdown');
   var item = null;
@@ -588,7 +609,27 @@ manic.page.Page.prototype.on_window_resize = function(event) {
 
 
 
+/**
+ * event handler
+ * @param  {goog.events.Event} event
+ */
+manic.page.Page.prototype.on_expand_container_expand = function(event) {
+  console.log('has expanded');
+  console.log(event);
 
+  /**
+   * @type {manic.ui.ExpandContainer}
+   */
+  var expand_container = event.currentTarget;
+
+  if (manic.IS_MOBILE == true) {
+
+    if (expand_container.scroll_value != 'none'){
+      this.util_scroll_to(expand_container.scroll_value);
+
+    }
+  }
+};
 
 
 

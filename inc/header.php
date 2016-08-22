@@ -23,7 +23,7 @@
           <div class="col-md-2"></div>
           <div class="col-md-8">
             <div class="desktop-header-large-logo-container">
-              <a href="" id="desktop-header-large-logo"></a>
+              <a href="index.html" id="desktop-header-large-logo"></a>
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="desktop-logo-container">
-                  <a href="" id="desktop-header-logo"></a>
+                  <a href="index.html" id="desktop-header-logo"></a>
                 </div>
               </div>
               <div class="col-md-6">
@@ -106,11 +106,13 @@
 
             -->
 
+
+
             <div class="desktop-header-article-container" data-value="food">
               <div class="row">
 
                 <div class="col-md-3">
-                  <a href="javascript:void(0)" class="desktop-header-article food-version">
+                  <a href="template-short-form.html" class="desktop-header-article food-version">
                     <div class="desktop-header-article-image">
                       <div class="manic-image-container">
                         <img src="" data-image-desktop="images_cms/menu/menu-content-1.png">
@@ -124,7 +126,7 @@
                 </div>
 
                 <div class="col-md-3">
-                  <a href="javascript:void(0)" class="desktop-header-article food-version">
+                  <a href="template-short-form.html" class="desktop-header-article food-version">
                     <div class="desktop-header-article-image">
                       <div class="manic-image-container">
                         <img src="" data-image-desktop="images_cms/menu/menu-content-2.png">
@@ -138,7 +140,7 @@
                 </div>
 
                 <div class="col-md-3">
-                  <a href="javascript:void(0)" class="desktop-header-article food-version">
+                  <a href="template-short-form.html" class="desktop-header-article food-version">
                     <div class="desktop-header-article-image">
                       <div class="manic-image-container">
                         <img src="" data-image-desktop="images_cms/menu/menu-content-3.png">
@@ -152,7 +154,7 @@
                 </div>
 
                 <div class="col-md-3">
-                  <a href="javascript:void(0)" class="desktop-header-article food-version">
+                  <a href="template-short-form.html" class="desktop-header-article food-version">
                     <div class="desktop-header-article-image">
                       <div class="manic-image-container">
                         <img src="" data-image-desktop="images_cms/menu/menu-content-4.png">

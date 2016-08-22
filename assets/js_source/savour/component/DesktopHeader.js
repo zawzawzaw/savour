@@ -66,6 +66,10 @@ savour.component.DesktopHeader = function(options, element) {
     var not_visible = $('.desktop-header-article-container').not('.desktop-header-article-container[data-value="' + value + '"]');
     var visible = $('.desktop-header-article-container[data-value="' + value + '"]');
 
+    not_visible.addClass('collapsed-version');
+    visible.removeClass('collapsed-version');
+    
+
     TweenMax.to(not_visible, 0.3, {autoAlpha: 0});
     TweenMax.to(visible, 0.3, {autoAlpha: 1});
 
