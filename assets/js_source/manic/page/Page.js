@@ -14,6 +14,7 @@ goog.require('manic');
 goog.require('manic.ui.FormCheck');
 goog.require('manic.ui.Dropdown');
 goog.require('manic.ui.ImageContainer');
+goog.require('manic.ui.VideoContainer');
 goog.require('manic.ui.ExpandContainer');
 goog.require('manic.ui.ImageContainerPadding');
 goog.require('manic.ui.TextPadding');
@@ -188,6 +189,7 @@ manic.page.Page.prototype.init = function(){
   this.controller.scrollTo(this.controller_scroll_to.bind(this));
 
   this.create_image_container();
+  this.create_video_container();
   this.create_expand_container();
   this.create_dropdown();
   this.create_form_check();
@@ -425,9 +427,22 @@ manic.page.Page.prototype.create_image_container = function() {
     //this.manic_image_array[i] = image_container;
     this.manic_image_array[this.manic_image_array.length] = image_container;
   }
-
-
 };
+
+
+manic.page.Page.prototype.create_video_container = function(){
+
+  var arr = $('.manic-video-container').not('.not-default-version');
+  var video_container = null;
+  var item = null;
+
+  for (var i = 0, l=arr.length; i < l; i++) {
+    item = $(arr[i]);
+    video_container = new manic.ui.VideoContainer({}, item);
+  }
+  
+};
+
 
 
 manic.page.Page.prototype.create_expand_container = function(){

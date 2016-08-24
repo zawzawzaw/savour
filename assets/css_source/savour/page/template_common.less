@@ -37,7 +37,8 @@
     margin-bottom: 2px;
   }
   h1{
-    .playfair-bold;
+    // .playfair-bold;
+    .raleway-bold;
     font-size: 48px;
     line-height: 57px;
   }
@@ -98,13 +99,64 @@
 
   #page-template-banner-image{
     height: 520px;
-    margin-left: -15px;
-    margin-right: -15px;
+    position: relative;
 
-    .manic-image-container{
+    iframe{
+      width: 100%;
+      //height: 520px;
+    }
+
+    .manic-image-container,
+    .manic-video-container{
       height: 520px;
     }
-  }
+
+    .manic-video-container{
+      .vjs-big-play-button,
+      .vjs-control-bar{
+        display: none;
+      }
+    }
+
+    .play-btn{
+      .play-icon-svg;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -60px;
+      margin-left: -60px;
+
+      pointer-events: none;
+
+      .opacity(0.8);
+      .transition-in(0.3s);
+    }
+
+    &:focus,
+    &:hover{
+      .play-btn{
+        .opacity(1.0);
+      }
+    }
+
+
+
+    &.embed-video-version{
+      cursor: pointer;
+      height: auto !important;
+
+      &.video-play-version{
+
+      }
+    }
+    &.youtube-video-version{
+      height: auto !important;
+    }
+
+  } // #page-template-banner-image
+
+
+
   #page-template-banner-copy{
     padding-top: 22px;
 
@@ -127,6 +179,8 @@
   margin-right: -2px;
   padding-top: 40px;
 
+
+
   ul{
     li{
       display: block;
@@ -145,11 +199,39 @@
 
         &:focus,
         &:hover{
-          color: @dark-grey;
+          color: @yellow;
+        }
+      }
+    }
+  } // ul
+
+
+  &.horizontal-version{
+    position: relative;
+    top: auto;
+    right: auto;
+
+    width: auto;
+    margin-right: -3px;
+    padding-top: 3px;
+
+    text-align: right;
+
+    ul{
+      font-size: 0;
+
+      li{
+        .display-inline-block;
+        margin-bottom: 0;
+        margin-left: 26px;
+
+        &:first-child{
+          margin-left: 0;
         }
       }
     }
   }
+
 }
 
 
@@ -161,9 +243,21 @@
 
     #page-template-banner-image{
       height: 360px;
-      .manic-image-container{
+      margin-left: -15px;
+      margin-right: -15px;
+
+      iframe{
+        // height: 360px;
+      }
+
+
+      .manic-image-container,
+      .manic-video-container{
         height: 360px;
       }
+
+
+
     }
     #page-template-banner-copy{
       padding-top: 15px;
@@ -181,7 +275,11 @@
   #page-template-banner-section{
     #page-template-banner-image{
       height: 200px;
-      .manic-image-container{
+      iframe{
+        // height: 200px;
+      }
+      .manic-image-container,
+      .manic-video-container{
         height: 200px;
       }
     }
@@ -585,7 +683,8 @@
   margin-bottom: 25px;
 
   h2{
-    .playfair-bold;
+    // .playfair-bold;
+    .raleway-bold;
     font-size: 24px;
     line-height: 26px;
     color: #707070;

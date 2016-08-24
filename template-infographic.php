@@ -8,8 +8,8 @@ ob_start();
   // $is_debug = false;
   $is_debug = true;
 
-  $body_class = "page-template-short-form no-pin-page";
-  $output_file = "template-short-form.html";
+  $body_class = "page-template-infographic no-pin-page";
+  $output_file = "template-infographic.html";
 ?>
 <!doctype html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
@@ -47,7 +47,7 @@ ob_start();
 
 
 
-        <?php include('page_template_short_form.php'); ?>
+        <?php include('page_template_infographic.php'); ?>
 
 
 

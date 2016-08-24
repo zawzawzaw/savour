@@ -8,8 +8,8 @@ ob_start();
   // $is_debug = false;
   $is_debug = true;
 
-  $body_class = "page-template-short-form no-pin-page";
-  $output_file = "template-short-form.html";
+  $body_class = "page-template-video no-pin-page";
+  $output_file = "template-video.html";
 ?>
 <!doctype html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
@@ -45,9 +45,24 @@ ob_start();
         -->
 
 
+        <?php 
+          $video_version = 'regular';
+          if (isset($_GET["version"])) {
+            $video_version = $_GET["version"];
+          }
+        ?>
 
 
-        <?php include('page_template_short_form.php'); ?>
+
+        <?php 
+          if ($video_version == 'regular') {
+            include('page_template_video.php');
+          } else if ($video_version == 'youtube') {
+            include('page_template_video_youtube.php');
+          }
+        
+        ?>
+        <?php  ?>
 
 
 
