@@ -71,6 +71,7 @@ manic.ui.VideoContainer = function(options, element) {
   this.original_image_height = 0;
   this.image_aspect_ratio = -1;
 
+  this.element.click(this.on_element_click.bind(this));
 
 
   this.scale_mode = this.options['scale_mode'];
@@ -877,7 +878,12 @@ manic.ui.VideoContainer.prototype.on_video_play = function(event) {
  * event handler
  * @param  {object} event
  */
-manic.ui.VideoContainer.prototype.on_event_handler_03 = function(event) {
+manic.ui.VideoContainer.prototype.on_element_click = function(event) {
+  if (this.is_ready == true) { 
+    if(manic.IS_MOBILE == true) {
+      this.player.play();
+    }
+  }
 };
 
 /**

@@ -32,7 +32,9 @@
 
               <section>
                 <div class="manic-image-container has-full-width">
-                  <img src="" data-image-desktop="images_cms/template_infographic/sample_infographic.jpg">
+                  <img src="" 
+                    data-image-desktop="images_cms/template_infographic/sample_infographic.jpg"
+                    data-image-mobile="images_cms/template_infographic/sample_infographic_mobile.jpg">
                 </div>
               </section>
 

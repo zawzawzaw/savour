@@ -3,3 +3,8 @@ Options +Includes
 
 AddType text/html .html
 AddHandler server-parsed .html
+
+AddType audio/ogg .oga
+AddType video/ogg .ogv .ogg
+AddType video/webm .webm
+AddType video/mp4 .mp4

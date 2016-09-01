@@ -45,24 +45,10 @@ ob_start();
         -->
 
 
-        <?php 
-          $video_version = 'regular';
-          if (isset($_GET["version"])) {
-            $video_version = $_GET["version"];
-          }
-        ?>
+        <?php include('page_template_video.php'); ?>
 
 
-
-        <?php 
-          if ($video_version == 'regular') {
-            include('page_template_video.php');
-          } else if ($video_version == 'youtube') {
-            include('page_template_video_youtube.php');
-          }
         
-        ?>
-        <?php  ?>
 
 
 

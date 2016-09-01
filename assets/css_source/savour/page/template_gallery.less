@@ -1,0 +1,162 @@
+
+
+
+
+
+//    ____  _____ _____  _    ___ _     ____
+//   |  _ \| ____|_   _|/ \  |_ _| |   / ___|
+//   | | | |  _|   | | / _ \  | || |   \___ \
+//   | |_| | |___  | |/ ___ \ | || |___ ___) |
+//   |____/|_____| |_/_/   \_\___|_____|____/
+//
+
+#page-template-chef-lookbook-details-section{
+
+  padding-top: 62px;
+  margin-bottom: 64px;
+  
+  .chef-detail-hr{
+    margin-top: 34px;
+  }
+
+  .chef-title{
+    font-size: 0;
+    text-align: center;
+    // margin-bottom: 60px;
+    margin-bottom: 52px;
+
+    h2{
+      .display-inline-block;
+      font-size: 24px;
+      line-height: 26px;
+
+      &:after{
+        content: "\f111";
+        .display-inline-block;
+        
+        .fa;
+        font-size: 9px;
+        line-height: 26px;
+        color: @green;
+
+        margin-left: 14px;
+        margin-right: 14px;
+
+        // position: relative;
+        // top: 2px;
+
+      }
+      &:last-child{
+        &:after{
+          display: none;
+        }
+      }
+    }
+  }
+  .chef-quote{
+    padding-top: 24px + 14px;
+
+
+    padding-bottom: 35px + 13px;
+    
+    p{
+      .raleway-regular;
+      font-size: 24px;
+      line-height: 29px;
+      text-align: center;      
+    }
+
+
+    &:after,
+    &:before{
+      .montserrat-bold;
+      font-size: 35px;
+      line-height: 25px;
+      text-align: center;
+
+      display: block;
+      position: absolute;
+      
+      left: 50%;
+      width: 25px;
+      height: 25px;
+      margin-left: -12px;
+
+    }
+
+    &:before{
+      top: 14px;
+      content: '“';
+    }
+    &:after{
+      bottom: 0;
+      content: '”';
+    }
+
+  }
+
+  .chef-detail-container{
+    .chef-detail{
+      margin-bottom: 14px;
+
+
+      &:last-child{
+
+        margin-bottom: 0;
+      }
+    }
+
+  }
+
+  .chef-detail{
+    
+    h3{
+      .open-sans-semi-bold;
+      font-size: 18px;
+      line-height: 28px;
+    }
+    p{
+      .open-sans-italic;
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+}
+
+
+//     ___  _   _ _____ ____ _____ ___ ___  _   _ ____
+//    / _ \| | | | ____/ ___|_   _|_ _/ _ \| \ | / ___|
+//   | | | | | | |  _| \___ \ | |  | | | | |  \| \___ \
+//   | |_| | |_| | |___ ___) || |  | | |_| | |\  |___) |
+//    \__\_\\___/|_____|____/ |_| |___\___/|_| \_|____/
+//
+
+.page-template-question-container{
+  text-align: center;
+  //padding-left: 40px;
+  //padding-right: 40px;
+  
+  padding-bottom: 3px;
+
+  .page-template-question{
+    margin-bottom: 28px;
+
+    &:last-child{
+      margin-bottom: 0px;
+    }
+
+
+    h3{
+      .montserrat-bold;
+      font-size: 20px;
+      line-height: 32px;
+      color: @green;
+    }
+    p{
+      .open-sans-regular;
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+}

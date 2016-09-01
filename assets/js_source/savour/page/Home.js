@@ -48,8 +48,8 @@ savour.page.Home.prototype.init = function() {
       fade: true,
       cssEase: 'linear',
       arrows: false,
-      // autoplay: true,
-      // autoplaySpeed: 3000,
+      autoplay: true,
+      autoplaySpeed: 3000,
   });
 
   $('#ads-container-mobile ul').slick({

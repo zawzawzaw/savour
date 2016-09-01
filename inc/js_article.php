@@ -33,7 +33,8 @@
   <script type="text/javascript" src="assets/libs/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
   <script type="text/javascript" src="assets/libs/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
 
-  <script type="text/javascript" src="assets/libs/video.js/dist/video.min.js"></script>   
+  <!--<script type="text/javascript" src="assets/libs/video.js/dist/video.min.js"></script> -->
+  <script type="text/javascript" src="assets/libs/videojs_old/video.js"></script>
   <script type="text/javascript" src="assets/libs/slick-carousel/slick/slick.min.js"></script>
   <script type="text/javascript" src="assets/libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
 

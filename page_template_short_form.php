@@ -23,9 +23,9 @@
           <?php if($banner_version == 'video'): ?>
 
             <article id="page-template-banner-section">
-              <div id="page-template-banner-image" class="embed-video-version">
+              <div id="page-template-banner-image" class="embed-video-version short-form-version">
 
-                <div class="manic-video-container has-full-width" data-video="images_cms/template_video/sample_video.mp4">
+                <div class="manic-video-container" data-video="images_cms/template_video/sample_video.mp4">
                   <video class="video-js vjs-default-skin" preload="auto" data-setup='{"controls": false}'>
                     <source src=""  type='video/mp4' />
                   </video>
@@ -59,7 +59,7 @@
           <?php elseif($banner_version == 'youtube'): ?>
 
             <article id="page-template-banner-section">
-              <div id="page-template-banner-image" class="youtube-video-version">
+              <div id="page-template-banner-image" class="youtube-video-version short-form-version">
                 <!-- AUTOPLAY VERSION
                   <iframe width="560" height="315" src="https://www.youtube.com/embed/d40VYULwXgM?autoplay=1&wmode=opaque&enablejsapi=1&showinfo=0&loop=1&playlist=d40VYULwXgM" frameborder="0" allowfullscreen></iframe> 
                 -->

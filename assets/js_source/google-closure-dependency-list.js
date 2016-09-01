@@ -38,6 +38,7 @@ goog.addDependency('../../../../../js_source/savour/component/DesktopHeader.js',
 goog.addDependency('../../../../../js_source/savour/component/InstagramDataItem.js', ['savour.component.InstagramDataItem'], ['goog.events.Event', 'goog.events.EventTarget']);
 goog.addDependency('../../../../../js_source/savour/component/InstagramSection.js', ['savour.component.InstagramSection'], ['goog.events.Event', 'goog.events.EventTarget', 'manic.ui.DingMasonry', 'savour.component.InstagramDataItem']);
 goog.addDependency('../../../../../js_source/savour/component/MobileHeader.js', ['savour.component.MobileHeader'], ['goog.events.Event', 'goog.events.EventTarget']);
-goog.addDependency('../../../../../js_source/savour/page/Article.js', ['savour.page.Article'], ['savour.component.InstagramSection', 'savour.page.Default']);
+goog.addDependency('../../../../../js_source/savour/component/TemplateGallery.js', ['savour.component.TemplateGallery'], ['goog.events.Event', 'goog.events.EventTarget']);
+goog.addDependency('../../../../../js_source/savour/page/Article.js', ['savour.page.Article'], ['manic.ui.VideoContainer', 'savour.component.InstagramSection', 'savour.component.TemplateGallery', 'savour.page.Default']);
 goog.addDependency('../../../../../js_source/savour/page/Default.js', ['savour.page.Default'], ['goog.events.Event', 'goog.events.EventTarget', 'manic.page.Page', 'savour.component.DesktopHeader', 'savour.component.MobileHeader']);
 goog.addDependency('../../../../../js_source/savour/page/Home.js', ['savour.page.Home'], ['savour.page.Default']);
