@@ -237,6 +237,13 @@
   } // .food-article
 
 
+  .food-article-container{
+    .article-thumbnail{
+      margin-bottom: 30px;
+    }
+  }
+
+
   .love-food {
     
     padding-top: 50px;
@@ -360,6 +367,10 @@
   }
 
 } // #page-home-banner-section
+
+
+
+
 
 
 
@@ -537,6 +548,15 @@ body.is-tablet.is-tablet-landscape{
     .food-article{
       padding-bottom: 20px;
     }
+    .food-article-container{
+      .article-thumbnail{
+        margin-bottom: 20px;
+        .article-thumbnail-image .manic-image-container{
+          height: 120px;
+        }
+      }
+    }
+
     .food-article .manic-image-container{
       // height: 135px;
       height: 120px;
@@ -946,8 +966,15 @@ body.is-tablet.is-tablet-landscape{
     }
   }
 
+  .article-thumbnail-box{
+    .article-thumbnail-box-image{
+      .manic-image-container{
+        height: 180px;
+      }
+    }
+  }
 
-
+  /*
   .video-item{
     display: block;
     box-shadow: 1px 1px 16px #EAEAEA;
@@ -1094,6 +1121,7 @@ body.is-tablet.is-tablet-landscape{
       background-color: @light-blue;
     }
   }
+  */
 
 } // #page-home-video-list-section
 
@@ -1113,7 +1141,17 @@ body.is-tablet.is-tablet-landscape{
       }
     }
 
+    .article-thumbnail-box{
+      margin-bottom: 20px;
+      
+      .article-thumbnail-box-image{
+        .manic-image-container{
+          height: 100px;
+        }
+      }
+    }
 
+    /*
     .video-item{
       margin-bottom: 20px;
     }
@@ -1152,6 +1190,7 @@ body.is-tablet.is-tablet-landscape{
       font-size: 10px;
       padding-top: 2px;
     }
+    */
 
 
 

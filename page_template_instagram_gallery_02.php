@@ -16,19 +16,68 @@
           <article id="page-template-banner-section" class="gallery-instagram-version visible-md visible-lg">
 
             <div id="instagram-data-item-container">
-              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJYDkFgAKSg/" data-location="Le Coucou"></div>
-              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJb5NtSgMZZ/" data-location="Las Ramblas"></div>
-              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJbs7W0jH5b/" data-location="Momofuku Ko"></div>
+              <div class="instagram-data-item" 
+                data-url="https://www.instagram.com/p/BJYDkFgAKSg/" 
+                data-iframe-url="https://www.instagram.com/p/BJYDkFgAKSg/embed/" 
+                data-location="Le Coucou">
+              </div>
+              <div class="instagram-data-item" 
+                data-url="https://www.instagram.com/p/BJb5NtSgMZZ/" 
+                data-iframe-url="https://www.instagram.com/p/BJb5NtSgMZZ/embed/" 
+                data-location="Las Ramblas">
+              </div>
+              <div class="instagram-data-item" 
+                data-url="https://www.instagram.com/p/BJbs7W0jH5b/" 
+                data-iframe-url="https://www.instagram.com/p/BJbs7W0jH5b/embed/" 
+                data-location="Momofuku Ko">
+              </div>
               
-              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJavHFADZV7/" data-location="Russ and Daughters Cafe"></div>
-              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJaeOuEAJI-/" data-location="North River Lobster Co"></div>
-              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJaZsmCDfrC/" data-location="Joy Luck Palace"></div>
-              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJabCO6B-ht/" data-location="Greenwich Project"></div>
-              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJZgG_qDebQ/" data-location="Champs Diner"></div>
-              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJZPkE0AGw5/" data-location="The Tang"></div>
-              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJZLbjSjc4r/" data-location="Pfizer 630 Flushing Avenue Brooklyn"></div>
-              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJYzzf0B7zb/" data-location="Lilia Ristorante"></div>
-              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJYzBBGAhFE/" data-location="Brooklyn Farmacy & Soda Fountain"></div>
+              <div class="instagram-data-item" 
+                data-url="https://www.instagram.com/p/BJavHFADZV7/" 
+                data-iframe-url="https://www.instagram.com/p/BJavHFADZV7/embed/" 
+                data-location="Russ and Daughters Cafe">
+              </div>
+              <div class="instagram-data-item" 
+                data-url="https://www.instagram.com/p/BJaeOuEAJI-/" 
+                data-iframe-url="https://www.instagram.com/p/BJaeOuEAJI-/embed/" 
+                data-location="North River Lobster Co">
+              </div>
+              <div class="instagram-data-item" 
+                data-url="https://www.instagram.com/p/BJaZsmCDfrC/" 
+                data-iframe-url="https://www.instagram.com/p/BJaZsmCDfrC/embed/" 
+                data-location="Joy Luck Palace">
+              </div>
+              <div class="instagram-data-item" 
+                data-url="https://www.instagram.com/p/BJabCO6B-ht/" 
+                data-iframe-url="https://www.instagram.com/p/BJabCO6B-ht/embed/" 
+                data-location="Greenwich Project">
+              </div>
+              <div class="instagram-data-item" 
+                data-url="https://www.instagram.com/p/BJZgG_qDebQ/" 
+                data-iframe-url="https://www.instagram.com/p/BJZgG_qDebQ/embed/" 
+                data-location="Champs Diner">
+              </div>
+              <div class="instagram-data-item" 
+                data-url="https://www.instagram.com/p/BJZPkE0AGw5/" 
+                data-iframe-url="https://www.instagram.com/p/BJZPkE0AGw5/embed/" 
+                data-location="The Tang">
+              </div>
+              <div class="instagram-data-item" 
+                data-url="https://www.instagram.com/p/BJZLbjSjc4r/" 
+                data-iframe-url="https://www.instagram.com/p/BJZLbjSjc4r/embed/" 
+                data-location="Pfizer 630 Flushing Avenue Brooklyn">
+              </div>
+              <div class="instagram-data-item" 
+                data-url="https://www.instagram.com/p/BJYzzf0B7zb/" 
+                data-iframe-url="https://www.instagram.com/p/BJYzzf0B7zb/embed/" 
+                data-location="Lilia Ristorante">
+              </div>
+              <div class="instagram-data-item" 
+                data-url="https://www.instagram.com/p/BJYzBBGAhFE/" 
+                data-iframe-url="https://www.instagram.com/p/BJYzBBGAhFE/embed/" 
+                data-location="Brooklyn Farmacy & Soda Fountain">
+              </div>
+              
             </div>
 
 
@@ -389,178 +438,7 @@
 
 
 
-          <!--
-             ____  _____ _        _  _____ _____ ____
-            |  _ \| ____| |      / \|_   _| ____|  _ \
-            | |_) |  _| | |     / _ \ | | |  _| | | | |
-            |  _ <| |___| |___ / ___ \| | | |___| |_| |
-            |_| \_\_____|_____/_/   \_\_| |_____|____/
-
-          -->
-
-          <article id="page-template-related-articles-section" class="hidden-sm hidden-xs">
-
-            <div id="page-template-related-articles-title">
-              <h2>What to read next</h2>
-            </div>
-            
-
-            <div class="row">
-              <div class="col-md-4 col-sm-4 col-xs-12">
-
-                <a href="javascript:void(0)" class="related-article-item travel-version">
-                  <div class="row">
-                    <div class="col-xs-6 col-sm-12 col-md-12">
-                      <div class="related-article-item-image">
-                        <div class="manic-image-container">
-                          <img src="" 
-                            data-image-mobile="images_cms/template_short_form/article-related-01.png"
-                            data-image-desktop="images_cms/template_short_form/article-related-01.png">
-                        </div>
-                        <span class="tag">Travel</span>
-                      </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-12 col-md-12">
-                      <div class="related-article-item-text">
-                        <p>Hong Kong: How The Best Char Siew Buns Are Made</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-              </div>
-              <div class="col-md-4 col-sm-4 col-xs-12">
-
-                <a href="javascript:void(0)" class="related-article-item food-version">
-                  <div class="row">
-                    <div class="col-xs-6 col-sm-12 col-md-12">
-                      <div class="related-article-item-image">
-                        <div class="manic-image-container">
-                          <img src="" 
-                            data-image-mobile="images_cms/template_short_form/article-related-02.png"
-                            data-image-desktop="images_cms/template_short_form/article-related-02.png">
-                        </div>
-                        <div class="play-icon"></div>
-                        <span class="tag">Food</span>
-                      </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-12 col-md-12">
-                      <div class="related-article-item-text">
-                        <p>Fruit Sorbet Recipe: Practice What You Peach</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-              </div>
-              <div class="col-md-4 col-sm-4 col-xs-12">
-
-                <a href="javascript:void(0)" class="related-article-item people-version">
-                  <div class="row">
-                    <div class="col-xs-6 col-sm-12 col-md-12">
-                      <div class="related-article-item-image">
-                        <div class="manic-image-container">
-                          <img src="" 
-                            data-image-mobile="images_cms/template_short_form/article-related-03.png"
-                            data-image-desktop="images_cms/template_short_form/article-related-03.png">
-                        </div>
-                        <span class="tag">People</span>
-                      </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-12 col-md-12">
-                      <div class="related-article-item-text">
-                        <p>60 Seconds with: Chris Naylor</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-
-              </div>
-            </div>
-          </article> <!-- page-template-related-articles-section -->
-
-          
-          <!--
-             ____  _____ _        _  _____ _____ ____    __  __  ___  ____ ___ _     _____
-            |  _ \| ____| |      / \|_   _| ____|  _ \  |  \/  |/ _ \| __ )_ _| |   | ____|
-            | |_) |  _| | |     / _ \ | | |  _| | | | | | |\/| | | | |  _ \| || |   |  _|
-            |  _ <| |___| |___ / ___ \| | | |___| |_| | | |  | | |_| | |_) | || |___| |___
-            |_| \_\_____|_____/_/   \_\_| |_____|____/  |_|  |_|\___/|____/___|_____|_____|
-
-          -->
-
-          <article id="page-template-related-articles-section-mobile" class="visible-sm visible-xs">
-            <div class="manic-expand-container last-version">
-              <div class="scroll-target" data-value="mobile-related-articles"></div>
-              <div class="manic-expand-container-title">
-                <p>What to read next</p>
-                <span class="manic-expand-container-btn"></span>
-              </div>
-              <div class="manic-expand-container-content">
-                
-
-                <div class="row">
-                  <div class="col-xs-12 col-sm-6">
-                    <a href="javascript:void(0)" class="mobile-article travel-version">
-                      <div class="row">
-                        <div class="col-xs-6">
-                          <div class="manic-image-container">
-                            <img src="" data-image-mobile="images_cms/template_short_form/article-related-01.png">
-                          </div>
-                        </div>
-                        <div class="col-xs-6">
-                          <div class="mobile-article-text">
-                            <h3>Travel</h3>
-                            <p>Hong Kong: How The Best Char Siew Buns Are Made</p>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-
-                  <div class="col-xs-12 col-sm-6">
-                    <a href="javascript:void(0)" class="mobile-article food-version">
-                      <div class="row">
-                        <div class="col-xs-6">
-                          <div class="manic-image-container">
-                            <img src="" data-image-mobile="images_cms/template_short_form/article-related-02.png">
-                          </div>
-                        </div>
-                        <div class="col-xs-6">
-                          <div class="mobile-article-text">
-                            <h3>Food</h3>
-                            <p>Fruit Sorbet Recipe: Practice What You Peach</p>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-
-                  <div class="col-xs-12 col-sm-6">
-                    <a href="javascript:void(0)" class="mobile-article food-version">
-                      <div class="row">
-                        <div class="col-xs-6">
-                          <div class="manic-image-container">
-                            <img src="" data-image-mobile="images_cms/template_short_form/article-related-03.png">
-                          </div>
-                        </div>
-                        <div class="col-xs-6">
-                          <div class="mobile-article-text">
-                            <h3>People</h3>
-                            <p>60 Seconds with: Chris Naylor</p>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-
-                </div> <!-- row -->  
-
-
-
-              </div>
-            </div>
-          </article> <!-- page-template-related-articles-section-mobile -->
+          <?php include('inc/related-articles.php') ?>
 
 
 
@@ -568,68 +446,10 @@
         </div> <!-- #page-template-content -->
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-1"></div>
+      <div class="col-md-2">
 
-        <!--
-           ____ ___ ____  _____ ____    _    ____
-          / ___|_ _|  _ \| ____| __ )  / \  |  _ \
-          \___ \| || | | |  _| |  _ \ / _ \ | |_) |
-           ___) | || |_| | |___| |_) / ___ \|  _ <
-          |____/___|____/|_____|____/_/   \_\_| \_\
-
-        -->
-        <div id="template-sidebar" class="hidden-sm hidden-xs">
-
-          <a href="javascript:void(0)" class="sidebar-article-item food-version">
-            <hr>
-            <div class="sidebar-article-item-image">
-              <div class="manic-image-container">
-                <img src="" data-image-desktop="images_cms/template_short_form/article-sf-sidebar-article-01.png">
-              </div>
-            </div>
-            <div class="sidebar-article-item-text">
-              <p>How To Make Ice Cream without Ice Cream Maker</p>
-            </div>
-          </a>
-
-          <a href="javascript:void(0)" class="sidebar-article-item people-version">
-            <hr>
-            <div class="sidebar-article-item-image">
-              <div class="manic-image-container">
-                <img src="" data-image-desktop="images_cms/template_short_form/article-sf-sidebar-article-02.png">
-              </div>
-            </div>
-            <div class="sidebar-article-item-text">
-              <p>Get That Morning Headstart</p>
-            </div>
-          </a>
-
-          <a href="javascript:void(0)" class="sidebar-ad">
-            <div class="manic-image-container has-full-width">
-              <img src="images_cms/search/search-ad-1.png">
-            </div>
-          </a>
-
-          <a href="javascript:void(0)" class="sidebar-article-item travel-version">
-            <hr>
-            <div class="sidebar-article-item-image">
-              <div class="manic-image-container">
-                <img src="" data-image-desktop="images_cms/template_short_form/article-sf-sidebar-article-02.png">
-              </div>
-            </div>
-            <div class="sidebar-article-item-text">
-              <p>Weirdest Coffee Bean Facts That You Need To Know</p>
-            </div>
-          </a>
-
-          <a href="javascript:void(0)" class="sidebar-ad">
-            <div class="manic-image-container has-full-width">
-              <img src="images_cms/search/search-ad-2.png">
-            </div>
-          </a>
-
-        </div> <!-- #template-sidebar -->
-
+        <?php include('inc/sidebar.php'); ?>
 
       </div>
 

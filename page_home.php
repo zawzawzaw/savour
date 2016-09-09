@@ -103,9 +103,66 @@
             </div>
           </div>
         </div>
+
         <div class="col-md-3">
           <div class="food-article-container hidden-sm hidden-xs">
 
+            <a href="javascript:void(0)" class="article-thumbnail food-version">
+              <div class="row">
+                <div class="col-xs-6 col-sm-12 col-md-12">
+                  <div class="article-thumbnail-image">
+                    <div class="manic-image-container">
+                      <img src="" 
+                        data-image-desktop="images_cms/home/home-content-1.jpg">
+                    </div>
+                    <span class="tag">Food</span>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-12 col-md-12">
+                  <div class="article-thumbnail-text">
+                    <p>How to Make Ice Cream without Ice Cream Maker</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="javascript:void(0)" class="article-thumbnail food-version">
+              <div class="row">
+                <div class="col-xs-6 col-sm-12 col-md-12">
+                  <div class="article-thumbnail-image">
+                    <div class="manic-image-container">
+                      <img src="" 
+                        data-image-desktop="images_cms/home/home-content-2.jpg">
+                    </div>
+                    <span class="tag">Food</span>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-12 col-md-12">
+                  <div class="article-thumbnail-text">
+                    <p>Get That Morning Head-start</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="javascript:void(0)" class="article-thumbnail people-version">
+              <div class="row">
+                <div class="col-xs-6 col-sm-12 col-md-12">
+                  <div class="article-thumbnail-image">
+                    <div class="manic-image-container">
+                      <img src="" 
+                        data-image-desktop="images_cms/home/home-content-2.jpg">
+                    </div>
+                    <span class="tag">people</span>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-12 col-md-12">
+                  <div class="article-thumbnail-text">
+                    <p>Weirdest Coffee Bean Facts That You Need To Know</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!--
             <a href="javascript:void(0)" class="food-article food-version">
               <hr>
               <div class="manic-image-container">
@@ -130,6 +187,10 @@
               </div>
               <h4>Weirdest Coffee Bean Facts That You Need To Know </h4>
             </a>
+            -->
+
+
+
           </div>
         </div>
       </div>      
@@ -190,7 +251,9 @@
   <article id="page-home-article-list-section" class="hidden-sm hidden-xs">
 
     <div class="container box-container">
-      <div class="row">               
+      <div class="row">
+
+        <!--
         <div class="col-md-4">
           <div class="box">
             <a href="#">
@@ -198,16 +261,16 @@
               <p>Talking Shop with Chef Luciano Monosilio At A Local Market</p>
             </a>
           </div>
-        </div><!--
-        --><div class="col-md-4">
+        </div>
+        <div class="col-md-4">
           <div class="box">
             <a href="#">
               <img src="images_cms/home/home-content-6.jpg" class="img-responsive" alt="">
               <p>Awfully Chocolate – How One’s Cakes Rise To Success </p>
             </a>
           </div>
-        </div><!--
-        --><div class="col-md-4">
+        </div>
+        <div class="col-md-4">
           <div class="box">
             <a href="#">
               <img src="images_cms/home/home-content-7.jpg" class="img-responsive" alt="">
@@ -215,6 +278,84 @@
             </a>
           </div>
         </div>
+        -->
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-tablet-landscape-md-4">
+          <a href="" class="article-thumbnail-box people-version">
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-12">
+
+                <div class="article-thumbnail-box-image">
+                  <div class="manic-image-container">
+                    <img src="" 
+                      data-image-mobile="images_cms/home/home-content-5.jpg"
+                      data-image-desktop="images_cms/home/home-content-5.jpg">
+                  </div>
+                  <span class="tag">People</span>
+                </div>
+
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-12">
+                <div class="article-thumbnail-box-text">
+                  <p>Talking Shop with Chef Luciano <br class="visible-md visible-lg">Monosilio At A Local Market</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-tablet-landscape-md-4">
+          <a href="" class="article-thumbnail-box food-version">
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-12">
+
+                <div class="article-thumbnail-box-image">
+                  <div class="manic-image-container">
+                    <img src="" 
+                      data-image-mobile="images_cms/home/home-content-6.jpg"
+                      data-image-desktop="images_cms/home/home-content-6.jpg">
+                  </div>
+                  <span class="tag">Food</span>
+                </div>
+
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-12">
+                <div class="article-thumbnail-box-text">
+                  <p>Awfully Chocolate – <br class="visible-md visible-lg">How One’s Cakes Rise To Success</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-tablet-landscape-md-4">
+          <a href="" class="article-thumbnail-box food-version">
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-12">
+
+                <div class="article-thumbnail-box-image">
+                  <div class="manic-image-container">
+                    <img src="" 
+                      data-image-mobile="images_cms/home/home-content-7.jpg"
+                      data-image-desktop="images_cms/home/home-content-7.jpg">
+                  </div>
+                  <span class="tag">Food</span>
+                </div>
+
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-12">
+                <div class="article-thumbnail-box-text">
+                  <p>Explore New Food Technologies: <br class="visible-md visible-lg">3D Food Printing with Chef Paco</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+          
+
+
+
       </div>
     </div>
     
@@ -714,6 +855,7 @@
 
 
         <div class="col-xs-12 col-sm-6 col-md-3 col-tablet-landscape-md-4">
+          <!-- 
           <a href="" class="video-item travel-version">
             <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-12">
@@ -736,9 +878,36 @@
               </div>
             </div>
           </a>
+          -->
+          <a href="" class="article-thumbnail-box people-version">
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-12">
+
+                <div class="article-thumbnail-box-image">
+                  <div class="manic-image-container">
+                    <img src="" 
+                      data-image-mobile="images_cms/home/home-content-8.jpg"
+                      data-image-desktop="images_cms/home/home-content-8.jpg">
+                  </div>
+                  <div class="play-icon"></div>
+                  <span class="tag">People</span>
+                </div>
+
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-12">
+                <div class="article-thumbnail-box-text">
+                  <p>HK: How The Best Char Siew Buns Are Made</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          
+
         </div>
 
         <div class="col-xs-12 col-sm-6 col-md-3 col-tablet-landscape-md-4">
+          <!-- 
           <a href="" class="video-item food-version">
             <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-12">
@@ -761,9 +930,36 @@
               </div>
             </div>
           </a>
+          -->
+          <a href="" class="article-thumbnail-box people-version">
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-12">
+
+                <div class="article-thumbnail-box-image">
+                  <div class="manic-image-container">
+                    <img src="" 
+                      data-image-mobile="images_cms/home/home-content-9.jpg"
+                      data-image-desktop="images_cms/home/home-content-9.jpg">
+                  </div>
+                  <div class="play-icon"></div>
+                  <span class="tag">People</span>
+                </div>
+
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-12">
+                <div class="article-thumbnail-box-text">
+                  <p>Fruit Sorbet Recipe: <br>Practice What You Peach</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          
+
+
         </div>
 
         <div class="col-xs-12 col-sm-6 col-md-3 col-tablet-landscape-md-4">
+          <!-- 
           <a href="" class="video-item people-version">
             <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-12">
@@ -786,9 +982,35 @@
               </div>
             </div>
           </a>
+          -->
+          <a href="" class="article-thumbnail-box people-version">
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-12">
+
+                <div class="article-thumbnail-box-image">
+                  <div class="manic-image-container">
+                    <img src="" 
+                      data-image-mobile="images_cms/home/home-content-10.jpg"
+                      data-image-desktop="images_cms/home/home-content-10.jpg">
+                  </div>
+                  <div class="play-icon"></div>
+                  <span class="tag">People</span>
+                </div>
+
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-12">
+                <div class="article-thumbnail-box-text">
+                  <p>60 Seconds with: <br>Chris Naylor</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          
+
         </div>
 
         <div class="col-xs-12 col-sm-6 col-md-3 hidden-tablet-landscape">
+          <!-- 
           <a href="" class="video-item events-version">
             <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-12">
@@ -811,6 +1033,30 @@
               </div>
             </div>
           </a>
+          -->
+          <a href="" class="article-thumbnail-box people-version">
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-12">
+
+                <div class="article-thumbnail-box-image">
+                  <div class="manic-image-container">
+                    <img src="" 
+                      data-image-mobile="images_cms/home/home-content-11.jpg"
+                      data-image-desktop="images_cms/home/home-content-11.jpg">
+                  </div>
+                  <div class="play-icon"></div>
+                  <span class="tag">People</span>
+                </div>
+
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-12">
+                <div class="article-thumbnail-box-text">
+                  <p>What to Eat at Music Festivals This Summer</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
         </div>
 
 

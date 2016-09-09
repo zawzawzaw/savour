@@ -202,6 +202,7 @@ savour.page.Article.prototype.update_page_layout = function() {
   
   if(this.has_banner_image_embed_video == true) {
 
+    /*
     if($('#page-template-banner-image').hasClass('short-form-version') == false) {
       if(manic.IS_MOBILE_HEADER == true){
         this.banner_image_video_container.scale_mode = manic.ui.VideoContainer.BEST_FIT;
@@ -211,6 +212,7 @@ savour.page.Article.prototype.update_page_layout = function() {
     } else {
       // do nothing, it has the class 'has-full-width';
     }
+    */
 
 
     if(this.banner_image_video_container.image_aspect_ratio != -1){
@@ -225,6 +227,7 @@ savour.page.Article.prototype.update_page_layout = function() {
     var target_height = 0;
     var target_width = 0;
 
+    /*
     if($('#page-template-banner-image').hasClass('short-form-version') == false) {
 
       if(manic.IS_MOBILE_HEADER == true){
@@ -233,6 +236,7 @@ savour.page.Article.prototype.update_page_layout = function() {
         target_height = target_width / this.banner_image_iframe_aspect_ratio;
 
       } else {
+
         // fixed-height
         target_height = this.banner_image.height();
         target_width = target_height * this.banner_image_iframe_aspect_ratio;
@@ -243,14 +247,19 @@ savour.page.Article.prototype.update_page_layout = function() {
 
     } else {
       
+
       // full-width
       target_width = this.banner_image.width();
       target_height = target_width / this.banner_image_iframe_aspect_ratio;
+
+      
       
     }
+    */
 
-    
-    
+    // full-width
+    target_width = this.banner_image.width();
+    target_height = target_width / this.banner_image_iframe_aspect_ratio;
 
     this.banner_image_iframe.css({
       'width': target_width + 'px',

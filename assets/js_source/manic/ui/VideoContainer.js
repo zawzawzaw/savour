@@ -513,6 +513,8 @@ manic.ui.VideoContainer.prototype.update_layout = function() {
 
     if(this.image_aspect_ratio != -1) {
 
+      // console.log('VideoContainer scale_mode: ' + this.scale_mode);
+
       // scale the image
       if(this.scale_mode == manic.ui.VideoContainer.STRETCH) {
         this.use_scale_mode_stretch();

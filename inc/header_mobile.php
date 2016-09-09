@@ -16,7 +16,7 @@
 
   <div id="mobile-header-content-container">
     <a href="index.html" id="mobile-header-logo">
-      <img src="assets/images/logos/main-logo.svg">
+      <img src="assets/images/logos/revised-logo-centered.svg">
     </a>
 
     <div id="mobile-header-close-btn"></div>

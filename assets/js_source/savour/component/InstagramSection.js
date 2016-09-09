@@ -6,7 +6,7 @@ goog.require('goog.events.EventTarget');
 goog.require('manic.ui.DingMasonry');
 goog.require('savour.component.InstagramDataItem');
 goog.require('savour.component.InstagramDataContainer');
-
+goog.require('savour.component.InstagramDetailPopup');
 
 
 
@@ -41,6 +41,15 @@ savour.component.InstagramSection = function(options, element) {
 
 
   this.is_instagram_data_loaded = false;
+
+
+  /**
+   * @type {savour.component.InstagramDetailPopup}
+   */
+  this.detail_popup = null;
+
+  
+  
 
 
 
@@ -157,8 +166,21 @@ savour.component.InstagramSection.prototype.create_masonry = function() {
     data_item_desktop_element = $(data_item.instagram_desktop_item_str);
 
     data_item_desktop_element.data('url', data_item.data_url);
+    data_item_desktop_element.data('index', i);
     
+
+    data_item_desktop_element.click(function(event){
+
+      var target = $(event.currentTarget);
+      var index = target.data('index');
+
+      this.detail_popup.open_overlay();
+      this.detail_popup.display_overlay_index(index);
+
+    }.bind(this));
+      
     
+
     
     data_item_desktop_element.click(function(event){
 
@@ -187,7 +209,8 @@ savour.component.InstagramSection.prototype.create_masonry = function() {
 
   this.instagram_item_container.append(fragment);
 
-  var column_divider_value = 350;
+  // var column_divider_value = 350;
+  var column_divider_value = 400;
   
   if (manic.IS_MOBILE == true) {
     column_divider_value = 150;
@@ -226,6 +249,20 @@ savour.component.InstagramSection.prototype.create_masonry = function() {
   
 
 
+
+};
+
+
+savour.component.InstagramSection.prototype.create_desktop_popup = function(){
+
+  if ($('#instagram-overlay').length != 0) {
+    this.detail_popup = new savour.component.InstagramDetailPopup({}, $('#instagram-overlay'));
+
+    this.detail_popup.set_data_array(this.data_array);
+
+  } else {
+    console.log('savour.component.InstagramSection: Missing #instagram-overlay');
+  }
 
 };
 
@@ -351,7 +388,9 @@ savour.component.InstagramSection.prototype.close_mobile_detail = function() {
 savour.component.InstagramSection.prototype.on_instagram_data_load_complete = function(event) {
   this.is_instagram_data_loaded = true;
   this.data_array = this.instagram_data_container.data_array;
+
   this.create_masonry();
+  this.create_desktop_popup();
 };
 
 /**

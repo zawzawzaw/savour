@@ -149,7 +149,7 @@
     <div class="row">
       <div class="col-xs-5">
         <a href="index.html" id="mobile-footer-logo">
-          <img src="assets/images/logos/main-logo.svg">
+          <img src="assets/images/logos/revised-logo.svg">
         </a>
       </div>
       <div class="col-xs-7">

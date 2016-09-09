@@ -25,7 +25,7 @@ savour.component.InstagramDataItem = function(options, element) {
 
   this.gallery_data_object = null;
 
-
+  /*
   this.instagram_desktop_item_template = [
     '<a href="{link_url}" target="_blank" class="instagram-item {extra_class}" data-width="{thumbnail_width}" data-height="{thumbnail_height}">',
       '<div class="manic-image-container">',
@@ -43,6 +43,25 @@ savour.component.InstagramDataItem = function(options, element) {
       '</div>',
     '</a>'
   ].join('');
+  */
+
+  this.instagram_desktop_item_template = [
+    '<div class="instagram-item {extra_class}" data-width="{thumbnail_width}" data-height="{thumbnail_height}">',
+      '<div class="manic-image-container">',
+        '<img src="" data-image="{thumbnail_url}">',
+      '</div>',
+      '<div class="instagram-item-hover-bg"></div>',
+      '<div class="instagram-item-hover">',
+        '<div class="instagram-item-hover-content">',
+          '<p>{short_title}</p>',
+        '</div>',
+        '<div class="instagram-item-info">',
+          '<h3>{location}</h3>',
+          '<p>{author_name}<br> {time}</p>',
+        '</div>',
+      '</div>',
+    '</div>'
+  ].join('');
 
 
 
@@ -50,6 +69,12 @@ savour.component.InstagramDataItem = function(options, element) {
   this.instagram_desktop_item_str = '';
 
 
+
+
+
+  this.iframe_width = 100;
+  this.iframe_height = 100;
+  this.iframe_url = ''
 
 
 
@@ -71,6 +96,10 @@ savour.component.InstagramDataItem = function(options, element) {
 
   if (goog.isDefAndNotNull(this.element.attr('data-location'))) {
     this.data_location = this.element.attr('data-location');
+  }
+
+  if (goog.isDefAndNotNull(this.element.attr('data-iframe-url'))) {
+    this.iframe_url = this.element.attr('data-iframe-url');
   }
 
   
@@ -256,6 +285,12 @@ savour.component.InstagramDataItem.prototype.on_instagram_ajax_complete = functi
   });
   
 
+
+  var aspect_ratio = this.data_object.thumbnail_width / this.data_object.thumbnail_height;
+
+  this.iframe_width = 430;
+  this.iframe_height = this.iframe_width /  aspect_ratio; 
+  this.iframe_height += 80;
 
   
   // create str
