@@ -1,3 +1,5 @@
+// this will crash if hidden or not visible
+
 goog.provide('manic.ui.DingMasonry');
 goog.provide('manic.ui.DingMasonryItem');
 
@@ -21,9 +23,9 @@ manic.ui.DingMasonry = function(options, element) {
   this.gutter_width = this.options['gutter_width'];
   this.remove_last_row = this.options['remove_last_row'];
 
-  this.element_width = 0;
-  this.column_num = 0;
-  this.row_num = 0;
+  this.element_width = 100;
+  this.column_num = 1;
+  this.row_num = 1;
 
   this.item_array = [];
   this.item_array_length = 0;
@@ -128,84 +130,98 @@ manic.ui.DingMasonry.prototype.sample_method_calls = function() {
 //
 
 manic.ui.DingMasonry.prototype.update_layout = function() {
-  this.element_width = this.element.width();
-  this.update_column_num();
 
-  if (this.remove_last_row == false) {
-    this.row_num = Math.ceil(this.item_array_length / this.column_num);     // default behavior keeps last row
-  } else {
-    this.row_num = Math.floor(this.item_array_length / this.column_num);     // default behavior keeps last row
-    this.update_visible_items();    
-  }
+  //if(this.element.is(':visible') == true){
+    console.log('DingMasonry: update_layout');
 
-  /**
-   * @type {Array.<manic.ui.DingMasonryItem>}
-   */
-  var column_item_array = [];
-  /**
-   * @type {manic.ui.DingMasonryItem}
-   */
-  var item = null;
+    
+    this.element_width = this.element.width();
+    this.update_column_num();
 
-  var row_lowest_height = 0;
-  var row_scale = 1;
-  var i = 0;
+    if (this.remove_last_row == false) {
+      this.row_num = Math.ceil(this.item_array_length / this.column_num);     // default behavior keeps last row
+      this.row_num = this.row_num <= 1 ? 1 : this.row_num;
 
+    } else {
+      this.row_num = Math.floor(this.item_array_length / this.column_num);     // default behavior keeps last row
+      this.row_num = this.row_num <= 1 ? 1 : this.row_num;
 
-  var target_item_scale = 0;
-  var target_item_margin_right = 0;
-  var target_item_margin_bottom = 0;
-
-  for (var r = 0; r < this.row_num; r++) {
-    column_item_array = [];
-    row_lowest_height = 0;
-
-    for (var c = 0; c < this.column_num; c++) {   // from the row, get items
-      i = (r * this.column_num) + c;
-
-      if (i < this.item_array_length) {  // if item is valid (0 to L), add to array
-        column_item_array[column_item_array.length] = this.item_array[i];
-      }
+      this.update_visible_items();    
     }
 
-    row_lowest_height = this.get_row_lowest_height(column_item_array);
-    row_scale = this.get_row_scale(column_item_array, row_lowest_height);
+    /**
+     * @type {Array.<manic.ui.DingMasonryItem>}
+     */
+    var column_item_array = [];
+    /**
+     * @type {manic.ui.DingMasonryItem}
+     */
+    var item = null;
 
-    //console.log('row_lowest_height: ' + row_lowest_height);
-    //console.log('row_scale: ' + row_scale);
+    var row_lowest_height = 0;
+    var row_scale = 1;
+    var i = 0;
 
-    for (var ii = 0, ll=column_item_array.length; ii < ll; ii++) {
-      item = column_item_array[ii];
-      target_item_scale = (row_lowest_height / item.h) * row_scale; // scale item to lowest height, then scale again to the scale of the row.
-      target_item_margin_right = this.gutter_width;
-      target_item_margin_bottom = this.gutter_width;
 
-      
+    var target_item_scale = 0;
+    var target_item_margin_right = 0;
+    var target_item_margin_bottom = 0;
 
-      if (ii == (ll - 1))  {
-        target_item_margin_right = 0;
+    for (var r = 0; r < this.row_num; r++) {
+      column_item_array = [];
+      row_lowest_height = 0;
+
+      for (var c = 0; c < this.column_num; c++) {   // from the row, get items
+        i = (r * this.column_num) + c;
+
+        if (i < this.item_array_length) {  // if item is valid (0 to L), add to array
+          column_item_array[column_item_array.length] = this.item_array[i];
+        }
       }
-      if(r == (this.row_num -1)){
-        target_item_margin_bottom = 0;
+
+      row_lowest_height = this.get_row_lowest_height(column_item_array);
+      row_scale = this.get_row_scale(column_item_array, row_lowest_height);
+
+      //console.log('row_lowest_height: ' + row_lowest_height);
+      //console.log('row_scale: ' + row_scale);
+
+      for (var ii = 0, ll=column_item_array.length; ii < ll; ii++) {
+        item = column_item_array[ii];
+        target_item_scale = (row_lowest_height / item.h) * row_scale; // scale item to lowest height, then scale again to the scale of the row.
+        target_item_margin_right = this.gutter_width;
+        target_item_margin_bottom = this.gutter_width;
+
+        
+
+        if (ii == (ll - 1))  {
+          target_item_margin_right = 0;
+        }
+        if(r == (this.row_num -1)){
+          target_item_margin_bottom = 0;
+        }
+
+
+        //console.log((r * this.column_num) + ii);
+
+        item.set_layout(
+          target_item_scale,
+          target_item_margin_right,
+          target_item_margin_bottom
+        );
       }
 
 
-      //console.log((r * this.column_num) + ii);
-
-      item.set_layout(
-        target_item_scale,
-        target_item_margin_right,
-        target_item_margin_bottom
-      );
     }
 
-
-  }
+  // }
 
 };
 manic.ui.DingMasonry.prototype.update_column_num = function() {
   this.column_num = Math.round(this.element_width / this.column_divider);
   this.column_num = this.column_num >= this.max_column_num ? this.max_column_num : this.column_num;
+
+  this.column_num = this.column_num <= 1 ? 1 : this.column_num;
+
   console.log('this.column_num: ' + this.column_num);
 };
 
@@ -227,9 +243,9 @@ manic.ui.DingMasonry.prototype.update_visible_items = function() {
     console.log('i: ' + i + ', row: ' + item_row);
 
     if (item_row < this.row_num) {
-      item.show();
+      item.show(0);
     } else {
-      item.hide();
+      item.hide(0);
     }
   }
 };
@@ -350,6 +366,21 @@ manic.ui.DingMasonry.prototype.on_event_handler_03 = function(event) {
  */
 manic.ui.DingMasonry.prototype.on_event_handler_04 = function(event) {
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

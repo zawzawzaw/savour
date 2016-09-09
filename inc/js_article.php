@@ -38,6 +38,8 @@
   <script type="text/javascript" src="assets/libs/slick-carousel/slick/slick.min.js"></script>
   <script type="text/javascript" src="assets/libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
 
+  <script type="text/javascript" src="assets/libs/hammer/hammer.min.js"></script>
+
 
   <!-- Google Closure -->
   <script src="assets/libs/google-closure/closure-library/closure/goog/base.js"></script>

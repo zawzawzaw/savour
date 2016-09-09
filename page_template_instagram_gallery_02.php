@@ -7,19 +7,34 @@
       <div class="col-md-9 col-sm-12 col-xs-12">
 
         <div id="page-template-content">
-          <article id="page-template-title-section">
-            <h3>Food</h3>
-            <h1>All You Need To Know About Hosting An English Afternoon Tea</h1>
+          <article id="page-template-title-section" class="travel-version">
+            <h3>Travel</h3>
+            <h1>Eating Through The Big Apple</h1>
           </article>
 
+          
+          <article id="page-template-banner-section" class="gallery-instagram-version visible-md visible-lg">
+
+            <div id="instagram-data-item-container">
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJYDkFgAKSg/" data-location="Le Coucou"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJb5NtSgMZZ/" data-location="Las Ramblas"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJbs7W0jH5b/" data-location="Momofuku Ko"></div>
+              
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJavHFADZV7/" data-location="Russ and Daughters Cafe"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJaeOuEAJI-/" data-location="North River Lobster Co"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJaZsmCDfrC/" data-location="Joy Luck Palace"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJabCO6B-ht/" data-location="Greenwich Project"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJZgG_qDebQ/" data-location="Champs Diner"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJZPkE0AGw5/" data-location="The Tang"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJZLbjSjc4r/" data-location="Pfizer 630 Flushing Avenue Brooklyn"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJYzzf0B7zb/" data-location="Lilia Ristorante"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJYzBBGAhFE/" data-location="Brooklyn Farmacy & Soda Fountain"></div>
+            </div>
 
 
+            <div id="page-template-banner-gallery-item-container" class="gallery-instagram-version">
 
-          <article id="page-template-banner-section" class="gallery-version">
-
-            <div id="page-template-banner-gallery-item-container">
-
-
+              <!--
               <div class="page-template-banner-gallery-item" 
                 data-id="gallery-01" 
                 data-caption="Image caption 01 style lorem ipsum dolor sit amet, consectetur adipiscing elit.">
@@ -154,220 +169,139 @@
                   </div>
                 </div>
               </div>
+              -->
 
             </div> <!-- #page-template-banner-gallery-item-container -->
 
 
             <div class="row">
-              <div class="col-md-10">
-                <div id="page-template-banner-copy" class="gallery-version">
-                  <p>Image caption style lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <div class="col-md-12">
+
+
+                <div id="page-template-banner-instagram-copy">
+
+                  <div class="default-copy">
+                    <h3>doscaminos</h3>
+
+                    <div class="instagram-detail-location">
+                      <span class="fa fa-map-marker"></span>
+                      <h4>dos caminos soho</h4>
+                    </div>
+
+                    <p>Soak up the summer with a pitcher of rosé sangria and a few #DosCaminos faves on the patio. | Tag a friend & Book your table - Link in Bio.</p>
+
+                    <div class="cta-container">
+                      <a href="javascript:void(0);" target="_blank"><span class="fa fa-instagram"></span> View post on instagram</a>
+                    </div>
+
+                  </div>
+
+
                 </div>
               </div>
             </div>
 
             <div id="page-template-banner-thumbnail-item-container">
 
+              <!-- 
               <div class="page-template-banner-thumbnail-item" data-id="gallery-01">
                 <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/tempate_chef_lookbook/gallery_thumbnail_01.jpg">
+                  <img src="" data-image="images_cms/tempate_chef_lookbook/gallery_thumbnail_01.jpg">
                 </div>
               </div>
               <div class="page-template-banner-thumbnail-item" data-id="gallery-02">
                 <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/tempate_chef_lookbook/gallery_thumbnail_02.jpg">
+                  <img src="" data-image="images_cms/tempate_chef_lookbook/gallery_thumbnail_02.jpg">
                 </div>
               </div>
               <div class="page-template-banner-thumbnail-item" data-id="gallery-03">
                 <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/tempate_chef_lookbook/gallery_thumbnail_03.jpg">
+                  <img src="" data-image="images_cms/tempate_chef_lookbook/gallery_thumbnail_03.jpg">
                 </div>
               </div>
               <div class="page-template-banner-thumbnail-item" data-id="gallery-04">
                 <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/tempate_chef_lookbook/gallery_thumbnail_04.jpg">
+                  <img src="" data-image="images_cms/tempate_chef_lookbook/gallery_thumbnail_04.jpg">
                 </div>
               </div>
               <div class="page-template-banner-thumbnail-item" data-id="gallery-05">
                 <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/tempate_chef_lookbook/gallery_thumbnail_01.jpg">
+                  <img src="" data-image="images_cms/tempate_chef_lookbook/gallery_thumbnail_01.jpg">
                 </div>
               </div>
               <div class="page-template-banner-thumbnail-item" data-id="gallery-06">
                 <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/tempate_chef_lookbook/gallery_thumbnail_02.jpg">
+                  <img src="" data-image="images_cms/tempate_chef_lookbook/gallery_thumbnail_02.jpg">
                 </div>
               </div>
               <div class="page-template-banner-thumbnail-item" data-id="gallery-07">
                 <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/tempate_chef_lookbook/gallery_thumbnail_03.jpg">
+                  <img src="" data-image="images_cms/tempate_chef_lookbook/gallery_thumbnail_03.jpg">
                 </div>
               </div>
               <div class="page-template-banner-thumbnail-item" data-id="gallery-08">
                 <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/tempate_chef_lookbook/gallery_thumbnail_04.jpg">
+                  <img src="" data-image="images_cms/tempate_chef_lookbook/gallery_thumbnail_04.jpg">
                 </div>
               </div>
               <div class="page-template-banner-thumbnail-item" data-id="gallery-09">
                 <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/tempate_chef_lookbook/gallery_thumbnail_01.jpg">
+                  <img src="" data-image="images_cms/tempate_chef_lookbook/gallery_thumbnail_01.jpg">
                 </div>
               </div>
               <div class="page-template-banner-thumbnail-item" data-id="gallery-10">
                 <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/tempate_chef_lookbook/gallery_thumbnail_02.jpg">
+                  <img src="" data-image="images_cms/tempate_chef_lookbook/gallery_thumbnail_02.jpg">
                 </div>
               </div>
               <div class="page-template-banner-thumbnail-item" data-id="gallery-11">
                 <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/tempate_chef_lookbook/gallery_thumbnail_03.jpg">
+                  <img src="" data-image="images_cms/tempate_chef_lookbook/gallery_thumbnail_03.jpg">
                 </div>
               </div>
               <div class="page-template-banner-thumbnail-item" data-id="gallery-12">
                 <div class="manic-image-container">
-                  <img src="" data-image-desktop="images_cms/tempate_chef_lookbook/gallery_thumbnail_04.jpg">
+                  <img src="" data-image="images_cms/tempate_chef_lookbook/gallery_thumbnail_04.jpg">
                 </div>
               </div>
+              -->
+
+            </div>
+
+          </article>
+
+
+          <article id="page-template-content-section" class="visible-md visible-lg">
+            <div class="default-copy travel-version">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore emagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </article>
+
+
+
+          <article id="page-template-instagram-section" class="visible-sm visible-xs">
+
+            <div id="instagram-data-item-container">
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJYDkFgAKSg/" data-location="Le Coucou"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJb5NtSgMZZ/" data-location="Las Ramblas"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJbs7W0jH5b/" data-location="Momofuku Ko"></div>
+              
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJavHFADZV7/" data-location="Russ and Daughters Cafe"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJaeOuEAJI-/" data-location="North River Lobster Co"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJaZsmCDfrC/" data-location="Joy Luck Palace"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJabCO6B-ht/" data-location="Greenwich Project"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJZgG_qDebQ/" data-location="Champs Diner"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJZPkE0AGw5/" data-location="The Tang"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJZLbjSjc4r/" data-location="Pfizer 630 Flushing Avenue Brooklyn"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJYzzf0B7zb/" data-location="Lilia Ristorante"></div>
+              <div class="instagram-data-item" data-url="https://www.instagram.com/p/BJYzBBGAhFE/" data-location="Brooklyn Farmacy & Soda Fountain"></div>
               
             </div>
 
-          </article>
-
-
-
-
-          <article id="page-template-chef-lookbook-details-section">
-
-            <div class="chef-title">
-              <h2>Kentaro Torii</h2>
-              <h2>Bella Cosa Restaurant</h2>
-              <h2>Executive Chef</h2>
+            <div id="instagram-item-container">
             </div>
 
-            <div class="row">
-              <div class="col-md-5">
-
-                <div class="chef-quote">
-                  <p>Dream no small dreams <br>for they have no power <br>to move the hearts of men.</p>
-                </div>
-
-              </div>
-              <div class="col-md-4">
-                <div class="chef-detail-container">
-                  <div class="chef-detail">
-                    <h3>Hometown: </h3>
-                    <p>Odawara, Kanagawa, Japan</p>
-                  </div>
-                  <div class="chef-detail">
-                    <h3>Awards: </h3>
-                    <p>GVCI Chef of the Year 2012</p>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-md-3">
-                <div class="chef-detail-container">
-                  <div class="chef-detail">
-                    <h3>Date of birth: </h3>
-                    <p>25 Sep 1982</p>
-                  </div>
-                  <div class="chef-detail">
-                    <h3>Height: </h3>
-                    <p>181cm</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-
-            <hr class="chef-detail-hr">
-          </article>
-
-
-
-
-
-
-
-          <!--
-              ____ ___  _   _ _____ _____ _   _ _____
-             / ___/ _ \| \ | |_   _| ____| \ | |_   _|
-            | |  | | | |  \| | | | |  _| |  \| | | |
-            | |__| |_| | |\  | | | | |___| |\  | | |
-             \____\___/|_| \_| |_| |_____|_| \_| |_|
-
-          -->
-
-
-          <article id="page-template-content-section">
-            <div class="default-copy food-version">
-
-
-
-              <!-- wordpress input start -->
-
-              <section>
-                <div class="page-template-question-container">
-                  <div class="page-template-question">
-                    <h3>Tell us something random about you: </h3>
-                    <p>Traveller, ambitious, family man, sometimes Japanese sometimes Italian.</p>
-                  </div>
-                  <div class="page-template-question">
-                    <h3>When did you start cooking?</h3>
-                    <p>16 years</p>
-                  </div>
-                  <div class="page-template-question">
-                    <h3>What is your pet peeve in the kitchen?</h3>
-                    <p>'Spaghetti Bolognese Very Spicy'</p>
-                  </div>
-                  <div class="page-template-question">
-                    <h3>Funny:</h3>
-                    <p>Dream no small dreams for they have no power to move the hearts of men</p>
-                  </div>
-                  <div class="page-template-question">
-                    <h3>What is your favourite/ prized kitchen tool?</h3>
-                    <p>Pasta Machine</p>
-                  </div>
-                  <div class="page-template-question">
-                    <h3>What do you think of Singapore's food scene?</h3>
-                    <p>Exciting and Dynamic, it is possible to be one of the best culinary cities in the world if the government helps to increase the manpower.</p>
-                  </div>
-                  <div class="page-template-question">
-                    <h3>What would your last meal be?</h3>
-                    <p>Sashimi from my hometown Odawara and Sake</p>
-                  </div>
-                  <div class="page-template-question">
-                    <h3>Who is your toughest critic?</h3>
-                    <p>Anyone who comes not to enjoy eating but try to criticise</p>
-                  </div>
-                  <div class="page-template-question">
-                    <h3>Are you an instagrammer, tweeter or a Facebooker?</h3>
-                    <p>Yes I do Instagram and Facebook</p>
-                  </div>
-                  <div class="page-template-question">
-                    <h3>If you could have any superpower, what would it be and why?</h3>
-                    <p>Teleportation, I could go to any market, farm and port to shop the freshest ingredient in the world.</p>
-                  </div>
-                  <div class="page-template-question">
-                    <h3>Weirdest thing ever eaten?</h3>
-                    <p>Durian</p>
-                  </div>
-                  <div class="page-template-question">
-                    <h3>What is your cooking philosophy?</h3>
-                    <p>Respect the Italian tradition, appreciate the four seasons, remain the Japanese Sensibility</p>
-                  </div>
-                </div> <!-- #page-template-question-container -->
-              </section>
-
-
-
-              <!-- wordpress input end -->
-
-
-            </div> <!-- default-copy -->
-
-          </article> <!-- #page-template-content-section -->
+          </article> <!-- #page-template-instagram-section -->
 
 
 
@@ -705,3 +639,71 @@
 
 
 
+
+
+
+
+
+<!--
+   ___ _   _ ____ _____  _    ____ ____      _    __  __   __  __  ___  ____ ___ _     _____   ____  _____ _____  _    ___ _
+  |_ _| \ | / ___|_   _|/ \  / ___|  _ \    / \  |  \/  | |  \/  |/ _ \| __ )_ _| |   | ____| |  _ \| ____|_   _|/ \  |_ _| |
+   | ||  \| \___ \ | | / _ \| |  _| |_) |  / _ \ | |\/| | | |\/| | | | |  _ \| || |   |  _|   | | | |  _|   | | / _ \  | || |
+   | || |\  |___) || |/ ___ \ |_| |  _ <  / ___ \| |  | | | |  | | |_| | |_) | || |___| |___  | |_| | |___  | |/ ___ \ | || |___
+  |___|_| \_|____/ |_/_/   \_\____|_| \_\/_/   \_\_|  |_| |_|  |_|\___/|____/___|_____|_____| |____/|_____| |_/_/   \_\___|_____|
+
+-->
+
+<div id="page-template-instagram-detail">
+  
+  <div id="page-template-instagram-detail-image">
+
+    <div class="manic-image-container has-full-width">
+      <img src="">
+    </div>
+    
+    <div id="page-template-instagram-detail-close-btn"></div>
+    <div id="page-template-instagram-detail-next-btn"></div>
+    <div id="page-template-instagram-detail-prev-btn"></div>
+
+  </div>
+
+  <div id="page-template-instagram-detail-text-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <div id="page-template-instagram-detail-text">
+            <div class="default-copy">
+              <h3>Username</h3>
+
+              <div class="instagram-detail-location">
+                <span class="fa fa-map-marker"></span>
+                <h4>Location</h4>
+              </div>
+              
+            
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="cta-container">
+              <a href="javascript:void(0);" target="_blank"><span class="fa fa-instagram"></span> View post on instagram</a>
+            </div>
+
+            
+            <div class="circle-container">
+              <span></span><span></span><span></span><span></span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div> <!-- page-template-instagram-detail -->

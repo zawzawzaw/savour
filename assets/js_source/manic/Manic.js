@@ -1,3 +1,6 @@
+
+
+
 goog.provide('manic');
 
 /**

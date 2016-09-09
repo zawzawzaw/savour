@@ -17,15 +17,19 @@ savour.component.InstagramDataItem = function(options, element) {
   this.element = element;
 
   this.data_object = null;
+  this.gallery_data_object = null;
 
   this.data_url = '';
   this.data_location = '';
+  this.i = 0;
+
+  this.gallery_data_object = null;
 
 
   this.instagram_desktop_item_template = [
     '<a href="{link_url}" target="_blank" class="instagram-item {extra_class}" data-width="{thumbnail_width}" data-height="{thumbnail_height}">',
       '<div class="manic-image-container">',
-        '<img src="" data-image-desktop="{thumbnail_url}">',
+        '<img src="" data-image="{thumbnail_url}">',
       '</div>',
       '<div class="instagram-item-hover-bg"></div>',
       '<div class="instagram-item-hover">',
@@ -71,20 +75,11 @@ savour.component.InstagramDataItem = function(options, element) {
 
   
 
+  
+  
 
-  if (this.data_url != '') {
 
-    var target_url = 'https://api.instagram.com/oembed/?url=' + this.data_url;
-    
-    // start ajax load
-    $.ajax({
-      type: "GET",
-      dataType: "jsonp",
-      url: target_url,
-      complete: this.on_instagram_ajax_complete.bind(this)
-    });
-
-  }
+  
 
 
 
@@ -145,7 +140,25 @@ savour.component.InstagramDataItem.prototype.private_method_06 = function() {};
 //
 
 
-savour.component.InstagramDataItem.prototype.public_method_01 = function() {};
+savour.component.InstagramDataItem.prototype.start_load = function() {
+  if (this.data_url != '') {
+
+    var target_url = 'https://api.instagram.com/oembed/?url=' + this.data_url;
+    
+    // start ajax load
+    $.ajax({
+      type: "GET",
+      dataType: "jsonp",
+      async: false,
+      cache: false,
+      url: target_url,
+      complete: this.on_instagram_ajax_complete.bind(this)
+    });
+
+  } else {
+    console.log('savour.component.InstagramDataItem: data-url is null');
+  }
+};
 savour.component.InstagramDataItem.prototype.public_method_02 = function() {};
 savour.component.InstagramDataItem.prototype.public_method_03 = function() {};
 savour.component.InstagramDataItem.prototype.public_method_04 = function() {};
@@ -182,6 +195,9 @@ savour.component.InstagramDataItem.prototype.on_event_handler_03 = function(even
  * @param {object} event
  */
 savour.component.InstagramDataItem.prototype.on_instagram_ajax_complete = function(event) {
+
+  console.log('on_instagram_ajax_complete')
+  console.log(event);
 
   this.data_object = event.responseJSON;
   this.data_object['link_url'] = this.data_url;
@@ -232,6 +248,13 @@ savour.component.InstagramDataItem.prototype.on_instagram_ajax_complete = functi
   if(this.data_location == '') {
     this.data_object['extra_class'] = 'no-location-version';
   }
+
+
+  
+  this.gallery_data_object = $.extend({}, this.data_object, {
+    'gallery_id': ('gallery-' + this.i)
+  });
+  
 
 
   

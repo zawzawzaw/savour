@@ -3,6 +3,7 @@ goog.require('savour.page.Default');
 
 goog.require('savour.component.InstagramSection');
 goog.require('savour.component.TemplateGallery');
+goog.require('savour.component.TemplateGalleryWithInstagram');
 
 goog.require('manic.ui.VideoContainer');
 
@@ -36,6 +37,12 @@ savour.page.Article = function(options, element) {
    * @type {savour.component.TemplateGallery}
    */
   this.banner_template_gallery = null;
+
+
+  /**
+   * @type {savour.component.TemplateGalleryWithInstagram}
+   */
+  this.banner_template_gallery_instagram = null;
   
 };
 goog.inherits(savour.page.Article, savour.page.Default);
@@ -89,6 +96,20 @@ savour.page.Article.prototype.init = function() {
     this.has_banner_image_embed_video = true;
     this.banner_image_video_container = $('#page-template-banner-image.embed-video-version .manic-video-container').data('manic.ui.VideoContainer');
 
+    $('#page-template-banner-image.embed-video-version .play-btn').click(function(event){
+      this.banner_image_video_container.play_video();
+    }.bind(this));
+    $('#page-template-banner-image.embed-video-version .manic-video-container').click(function(event){
+
+      if(this.banner_image_video_container.is_paused == true){
+        this.banner_image_video_container.play_video();
+      } else {
+        this.banner_image_video_container.pause_video();
+      }
+
+
+    }.bind(this));
+
     // console.log('this.banner_image_video_container')
     // console.log(this.banner_image_video_container);
 
@@ -96,7 +117,7 @@ savour.page.Article.prototype.init = function() {
 
       console.log('video play..');
       $('#page-template-banner-image.embed-video-version').addClass('video-play-version');
-      TweenMax.to($('#page-template-banner-image.embed-video-version .play-btn'), 0.5, {autoAlpha:0});
+      TweenMax.to($('#page-template-banner-image.embed-video-version .play-btn'), 0.3, {autoAlpha:0});
 
     }.bind(this));
   }
@@ -106,12 +127,16 @@ savour.page.Article.prototype.init = function() {
 
   // create gallery banner
   if ($('#page-template-banner-section.gallery-version').length != 0) {
-    
     this.banner_template_gallery  = new savour.component.TemplateGallery({}, $('#page-template-banner-section.gallery-version'));
-    
   }
 
 
+  if ($('#page-template-banner-section.gallery-instagram-version').length != 0) {
+    this.banner_template_gallery_instagram = new savour.component.TemplateGalleryWithInstagram({}, $('#page-template-banner-section.gallery-instagram-version'));
+  }
+  
+  
+  
   
 
   this.update_page_layout();    // this is called after the initial create to update the layout
@@ -132,7 +157,7 @@ savour.page.Article.prototype.init = function() {
 
 
 savour.page.Article.prototype.create_instagram_section = function(){
-
+  
   var arr = $('#page-template-instagram-section');
   var item = null;
 
