@@ -1,7 +1,4 @@
 <?php 
-ob_start();
-?>
-<?php 
   global $is_debug;
   global $body_class;
 
@@ -103,9 +100,3 @@ ob_start();
 
   </body>
 </html>
-<?php
-// saving captured output to file
-file_put_contents($output_file, ob_get_contents());
-// end buffering and displaying page
-ob_end_flush();
-?>
