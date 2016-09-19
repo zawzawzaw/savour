@@ -76,24 +76,26 @@ savour.page.ArticleIndex.prototype.init = function() {
     'arrows': true,
     'infinite': false,
     'slidesToShow': 4,
-    'slidesToScroll': 1,
-    'pauseOnHover': false,
-    'autoplay': true,
-    'autoplaySpeed': 4000
+    'slidesToScroll': 1
+    //'pauseOnHover': false,
+    //'autoplay': true,
+    //'autoplaySpeed': 4000
   });
 
   // create large carousel
 
+
+  /*
   $('#page-article-index-large-carousel-item-container').slick({
     'speed': 350,
     'dots': false,
     'arrows': false,
     'infinite': false,
     'slidesToShow': 3,
-    'slidesToScroll': 1,
-    'pauseOnHover': false,
-    'autoplay': true,
-    'autoplaySpeed': 4000 * 2
+    'slidesToScroll': 1
+    //'pauseOnHover': false,
+    //'autoplay': true,
+    //'autoplaySpeed': 4000 * 2
   });
 
 
@@ -107,6 +109,9 @@ savour.page.ArticleIndex.prototype.init = function() {
 
     
   }.bind(this));
+  */
+
+
 
 
   // create auto load on scroll

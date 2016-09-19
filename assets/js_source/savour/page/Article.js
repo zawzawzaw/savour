@@ -91,6 +91,7 @@ savour.page.Article.prototype.init = function() {
 
 
   // create embedded video banner
+  /*
   if ($('#page-template-banner-image.embed-video-version').length != 0) {
 
     this.has_banner_image_embed_video = true;
@@ -121,6 +122,7 @@ savour.page.Article.prototype.init = function() {
 
     }.bind(this));
   }
+  */
 
 
 
@@ -200,26 +202,26 @@ savour.page.Article.prototype.update_page_layout = function() {
   savour.page.Article.superClass_.update_page_layout.call(this);
 
   
+  /*
   if(this.has_banner_image_embed_video == true) {
 
-    /*
-    if($('#page-template-banner-image').hasClass('short-form-version') == false) {
-      if(manic.IS_MOBILE_HEADER == true){
-        this.banner_image_video_container.scale_mode = manic.ui.VideoContainer.BEST_FIT;
-      } else {
-        this.banner_image_video_container.scale_mode = manic.ui.VideoContainer.SHOW_ALL
-      }
-    } else {
-      // do nothing, it has the class 'has-full-width';
-    }
-    */
-
-
+    
+    // if($('#page-template-banner-image').hasClass('short-form-version') == false) {
+    //   if(manic.IS_MOBILE_HEADER == true){
+    //     this.banner_image_video_container.scale_mode = manic.ui.VideoContainer.BEST_FIT;
+    //   } else {
+    //     this.banner_image_video_container.scale_mode = manic.ui.VideoContainer.SHOW_ALL
+    //   }
+    // } else {
+    //   // do nothing, it has the class 'has-full-width';
+    // }
+    
     if(this.banner_image_video_container.image_aspect_ratio != -1){
       this.banner_image_video_container.update_layout();
     }
-
+    
   }
+  */
   
 
   if(this.has_banner_image_iframe == true){

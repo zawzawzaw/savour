@@ -80,6 +80,12 @@
   -o-transition: all @duration @ease @delay;
   transition: all @duration @ease @delay;
 }
+.transition-in-important (@duration: 0.4s, @ease: cubic-bezier(0.645, 0.045, 0.355, 1), @delay: 0s) {
+  -webkit-transition: all @duration @ease @delay !important;
+  -moz-transition: all @duration @ease @delay !important;
+  -o-transition: all @duration @ease @delay !important;
+  transition: all @duration @ease @delay !important;
+}
 .transition-in-single (@parameter, @duration: 0.4s, @ease: cubic-bezier(0.645, 0.045, 0.355, 1), @delay: 0s) {
   -webkit-transition: @parameter @duration @ease @delay;
   -moz-transition: @parameter @duration @ease @delay;

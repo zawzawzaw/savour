@@ -176,7 +176,7 @@ body.is-mobile-header{
   .transition-in(0.3s);
   .opacity(0);
   
-  margin-left: -29px;
+  //margin-left: -29px;
   
   &.sticky-version{
     .opacity(1);
@@ -244,6 +244,8 @@ body.is-mobile-header{
 
         } // a
 
+        
+
         &[data-value=food] a{
           &:focus,&:hover{
             background: @yellow;
@@ -270,6 +272,14 @@ body.is-mobile-header{
             background: #cccccc;
           }
         }
+
+        &[data-value=none] a{
+          &:focus,&:hover{
+            background: transparent;
+            color: @yellow;
+          }
+        }
+
 
       } // li
     } // ul

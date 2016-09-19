@@ -56,6 +56,7 @@
 
                   <div id="page-template-banner-image" class="embed-video-version">
                     <!-- <div class="manic-video-container" data-video="images_cms/template_video/sample_video.mp4" data-scale-mode="show_all"> -->
+                    <!--
                     <div class="manic-video-container" data-video="images_cms/template_video/sample_video.mp4">
                       <video class="video-js vjs-default-skin" preload="auto" data-setup='{"controls": false}'>
                         <source src=""  type='video/mp4' />
@@ -63,6 +64,15 @@
 
                     </div>
                     <div class="play-btn"></div>
+                    -->
+
+                    <video id="vid1" class="savour-video video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="640" height="264"
+                        poster="http://vjs.zencdn.net/v/oceans.png"
+                        data-setup='{"fluid": true}'>
+                      <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+                      <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                    </video>
+
                   </div>
 
                 </div> <!-- #page-template-banner-image-full-width-container -->
@@ -84,7 +94,7 @@
 
 
 
-                
+
           
 
           <!--

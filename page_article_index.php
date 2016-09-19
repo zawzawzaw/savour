@@ -250,6 +250,7 @@
 
 -->
 
+<!--
 <article id="page-article-index-large-carousel-section">
   <div class="container">
     <div class="col-md-1"></div>
@@ -331,13 +332,14 @@
               </div>
             </div>
 
-          </div> <!-- #page-article-index-large-carousel-item-container -->
-        </div> <!-- #page-article-index-large-carousel -->
-      </div> <!-- #page-article-index-large-carousel-container -->
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
 </article>
+-->
 
 
 
