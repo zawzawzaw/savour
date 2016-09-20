@@ -1,0 +1,128 @@
+.button-cta {
+  .montserrat-bold;
+  font-size: 12px; // fix
+  letter-spacing: 0.04em;
+  color: @yellow;
+  background: @black;
+  padding: 7px 20px;    
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  .transition(.5s);
+  // .round(7px);
+  .round(9px);
+
+  &:focus,
+  &:hover {
+    color: @yellow;
+    background-color: @grey-2;
+  }
+
+  &.food-version{
+    color: @yellow;
+    &:focus, &:hover {
+      color: @yellow;
+    }
+  }
+
+  &.people-version{
+    color: @green;
+    &:focus, &:hover {
+      color: @green;
+    }
+  }
+
+  &.travel-version{
+    color: @orange;
+    &:focus, &:hover {
+      color: @orange;
+    }
+  }
+
+  &.events-version{
+    color: @light-blue;
+    &:focus, &:hover {
+      color: @light-blue;
+    }
+  }
+
+}
+
+
+// MOBILE
+@media only screen and (max-width: 767px) {
+  .button-cta {
+    letter-spacing: 0.12em;
+
+
+    &:focus,
+    &:hover {
+      color: @yellow;
+      background-color: @grey-2;
+    }
+  }
+}
+
+
+.button-cta-small {
+  .montserrat-bold; 
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: @white;
+  padding: 5px 19px;
+  background-color: @dark-grey;
+  text-transform: uppercase;
+  text-decoration: none;
+  .round(20px);
+
+  &:focus,
+  &:hover {
+    color: @white;
+    background-color: @grey-2;
+  }
+}
+
+
+
+
+
+
+.large-button-cta-container{
+  text-align: center;
+}
+
+
+.large-button-cta{
+  .montserrat-bold; 
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  padding: 6px 52px;
+  color: @dark-grey !important;
+  
+  text-transform: uppercase;
+  text-decoration: none;
+  .round(9px);
+
+  
+  // default
+  background-color: @yellow !important;
+
+  /*
+  &.food-version{
+    background-color: @yellow !important;
+  }
+
+  &.people-version{
+    background-color: @green !important;
+  }
+
+  &.travel-version{
+    background-color: @orange !important;
+  }
+
+  &.events-version{
+    background-color: @light-blue !important;
+  }
+  */
+
+}

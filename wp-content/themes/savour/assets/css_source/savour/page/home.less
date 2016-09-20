@@ -1,0 +1,1456 @@
+
+#page-home-content{
+  padding-top: 40px;
+  padding-bottom: 100px;
+
+
+  overflow-x: hidden;     // important, must add to other pages as well....
+
+
+}
+
+// TABLET PORTRAIT & SMALL DESKTOP
+@media only screen and (max-width: 991px) {
+  #page-home-content{
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+// MOBILE
+@media only screen and (max-width: 767px) {
+  
+}
+
+
+
+
+//    ____    _    _   _ _   _ _____ ____
+//   | __ )  / \  | \ | | \ | | ____|  _ \
+//   |  _ \ / _ \ |  \| |  \| |  _| | |_) |
+//   | |_) / ___ \| |\  | |\  | |___|  _ <
+//   |____/_/   \_\_| \_|_| \_|_____|_| \_\
+//
+
+#page-home-banner-section{
+
+  .food-carousel {
+    margin-bottom: 0px;
+    .slick-dots {
+      bottom: auto!important;
+        top: 20px!important;
+        right: 10px!important;
+        left: auto!important;
+        width: auto!important;
+        position: absolute;
+        li {
+          display: block;         
+          border: none;
+          margin: 0px;          
+          button {
+            margin-bottom: 10px;            
+            border: none;
+            width: 10px;
+            height: 10px;
+            padding: 0px;
+            margin: 0px;
+            &:before {
+              content: "";
+              background-color: @grey;
+              .round(100px);
+              width: 10px;
+              height: 10px;
+              .opacity(1);
+            }
+          }
+          &.slick-active {
+            button {
+              &:before {
+                background-color: @yellow;
+              }
+            }
+          }
+        }
+    }
+    .item {
+      position: relative;
+
+      .manic-image-container{
+        height: 540px;
+      }
+
+      .item-caption {
+        position: absolute;
+        top: 0px;         
+        z-index: 1;       
+          height: 495px;          
+        display: table;
+        padding-left: 51px;
+        .text-container {         
+          display: table-cell;
+          vertical-align: middle;
+          h3 {
+            text-transform: uppercase;
+            color: @yellow;
+            padding-bottom: 5px;
+          }
+          h1 {
+            color: @white;
+            margin: 0px;
+            padding-bottom: 10px;
+            width: 60%;
+          }
+          p {
+            .open-sans-regular;
+            font-size: 24px;
+            line-height: 30px;
+            letter-spacing: -0.005em;
+            color: @white;
+            padding-bottom: 22px;
+            width: 50%;
+          }
+        }
+        
+        .text-container-2 {   
+          vertical-align: top;  
+          padding-top: 11px;    
+          h1 {
+            color: @dark-grey;
+            width: 80%; 
+            // padding-bottom: 190px;
+            padding-bottom: 240px;
+
+          }
+          .date-cta-container {
+            text-align: center;
+            width: 69%;
+            h3 {
+              color: @grey-2;
+              padding-bottom: 20px;
+            } 
+          }         
+        }
+      }
+    }
+  }
+
+
+  .food-article {
+    display: block;
+    padding-bottom: 30px;
+
+    cursor: pointer;
+
+    // h5 {
+    //   text-transform: uppercase;
+    //   position: relative;   
+    //   padding-bottom: 12px;    
+    //   &:after {
+    //     content: "";        
+    //     width: 72%;
+    //     height: 14px;
+    //     background-color: @yellow;
+    //     position: absolute;
+    //     top: 0px;
+    //     right: 0px;
+    //     .round(25px);
+    //   }
+    // }
+
+    hr{
+      display: block;
+      border: none;
+      width: 100%;
+      height: 14px;
+      background-color: @yellow;  // yellow by default
+      .round(25px);
+
+      margin-bottom: 14px;
+    }
+
+    // img { .transition(.5s); }
+    .manic-image-container{
+      height: 160px;
+    }
+    h4 {
+      padding-top: 7px; // 
+      font-size: 17px; // fix       
+      color: @dark-grey;
+      .transition-in(0.3s);
+    }
+
+
+    &:hover {
+      .manic-image-container{
+        .opacity(0.7);
+      }
+      h4 {
+        color: @yellow;
+      }
+    }
+
+
+    &.food-version{
+      hr{
+        background-color: @yellow;
+      }
+      &:hover{
+        h4{
+          color: @yellow;
+        }
+      }
+    }
+
+    &.people-version{
+      hr{
+        background-color: @green;
+      }
+      &:hover{
+        h4{
+          color: @green;
+        }
+      }
+    }
+
+    &.travel-version{
+      hr{
+        background-color: @orange;
+      }
+      &:hover{
+        h4{
+          color: @orange;
+        }
+      }
+    }
+
+    &.events-version{
+      hr{
+        background-color: @light-blue;
+      }
+      &:hover{
+        h4{
+          color: @light-blue;
+        }
+      }
+    }
+
+  } // .food-article
+
+
+  .food-article-container{
+    .article-thumbnail{
+      margin-bottom: 30px;
+    }
+  }
+
+
+  .love-food {
+    
+    padding-top: 50px;
+    .text-container {
+      h2 {
+        font-size: 44px;
+        line-height: 44px;
+        padding-bottom: 26px;
+      }
+      p {
+        .open-sans-regular;
+        font-size: 16px;
+        line-height: 26px;
+        padding-bottom: 25px;
+        &:last-child {
+          padding-bottom: 0px;
+        }
+      }     
+    }
+    .social-media-container {
+      .circles-container {
+        padding-bottom: 30px;
+        padding-top: 5px;
+        .circles {
+          width: 40px;
+          height: 40px; 
+          display: inline-block;
+          margin-right: 28px;         
+          .round(100%);
+          &:last-child {
+            margin-right: 0px;
+          }
+          &:nth-of-type(1) {
+            background-color: @yellow;
+          }
+          &:nth-of-type(2) {
+            background-color: @green;
+          }
+          &:nth-of-type(3) {
+            background-color: @orange;
+          }
+          &:nth-of-type(4) {
+            background-color: @light-blue;
+          }
+        }
+        
+      }
+      span {
+        .montserrat-regular;
+        font-size: 16px;
+        color: @dark-grey;
+        text-transform: uppercase;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        width: 100%;
+        padding-bottom: 10px;
+      }
+      ul {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        width: 100%;
+        li {
+          display: inline-block;
+          padding-right: 20px;
+          a {
+            font-size: 28px;
+            color: @dark-grey;
+
+            &:focus,
+            &:hover{
+              // color: @black;
+              color: #707070;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+  // MOBILE ONLY
+
+  .mobile-circles-container {
+    width: 100px;
+    text-align: right;
+    font-size: 0;
+
+    position: absolute;
+    top: 3px;
+    right: 15px;
+
+    .mobile-circles {
+      width: 17px;
+      height: 17px; 
+      display: inline-block;
+      // margin-right: 4px;
+
+      margin-right: 6px;
+      .round(100%);
+      &:last-child {
+        margin-right: 0px;
+      }
+      &:nth-of-type(1) {
+        background-color: @yellow;
+      }
+      &:nth-of-type(2) {
+        background-color: @green;
+      }
+      &:nth-of-type(3) {
+        background-color: @orange;
+      }
+      &:nth-of-type(4) {
+        background-color: @light-blue;
+      }
+    }
+    
+  }
+
+} // #page-home-banner-section
+
+
+
+
+
+
+
+
+// TABLET LANDSCAPE & LAPTOPS
+@media only screen and (max-width: 1199px) {
+  #page-home-banner-section{
+    .love-food .social-media-container .circles-container{
+
+      .circles {
+        width: 30px;
+        height: 30px; 
+        margin-right: 21px;
+      }
+    }
+
+  }
+}
+
+
+
+// TABLET PORTRAIT & SMALL DESKTOP
+@media only screen and (max-width: 991px) {
+  #page-home-banner-section{
+
+
+    .food-carousel .slick-dots {
+        vbottom: auto!important;
+
+        top: 11px!important;
+        right: 12px!important;
+
+        left: auto!important;
+        width: auto!important;
+        position: absolute;
+        li {      
+          width: 13px;
+          height: 13px;
+
+          button {
+            margin-bottom: 6px;
+            width: 7px;
+            height: 7px;
+            &:before {
+              width: 7px;
+              height: 7px;
+            }
+          }
+
+          &.slick-active {
+            button {
+              &:before {
+                background-color: @yellow;
+              }
+            }
+          }
+        }
+    }
+
+
+    .container.food-container{
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      .row{
+        
+        .food-carousel{
+          // margin-left: -15px;
+          // margin-right: -15px;
+        }
+
+      }
+    }
+
+    .love-food .social-media-container .circles-container{
+      .circles {
+        width: 30px;
+        height: 30px; 
+        margin-right: 21px;
+      }
+    }
+
+
+    .food-article {
+      padding-right: 15px;
+      padding-left: 15px;
+      
+    } // .food-article
+
+    .love-food {
+      padding-right: 15px;
+      padding-left: 15px;
+      padding-top: 27px;
+
+      .text-container{
+        padding-bottom: 30px;
+
+        h2{
+          padding-bottom: 20px;
+        }
+      }
+
+    } // .love-food
+
+  }
+}
+
+
+
+
+
+body.is-tablet.is-tablet-landscape{
+
+
+
+  #page-home-banner-section{
+
+    .food-carousel{
+      .item{
+        .manic-image-container{
+          height: 400px;
+        }
+        .item-caption{
+          height: 400px;
+          padding-left: 51px - 13px;
+
+          .text-container{
+
+            // -54px;
+
+            h3{
+              font-size: 17px;
+              line-height: 24px;
+              padding-bottom: 3px;
+            }
+            h1{
+              font-size: 54px;
+              line-height: 60px;
+
+              padding-bottom: 7px;
+            }
+            p{
+              font-size: 19px;
+              line-height: 22px;
+
+              padding-bottom: 17px;
+            }
+          }
+
+          .text-container-2{
+            padding-top: 9px;
+
+            h1{
+              font-size: 54px;
+              line-height: 60px;
+
+              padding-bottom: 240px - 67px;
+            }
+            h3{
+              font-size: 17px;
+              line-height: 24px;
+              padding-bottom: 13px;
+            }
+
+          }
+
+
+        }
+      }
+    }
+
+    
+
+
+    .food-article{
+      padding-bottom: 20px;
+    }
+    .food-article-container{
+      .article-thumbnail{
+        margin-bottom: 20px;
+        .article-thumbnail-image .manic-image-container{
+          height: 120px;
+        }
+      }
+    }
+
+    .food-article .manic-image-container{
+      // height: 135px;
+      height: 120px;
+    }
+    .food-article h4{
+      font-size: 15px;
+      line-height: 20px;
+    }
+    .food-article hr{
+      height: 12px;
+    }
+
+    
+  }
+}
+
+
+
+
+// MOBILE
+@media only screen and (max-width: 767px) {
+  #page-home-banner-section{
+
+    .food-carousel{
+      overflow: hidden;
+    }
+    .food-carousel .item{
+      .manic-image-container{
+        height: 200px;
+      }
+      .item-caption{
+        display: block;
+        width: 100%;
+        padding-left: 17px;
+
+        .text-container{
+          display: block;
+          padding-top: 35px;
+
+          h3{
+            padding-bottom: 0;
+            margin-bottom: -5px;
+          }
+          h1{
+            width: 90%;
+            height: 72px;                    // fixed height to keep layout;
+
+            padding-bottom: 0px;
+            margin-bottom: 19px;
+          }
+          p{
+            display: none;
+          }
+        }
+        .text-container-2{
+          display: block;
+          padding-top: 13px;
+
+          h1{
+            width: 100%;
+            height: 72px;                   // fixed height to keep layout;
+
+            padding-bottom: 0px;
+            margin-bottom: 54px;
+          }
+
+          .date-cta-container{
+            text-align: right;
+            width: 100%;
+            position: relative;
+
+            padding-right: 17px;
+
+            h3{
+              font-size: 13px;
+              position: absolute;
+              top: 16px;
+              left: 20px;
+            }
+          }
+
+        }
+      }
+    } // .food-carousel .item
+
+
+    .food-article {
+      
+
+    } // .food-article
+
+    .love-food {
+
+      .text-container {
+
+        h2{
+          font-size: 18px;
+          line-height: 22px;
+          letter-spacing: 0.03em;
+        }
+        p{
+          font-size: 12px;
+          line-height: 20px;
+        }
+
+
+      }
+    } // .love-food
+
+    
+  }
+}
+
+
+
+
+//   __     _____ ____  _____ ___
+//   \ \   / /_ _|  _ \| ____/ _ \
+//    \ \ / / | || | | |  _|| | | |
+//     \ V /  | || |_| | |__| |_| |
+//      \_/  |___|____/|_____\___/
+//
+
+#page-home-video-banner-section{
+
+  video { 
+      // position: fixed;
+      // top: 50%;
+      // left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      // transform: translateX(-50%) translateY(-50%);
+      // background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;      // not needed...
+      background-size: cover;
+      background-position: center center;
+      transition: 1s opacity;
+  }
+
+  .divider-bg-video {
+    // background: url(../images/home/divider-bg.jpg) no-repeat;
+    // background-size: cover;
+    // background-attachment: fixed;
+    // background-position: center center;
+    height: 480px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    .table {
+      position: absolute;
+      top: 0px;
+      height: 100%;
+    }
+    .text-container {
+      text-align: center;
+
+      h3 {
+        color: @green;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+      }
+      h1 {
+        font-size: 100px;
+        line-height: 110px;
+        color: @white;
+        margin: 0px;
+        width: 80%;
+        margin: 0 auto;
+          padding-bottom: 13px;
+      }
+      p {
+        color: @white;
+        .open-sans-semi-bold;
+        font-size: 24px;
+        line-height: 24px;        
+          width: 52%;
+        margin: 0 auto;
+        padding-bottom: 30px
+      }
+      a {
+        color: @green;
+      }
+    }
+  }
+
+} // #page-home-video-banner-section
+
+body.is-tablet.is-tablet-landscape{
+  #page-home-video-banner-section{
+
+    .divider-bg-video .text-container h1{
+      font-size: 72px;
+      line-height: 82px;
+    }
+
+  }
+}
+
+
+//       _    ____ _____ ___ ____ _     _____   _     ___ ____ _____
+//      / \  |  _ \_   _|_ _/ ___| |   | ____| | |   |_ _/ ___|_   _|
+//     / _ \ | |_) || |  | | |   | |   |  _|   | |    | |\___ \ | |
+//    / ___ \|  _ < | |  | | |___| |___| |___  | |___ | | ___) || |
+//   /_/   \_\_| \_\|_| |___\____|_____|_____| |_____|___|____/ |_|
+//
+
+#page-home-article-list-section{
+
+  .box-container {
+    padding-bottom: 70px;
+    .box {
+      display: inline-block;
+      // width: 32%;
+      // margin-right: 20px;
+      box-shadow: 1px 1px 16px #EAEAEA;
+      &:last-child {
+        margin-right: 0px;
+      }
+      a {       
+        display: block;       
+        text-decoration: none;
+        .transition(.5s);
+        &:hover {
+          p {
+            color: @green;    
+          }
+          img {
+            .opacity(0.8);
+          }         
+        }
+        p {
+          padding: 20px;
+          width: 80%; 
+          color: @dark-grey;
+        }       
+      }
+    
+    }
+  }
+
+  .divider-line {
+    padding-bottom: 50px;
+    border-top: 1px solid #ccc;
+  }
+  .divider-line-02 {
+    padding-bottom: 70px;
+    border-top: 1px solid #ccc;
+  }
+
+  .ads-container {
+    // padding-bottom: 40px;
+    padding-bottom: 49px;
+    a {
+      img {
+        .transition(.3s);
+      }
+      // &:hover {
+      //  img {
+      //    box-shadow: 1px 1px 16px #bfbfbf;
+      //  }
+      // }
+    } 
+  }
+
+} // #page-home-article-list-section
+
+//     ____ ___  _   _ _____ _____ _   _ _____   ____    _    _   _ _   _ _____ ____
+//    / ___/ _ \| \ | |_   _| ____| \ | |_   _| | __ )  / \  | \ | | \ | | ____|  _ \
+//   | |  | | | |  \| | | | |  _| |  \| | | |   |  _ \ / _ \ |  \| |  \| |  _| | |_) |
+//   | |__| |_| | |\  | | | | |___| |\  | | |   | |_) / ___ \| |\  | |\  | |___|  _ <
+//    \____\___/|_| \_| |_| |_____|_| \_| |_|   |____/_/   \_\_| \_|_| \_|_____|_| \_\
+//
+
+#page-home-content-banner-section{
+
+  .divider-bg-2 {
+    // placed in inline to be able to replace in php
+    /*
+    background: url(../images/home/divider-bg-2.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    */
+    height: 630px;
+    // margin-bottom: 40px;
+    display: block;
+    .container {
+      height: 100%;
+      .row {
+        height: 100%;
+      }
+      .col-md-5 {
+        height: 100%;
+      }
+    }
+    .table {
+      height: 100%;
+    }
+        
+    .text-box {     
+      // height: 513px;
+      height: 473px; //fix
+      padding: 30px 40px;
+      background: @white;
+      vertical-align: middle;
+      h3 {
+        text-transform: uppercase;
+        color: @orange;
+        padding-bottom: 13px;
+      }
+      h2 {
+        // .playfair-bold;
+        .raleway-bold;
+        font-size: 48px;
+        line-height: 48px;
+        padding-bottom: 22px;
+        a{
+          // .playfair-bold;
+          .raleway-bold;
+          font-size: 48px;
+          color: @dark-grey;
+
+          &:focus,
+          &:hover{
+            color: @orange;
+          }
+        }
+      }
+      p {
+        .open-sans-regular;
+          font-size: 22px;
+        line-height: 22px;
+        letter-spacing: -0.005em;
+        color: @grey-2;
+        padding-bottom: 40px;
+      }
+      h4 {
+        color: @dark-grey;
+        border-top: 1px solid #ccc;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        a{
+          color: @dark-grey;
+
+          &:focus,
+          &:hover {
+            color: @orange;
+          }
+        }
+      }
+    }
+  }
+
+} // #page-home-content-banner-section
+
+
+body.is-tablet.is-tablet-landscape{
+
+  #page-home-content-banner-section{
+
+    .divider-bg-2 .text-box{
+      height: 500px;
+    }
+
+    .divider-bg-2 .text-box h2{
+
+      font-size: 38px;
+      line-height: 40px;
+
+      a{
+        font-size: 38px;
+        line-height: 40px;
+      }
+    }
+    
+  }
+  
+}
+
+
+
+//   __     _____ ____  _____ ___    _     ___ ____ _____
+//   \ \   / /_ _|  _ \| ____/ _ \  | |   |_ _/ ___|_   _|
+//    \ \ / / | || | | |  _|| | | | | |    | |\___ \ | |
+//     \ V /  | || |_| | |__| |_| | | |___ | | ___) || |
+//      \_/  |___|____/|_____\___/  |_____|___|____/ |_|
+//
+
+#page-home-video-list-section{
+
+  .more-cool-shit-container {
+    padding-top: 70px;
+
+
+    h2 {
+      .montserrat-regular;
+      font-size: 36px;
+      line-height: 36px;
+      letter-spacing: -0.005em;
+      text-transform: uppercase;
+      padding-bottom: 25px;
+    }
+  }
+
+  .article-thumbnail-box{
+    .article-thumbnail-box-image{
+      .manic-image-container{
+        height: 180px;
+      }
+    }
+  }
+
+  /*
+  .video-item{
+    display: block;
+    box-shadow: 1px 1px 16px #EAEAEA;
+    position: relative;
+    text-decoration: none;
+
+    &:focus,
+    &:hover{
+      .video-item-image{
+        .play-icon{
+          .opacity(1);
+        }
+      }
+    }
+
+
+
+    // default = food
+    .tag{
+      background-color: @yellow;
+    }
+    &:focus,
+    &:hover{
+      .video-item-text p{
+        color: @yellow;
+      }
+    }
+
+
+    &.food-version{
+      .tag{
+        background-color: @yellow;
+      }
+      &:focus,
+      &:hover{
+        .video-item-text p{
+          color: @yellow;
+        }
+      }
+    }
+
+    &.people-version{
+      .tag{
+        background-color: @green;
+      }
+      &:focus,
+      &:hover{
+        .video-item-text p{
+          color: @green;
+        }
+      }
+    }
+
+    &.travel-version{
+      .tag{
+        background-color: @orange;
+      }
+      &:focus,
+      &:hover{
+        .video-item-text p{
+          color: @orange;
+        }
+      }
+    }
+
+    &.events-version{
+      .tag{
+        background-color: @light-blue;
+      }
+      &:focus,
+      &:hover{
+        .video-item-text p{
+          color: @light-blue;
+        }
+      }
+    }
+
+  }
+
+  .video-item-image{
+    position: relative;
+
+    .manic-image-container{
+      position: relative;
+      height: 180px;
+    }
+    .play-icon {
+      text-align: center;
+      background: url(../images/icons/play-icon.png) no-repeat;
+      height: 66px;
+      width: 66px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -33px;
+      margin-left: -33px;
+
+      background-size: contain;
+      .opacity(0.8);
+      .transition-in(0.3s);
+
+
+    }
+    
+  }
+  .video-item-text{
+    padding: 15px;
+
+    p{
+      color: @dark-grey;
+      .transition-in(0.3s);
+    }
+  }
+
+
+  .tag {
+    .rotation(-90deg);
+    .montserrat-bold;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: @grey-2;
+    text-transform: uppercase;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 69px;
+    height: 30px;
+    text-align: center;
+    padding-top: 7px;
+    //left: -5px;
+    left: -20px;
+    top: 20px;
+    border-bottom-left-radius: 15px;
+    &.orange {
+      background-color: @orange;
+    }
+    &.yellow {
+      background-color: @yellow;
+    }
+    &.green {
+      background-color: @green;
+    }
+    &.light-blue {
+      background-color: @light-blue;
+    }
+  }
+  */
+
+} // #page-home-video-list-section
+
+
+
+
+// TABLET PORTRAIT & SMALL DESKTOP
+@media only screen and (max-width: 991px) {
+  #page-home-video-list-section{
+
+    .more-cool-shit-container{
+      padding-top: 0px;
+      h2{
+        font-size: 18px;
+        line-height: 22px;
+        padding-bottom: 15px;
+      }
+    }
+
+    .article-thumbnail-box{
+      margin-bottom: 20px;
+      
+      .article-thumbnail-box-image{
+        .manic-image-container{
+          height: 100px;
+        }
+      }
+    }
+
+    /*
+    .video-item{
+      margin-bottom: 20px;
+    }
+    .video-item-image{
+      //margin-left: 2px;
+      margin-right: -10px;
+      .manic-image-container{
+        height: 100px;
+      }
+      .play-icon{
+        .play-icon-mobile;
+        margin-top: -20px;
+        margin-left: -20px;
+      }
+    }
+    .video-item-text{
+      margin-left: -10px;
+
+      padding-left: 0px;
+      padding-right: 15px;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      display: table;
+      height: 100px;
+
+      p{
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+    }
+    .tag {
+      width: 60px;
+      height: 20px;
+      font-size: 10px;
+      padding-top: 2px;
+    }
+    */
+
+
+
+    .large-button-cta-container{
+      padding-top: 17px;
+      padding-bottom: 37px;
+    }
+
+
+  }
+}
+
+
+
+
+    
+
+
+
+//    __  __  ___  ____ ___ _     _____      _    ____ _____ ___ ____ _     _____   _     ___ ____ _____
+//   |  \/  |/ _ \| __ )_ _| |   | ____|    / \  |  _ \_   _|_ _/ ___| |   | ____| | |   |_ _/ ___|_   _|
+//   | |\/| | | | |  _ \| || |   |  _|     / _ \ | |_) || |  | | |   | |   |  _|   | |    | |\___ \ | |
+//   | |  | | |_| | |_) | || |___| |___   / ___ \|  _ < | |  | | |___| |___| |___  | |___ | | ___) || |
+//   |_|  |_|\___/|____/___|_____|_____| /_/   \_\_| \_\|_| |___\____|_____|_____| |_____|___|____/ |_|
+//
+
+
+#page-home-article-list-mobile{
+
+}
+
+
+#page-home-food-article-list-mobile{
+  
+  .large-button-cta-container{
+    padding-top: 17px;
+    padding-bottom: 37px;
+  }
+
+}
+
+#page-home-people-article-list-mobile{
+  .large-button-cta-container{
+    padding-top: 17px;
+    padding-bottom: 37px;
+  }
+}
+
+#page-home-travel-article-list-mobile{
+  .large-button-cta-container{
+    padding-top: 17px;
+    padding-bottom: 37px;
+  }
+}
+
+#page-home-events-article-list-mobile{
+  .large-button-cta-container{
+    padding-top: 17px;
+    padding-bottom: 37px - 5px;
+  }
+}
+
+
+// SM ONLY
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+  #page-home-food-article-list-mobile,
+  #page-home-people-article-list-mobile,
+  #page-home-travel-article-list-mobile,
+  #page-home-events-article-list-mobile{
+
+    .large-button-cta-container{
+      text-align: left;
+      padding-bottom: 70px;
+      
+      .large-button-cta{
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+    }
+  }
+
+  #page-home-video-list-section{
+    .large-button-cta-container{
+      text-align: left;
+      padding-bottom: 70px;
+      padding-left: 10px;
+      padding-right: 10px;
+      
+      .large-button-cta{
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+//    __  __  ___  ____ ___ _     _____    ____ ___  _   _ _____ _____ _   _ _____   ____    _    _   _ _   _ _____ ____
+//   |  \/  |/ _ \| __ )_ _| |   | ____|  / ___/ _ \| \ | |_   _| ____| \ | |_   _| | __ )  / \  | \ | | \ | | ____|  _ \
+//   | |\/| | | | |  _ \| || |   |  _|   | |  | | | |  \| | | | |  _| |  \| | | |   |  _ \ / _ \ |  \| |  \| |  _| | |_) |
+//   | |  | | |_| | |_) | || |___| |___  | |__| |_| | |\  | | | | |___| |\  | | |   | |_) / ___ \| |\  | |\  | |___|  _ <
+//   |_|  |_|\___/|____/___|_____|_____|  \____\___/|_| \_| |_| |_____|_| \_| |_|   |____/_/   \_\_| \_|_| \_|_____|_| \_\
+//
+
+
+#ads-container-mobile{
+
+  hr{
+    margin-bottom: 30px;
+  }
+
+  margin-bottom: 30px;
+
+
+  .slick-dots{
+    // bottom: 2px;
+    bottom: -23px;
+
+    li{
+      width: 14px;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
+}
+
+
+
+#page-home-content-banner-mobile-container{
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+#page-home-content-banner-mobile{
+  position: relative;
+  margin-bottom: 30px;
+
+  margin-left: -15px;
+  margin-right: -15px;
+
+  ul{
+    li{
+      position: relative;
+      height: 400px;
+    }
+  }
+  .slick-prev,
+  .slick-next{
+    z-index: 20;
+    position: absolute;
+    &:before{
+      .fa;
+      font-size: 22px;
+    }
+  }
+
+  .slick-prev{
+    left: 15px;
+    &:before{
+      // content: "\f053";
+      content: "\f104";
+    }
+  }
+  .slick-next{
+    right: 15px;
+    &:before{
+      // content: "\f054";
+      content: "\f105";
+    }
+  }
+
+  .manic-image-container{
+    width: 100%;
+    height: 400px;
+  }
+
+  .text-box{
+    position: absolute;
+    width: 100%;
+    height: 400px;
+
+    top: 0;
+    left: 0;
+
+    padding-top: 129px;
+    text-align: center;
+
+    h3{
+      margin-bottom: 7px;
+      color: @yellow;
+
+      text-transform: uppercase;
+
+
+    }
+    h2{
+      font-size: 26px;
+      line-height: 31px;
+      color: @white;
+
+      margin-bottom: 17px;
+    }
+    .button-cta{
+
+    }
+
+    &.food-version{
+      h3{
+        color: @yellow;
+      }
+    }
+
+    &.people-version{
+      h3{
+        color: @green;
+      }
+    }
+
+    &.travel-version{
+      h3{
+        color: @orange;
+      }
+    }
+
+    &.events-version{
+      h3{
+        color: @light-blue;
+      }
+    }
+
+
+  }
+}
+
+
+// MOBILE
+@media only screen and (max-width: 767px) {
+  #page-home-content-banner-mobile{
+    ul{
+      li{
+        height: 200px;
+      }
+    }
+    .manic-image-container{
+      height: 200px;
+    }
+    .text-box{
+      height: 200px;
+      padding-top: 37px;
+    }
+  }
+}

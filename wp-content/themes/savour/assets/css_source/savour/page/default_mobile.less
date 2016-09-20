@@ -1,0 +1,220 @@
+.mobile-article{
+  margin-bottom: 20px;
+  display: block;
+
+  .manic-image-container{
+    // margin-left: 2px;
+    margin-right: -10px;
+    height: 100px;
+  }
+
+  .mobile-article-text{
+    margin-left: -10px;
+  }
+
+  h3{
+    font-size: 11px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: @yellow;                   // default;
+
+    margin-top: -3px;
+    margin-bottom: 3px;
+  }
+  p{
+    font-size: 14px;
+    line-height: 18px;
+    color: @dark-grey;
+  }
+
+
+  &.food-version{
+    h3{
+      color: @yellow;
+    }
+  }
+
+  &.people-version{
+    h3{
+      color: @green;
+    }
+  }
+
+  &.travel-version{
+    h3{
+      color: @orange;
+    }
+  }
+
+  &.events-version{
+    h3{
+      color: @light-blue;
+    }
+  }
+  
+  
+  
+
+}
+
+
+
+
+////////////////
+
+.manic-expand-container{
+
+  // border-bottom: 1px solid darken(#575756, 5%);
+  border-bottom: 1px solid #cccccc;
+  .transition-in(0.3s);
+
+  &.last-version{
+    border-bottom: none;
+  }
+
+  .manic-expand-container-title{
+    position: relative;
+
+    background: #575756;
+
+    p{
+      .montserrat-regular;
+      font-size: 15px;
+      line-height: 40px;
+      text-transform: uppercase;
+      color: @yellow;                 // default
+    }
+  }
+  .manic-expand-container-btn{
+    position: absolute;
+    top: 0;
+    right: 13px;
+
+    width: 40px;
+    height: 40px;
+
+    color: @yellow;                   // default;
+    line-height: 40px;
+    text-align: center;
+
+    pointer-events: none;
+
+
+    &:before,
+    &:after{
+      .fa;
+      font-size: 10px;
+      line-height: 40px;
+
+      position: absolute;
+      top: 0px;
+      left: 0px;
+
+      width: 40px;
+
+      .transition-in(0.3s);
+    }
+
+    // minus
+    &:before{
+      content: "\f068";
+      .opacity(0);
+    }
+
+    // plus
+    &:after{
+      content: "\f067";
+      .opacity(1);
+    }
+
+
+  }
+
+
+  .manic-expand-container-content{
+    display: none;
+
+    &:before{
+      display: block;
+      content: "";
+      height: 15px;
+    }
+
+    &:after{
+      display: block;
+      content: "";
+      height: 30px;
+    }
+  }
+
+
+
+
+
+  &.expand-version{
+
+    .manic-expand-container-btn{
+      // minus
+      &:before{
+        .opacity(1);
+      }
+
+      // plus
+      &:after{
+        .opacity(0);
+      }
+    }
+
+    border-bottom: 1px solid transparent;
+  }
+
+
+  //////////////////////
+
+  &.food-version{
+    .manic-expand-container-title p{
+      color: @yellow;
+    }
+  }
+
+  &.people-version{
+    .manic-expand-container-title p{
+      color: @green;
+    }
+  }
+
+  &.travel-version{
+    .manic-expand-container-title p{
+      color: @orange;
+    }
+  }
+
+  &.events-version{
+    .manic-expand-container-title p{
+      color: @light-blue;
+    }
+  }
+
+} // .manic-expand-container
+
+
+// TABLET PORTRAIT & SMALL DESKTOP
+@media only screen and (max-width: 991px) {
+
+  .manic-expand-container{
+    margin-left: -15px;
+    margin-right: -15px;
+    .manic-expand-container-title{
+      p{
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+    .manic-expand-container-content{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+
+  }
+}
