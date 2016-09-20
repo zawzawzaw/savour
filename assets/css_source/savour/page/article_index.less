@@ -46,6 +46,28 @@
 
 
 
+// TABLET PORTRAIT & SMALL DESKTOP
+@media only screen and (max-width: 991px) {
+
+  #page-article-index-title-section{
+    padding-top: 8px;
+    padding-bottom: 9px;
+    margin-bottom: 0;
+
+    #page-article-index-title{
+      h1{
+        font-size: 30px;
+        line-height: 32px;
+      }
+    }
+
+  }
+}
+
+
+
+
+
 
 
 //    ____    _    _   _ _   _ _____ ____
@@ -68,6 +90,20 @@
   height: 420px;
   background: @dark-grey;
 }
+
+
+// item
+
+.page-article-index-banner-image-item{
+  width: 100%;
+  height: 420px;
+  .display-inline-block;
+
+  .manic-image-container{
+    height: 420px;
+  }
+}
+
 
 #page-article-index-banner-image-item-container{
   font-size: 0px;
@@ -115,18 +151,6 @@
 }
 
 
-
-// item
-
-.page-article-index-banner-image-item{
-  width: 100%;
-  height: 420px;
-  .display-inline-block;
-
-  .manic-image-container{
-    height: 420px;
-  }
-}
 
 
 
@@ -230,7 +254,178 @@
 
 
 
+//    ____    _    _   _ _   _ _____ ____    __  __  ___  ____ ___ _     _____
+//   | __ )  / \  | \ | | \ | | ____|  _ \  |  \/  |/ _ \| __ )_ _| |   | ____|
+//   |  _ \ / _ \ |  \| |  \| |  _| | |_) | | |\/| | | | |  _ \| || |   |  _|
+//   | |_) / ___ \| |\  | |\  | |___|  _ <  | |  | | |_| | |_) | || |___| |___
+//   |____/_/   \_\_| \_|_| \_|_____|_| \_\ |_|  |_|\___/|____/___|_____|_____|
+//
 
+
+#page-article-index-banner-image-mobile{
+  height: 200px;
+  width: auto;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.page-article-index-banner-image-item-mobile{
+  .display-inline-block;
+  width: 100%;
+  height: 200px;
+
+  .manic-image-container{
+    height: 200px;
+  }
+}
+
+
+#page-article-index-banner-image-item-mobile-container{
+  font-size: 0px;
+
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+
+  .slick-dots {
+    bottom: auto!important;
+    top: 20px!important;
+    right: 10px!important;
+    left: auto!important;
+    width: auto!important;
+    position: absolute;
+    li {
+      display: block;         
+      border: none;
+      margin: 0px;          
+      button {
+        margin-bottom: 10px;            
+        border: none;
+        width: 10px;
+        height: 10px;
+        padding: 0px;
+        margin: 0px;
+        &:before {
+          content: "";
+          background-color: @grey;
+          .round(100px);
+          width: 10px;
+          height: 10px;
+          .opacity(1);
+        }
+      }
+      &.slick-active {
+        button {
+          &:before {
+            background-color: @yellow;
+          }
+        }
+      }
+    }
+  }
+
+} // #page-article-index-banner-image-item-mobile-container
+
+
+
+// larger dimentions for tablets
+
+body.is-tablet{
+  #page-article-index-banner-image-mobile{
+    height: 480px;
+  }
+  .page-article-index-banner-image-item-mobile{
+    height: 480px;
+
+    .manic-image-container{
+      height: 480px;
+    }
+  }
+  #page-article-index-banner-image-item-mobile-container{
+    height: 480px;
+  }
+
+}
+
+
+
+#page-article-index-banner-copy-mobile{
+  padding-top: 10px;
+
+  h2{
+    font-size: 18px;
+    line-height: 24px;
+
+    margin-bottom: 3px;
+  }
+  p{
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  hr{
+    margin-top: 23px;
+    margin-left: -15px;
+    margin-right: -15px;
+    border-top: 5px solid @yellow;
+  }
+
+}
+
+
+
+
+#page-article-index-banner-links-mobile{
+
+
+
+  h2{
+    font-size: 18px;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    padding-top: 17px;
+    padding-bottom: 16px;
+  }
+
+  ul{
+    
+    li{
+      position: relative;
+
+      padding-top: 12px;
+      padding-bottom: 11px;
+
+      &:before{
+        content: "";
+        display: block;
+
+        position: absolute;
+        top: 0;
+        left: -15px;
+        right: -15px;
+
+        border-top: 1px solid @border-grey;
+      }
+
+      
+      a{
+        .montserrat-regular;
+        font-size: 14px;
+        line-height: 18px;
+
+        color: @dark-grey;
+
+        &:focus,
+        &:hover{
+          color: @dark-grey;      // no hover color
+        }
+      } // a
+
+    }
+  }
+}
 
 
 
@@ -650,12 +845,62 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
+#page-article-index-ad-section-mobile{
+  .page-article-index-ad-mobile-hr{
+    margin-left: -15px;
+    margin-right: -15px;
+    border-top: 5px solid @yellow;
+  }
+}
+
+
+
+
+
+#page-article-index-ad-item-mobile-container{
+
+  font-size: 0;
+  overflow: hidden;
+
+  width: 100%;
+  //height: 84px;
+
+  &.slick-initialized{
+    overflow: visible;
+  }
+
+  .page-article-index-ad-item-mobile{
+
+    .display-inline-block;
+    width: 100%;
+    //height: 84px;
+
+    .manic-image-container{
+      height: 84px;
+    }
+  }
+}
+
+
+
 //    ____  _____ _        _  _____ _____ ____       _    ____ _____ ___ ____ _     _____ ____
 //   |  _ \| ____| |      / \|_   _| ____|  _ \     / \  |  _ \_   _|_ _/ ___| |   | ____/ ___|
 //   | |_) |  _| | |     / _ \ | | |  _| | | | |   / _ \ | |_) || |  | | |   | |   |  _| \___ \
 //   |  _ <| |___| |___ / ___ \| | | |___| |_| |  / ___ \|  _ < | |  | | |___| |___| |___ ___) |
 //   |_| \_\_____|_____/_/   \_\_| |_____|____/  /_/   \_\_| \_\|_| |___\____|_____|_____|____/
 //
+
+
 
 #page-article-index-related-article-section{
   padding-bottom: 60px;
@@ -675,9 +920,45 @@
 }
 
 
+
+
 #page-article-index-related-article-thumbnail-container{
+  position: relative;
+
+  //overflow-y: visible;
+
+  
+  
+
 
   .article-thumbnail{
     margin-bottom: 44px;
   }
+}
+
+
+
+.page-article-index-related-article-next-link{
+  display: none;
+}
+
+
+
+
+
+#page-article-index-related-article-preloader-container{
+  position: relative;
+}
+#page-article-index-related-article-preloader{
+
+  position: absolute;
+  z-index: 20;
+  width: 140px;
+  height: 40px;
+
+  bottom: -25px;
+  left: 50%;
+  margin-left: -70px;
+
+  .inline-preloader-dots;
 }

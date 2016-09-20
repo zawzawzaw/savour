@@ -20,6 +20,10 @@
   <script type="text/javascript" src="assets/libs/jquery-mousewheel/jquery.mousewheel.min.js"></script>
   <script type="text/javascript" src="assets/libs/jquery-disablescroll/jquery.disablescroll.min.js"></script>
 
+  <!-- only available in article index -->
+  <!-- <script type="text/javascript" src="assets/libs/jquery-jscroll/jquery.jscroll.min.js"></script> -->
+  <!-- <script type="text/javascript" src="assets/libs/jquery-jscroll/jquery.jscroll.js"></script> -->
+
   <script type="text/javascript" src="assets/libs/misc-js/manic-custom-polyfill.js"></script>
   <script type="text/javascript" src="assets/libs/misc-js/mobile-detect.js"></script>
   <script type="text/javascript" src="assets/libs/misc-js/preloadjs-0.4.0.min.js"></script>

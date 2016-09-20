@@ -67,12 +67,32 @@
                     Sincerely, <br>
                     Team Savour
                   </p>
+
+                  
+
                 </div> <!-- #page-thank-you-copy -->
 
               </div>
             </div>
           </article>
-        </div>
+
+
+          <div id="page-thank-you-related-articles-container">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+
+                  <hr class="page-thank-you-related-articles-hr">
+
+                  <?php include('inc/related-articles-large.php'); ?> 
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div> <!-- #page-thank-you-content -->
 
 
 

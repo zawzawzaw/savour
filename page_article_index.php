@@ -31,7 +31,7 @@
 
 -->
 
-<article id="page-article-index-banner-section">
+<article id="page-article-index-banner-section" class="visible-md visible-lg">
   <div class="container">
     <div class="row">
       <div class="col-md-7">
@@ -41,23 +41,17 @@
 
             <div class="page-article-index-banner-image-item">
               <div class="manic-image-container">
-                <img src="" 
-                  data-image-mobile="images_cms/article_index/article-index-banner-carousel-01.jpg"
-                  data-image-desktop="images_cms/article_index/article-index-banner-carousel-01.jpg">
+                <img src="" data-image-desktop="images_cms/article_index/article-index-banner-carousel-01.jpg">
               </div>
             </div>
             <div class="page-article-index-banner-image-item">
               <div class="manic-image-container">
-                <img src="" 
-                  data-image-mobile="images_cms/article_index/article-index-banner-carousel-01.jpg"
-                  data-image-desktop="images_cms/article_index/article-index-banner-carousel-01.jpg">
+                <img src="" data-image-desktop="images_cms/article_index/article-index-banner-carousel-01.jpg">
               </div>
             </div>
             <div class="page-article-index-banner-image-item">
               <div class="manic-image-container">
-                <img src="" 
-                  data-image-mobile="images_cms/article_index/article-index-banner-carousel-01.jpg"
-                  data-image-desktop="images_cms/article_index/article-index-banner-carousel-01.jpg">
+                <img src="" data-image-desktop="images_cms/article_index/article-index-banner-carousel-01.jpg">
               </div>
             </div>
 
@@ -97,6 +91,71 @@
 </article>
 
 
+
+
+
+
+<article id="page-article-index-banner-section-mobile" class="visible-sm visible-xs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+
+        <div id="page-article-index-banner-image-mobile">
+
+          <div id="page-article-index-banner-image-item-mobile-container">
+            <div class="page-article-index-banner-image-item-mobile">
+              <div class="manic-image-container">
+                <img src="" 
+                  data-image-tablet="images_cms/article_index/article-index-banner-carousel-01-tablet.jpg"
+                  data-image-mobile="images_cms/article_index/article-index-banner-carousel-01-mobile.jpg">
+              </div>
+            </div>
+            <div class="page-article-index-banner-image-item-mobile">
+              <div class="manic-image-container">
+                <img src="" 
+                  data-image-tablet="images_cms/article_index/article-index-banner-carousel-01-tablet.jpg"
+                  data-image-mobile="images_cms/article_index/article-index-banner-carousel-01-mobile.jpg">
+              </div>
+            </div>
+            <div class="page-article-index-banner-image-item-mobile">
+              <div class="manic-image-container">
+                <img src="" 
+                  data-image-tablet="images_cms/article_index/article-index-banner-carousel-01-tablet.jpg"
+                  data-image-mobile="images_cms/article_index/article-index-banner-carousel-01-mobile.jpg">
+              </div>
+            </div>
+          </div> <!-- #page-article-index-banner-image-item-mobile-container -->
+
+        </div>
+
+        <div id="page-article-index-banner-copy-mobile">
+          <h2>Berry Good Pancake Recipes</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolor magna aliqua. Ut enim ad minim veniam...</p>
+          <hr>
+        </div>
+
+        <div id="page-article-index-banner-links-mobile" class="food-version">
+          <h2>Latest articles</h2>
+          
+          <ul>
+            <li><a href="javascript:void(0);">Insta-story: Eating through the Big Apple</a></li>
+            <li><a href="javascript:void(0);">Friday Night Cocktails: Start Your Weekend In Delicious Style</a></li>
+            <li><a href="javascript:void(0);">10 Things to Eat and Drink at the Rio de Janeiro Carnival</a></li>
+            <li><a href="javascript:void(0);">Insta-story: Eating through the Big Apple</a></li>
+            <li><a href="javascript:void(0);">Friday Night Cocktails: Start Your Weekend In Delicious Style</a></li>
+            <li><a href="javascript:void(0);">10 Things to Eat and Drink at the Rio de Janeiro Carnival</a></li>
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
 <!--
     ____    _    ____   ___  _   _ ____  _____ _
    / ___|  / \  |  _ \ / _ \| | | / ___|| ____| |
@@ -106,7 +165,7 @@
 
 -->
 
-<article id="page-article-index-carousel-section">
+<article id="page-article-index-carousel-section" class="visible-md visible-lg">
   <div class="container">
 
     <div class="row">
@@ -354,7 +413,7 @@
 
 
 
-<article id="page-article-index-ad-section">
+<article id="page-article-index-ad-section" class="visible-md visible-lg">
   <div class="container">
 
     <div class="row">
@@ -398,6 +457,36 @@
 </article>
 
 
+
+
+<article id="page-article-index-ad-section-mobile" class="visible-sm visible-xs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+        <div id="page-article-index-ad-item-mobile-container">
+
+          <div class="page-article-index-ad-item-mobile">
+            <div class="manic-image-container has-full-width">
+              <img src="" data-image-mobile="images_cms/article_index/article-index-ad-01-mobile.jpg">
+            </div>
+          </div>
+          <div class="page-article-index-ad-item-mobile">
+            <div class="manic-image-container has-full-width">
+              <img src="" data-image-mobile="images_cms/article_index/article-index-ad-01-mobile.jpg">
+            </div>
+          </div>
+
+        </div>
+
+        <hr class="page-article-index-ad-mobile-hr">
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
 <!--
    ____  _____ _        _  _____ _____ ____       _    ____ _____ ___ ____ _     _____
   |  _ \| ____| |      / \|_   _| ____|  _ \     / \  |  _ \_   _|_ _/ ___| |   | ____|
@@ -422,7 +511,11 @@
     </div>
     <div class="row">
 
-      <div id="page-article-index-related-article-thumbnail-container">
+      
+
+      <div id="page-article-index-related-article-thumbnail-container" data-url="page_article_index_next.php">
+
+        
 
 
         <div class="col-md-3">
@@ -600,13 +693,24 @@
             </div>
           </a>
         </div>
-
-
-
 
       </div> <!-- #page-article-index-related-article-thumbnail-container -->
 
+      
+
     </div>
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div id="page-article-index-related-article-preloader-container">
+          <div id="page-article-index-related-article-preloader"></div>
+        </div>
+
+      </div>
+    </div>
+
+
   </div>
 </article>
 

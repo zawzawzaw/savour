@@ -6,6 +6,16 @@
 //
 
 
+
+/**
+ * @param  {...} args lots of possibilities
+ * @return {!jQuery}
+ */
+jQuery.prototype.jscroll = function(args){};
+
+
+
+
 ///////////////////////////////////////
 ///////////////////////////////////////  //jquery.backstretch.min.js
 ///////////////////////////////////////

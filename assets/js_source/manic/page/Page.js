@@ -414,12 +414,14 @@ manic.page.Page.prototype.create_hammer = function(){
 
 manic.page.Page.prototype.create_image_container = function() {
   
-  var arr = $('.manic-image-container').not('.not-default-version');
+  var arr = $('.manic-image-container').not('.not-default-version').not('.instantiated-version');
   var image_container = null;
   var item = null;
 
   for (var i = 0, l=arr.length; i < l; i++) {
     item = $(arr[i]);
+
+    item.addClass('instantiated-version');
     
     image_container = new manic.ui.ImageContainer({
       'has_window_resize': false                                // updated manually by 'update_page_layout'
